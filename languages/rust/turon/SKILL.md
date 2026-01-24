@@ -285,9 +285,3 @@ Turon designs APIs by asking:
 | `is_` for boolean queries | `Option::is_some()` |
 | `_mut` suffix for mutable variants | `slice::iter_mut()` |
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

@@ -242,9 +242,3 @@ Hettinger approaches code by asking:
 - Replace nested loops with `itertools.product`
 - Replace manual counting with `collections.Counter`
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

@@ -310,9 +310,3 @@ Ronacher designs systems by asking:
 
 This isn't limiting—it's clarifying.
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

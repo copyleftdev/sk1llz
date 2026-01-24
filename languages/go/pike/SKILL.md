@@ -269,10 +269,3 @@ Pike approaches software by asking:
 - No implicit conversions — explicit is better
 
 Each "missing" feature is a deliberate choice for simplicity.
-
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

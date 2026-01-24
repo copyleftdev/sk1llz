@@ -312,9 +312,3 @@ Cheney writes code by asking:
 4. Small interfaces are better than large ones
 5. Accept interfaces, return structs
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

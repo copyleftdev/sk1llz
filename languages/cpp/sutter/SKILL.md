@@ -194,9 +194,3 @@ Key lessons from Guru of the Week:
 - Never write `using namespace` in headers
 - Make const-qualified overloads return const (or by value)
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

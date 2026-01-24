@@ -317,9 +317,3 @@ Beazley approaches Python by understanding mechanisms:
 - The GIL means **threads don't parallelize CPU work**
 - `async`/`await` is about **cooperative multitasking**, not true parallelism
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)

@@ -269,9 +269,3 @@ When designing an API, ask:
 - Is the code beautiful when written correctly?
 - Would you be proud to show this code to others?
 
-## Additional Resources
-
-- For detailed philosophy, see [philosophy.md](philosophy.md)
-- For anti-patterns to avoid, see [anti-patterns/](anti-patterns/)
-- For canonical examples, see [examples/](examples/)
-- For references (books, talks), see [references.md](references.md)
