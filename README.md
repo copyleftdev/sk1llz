@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="media/logo.png" alt="$K1LLZ Logo" width="400">
+</p>
+
 # $K1LLZ
 
 > Capturing the coding philosophies, patterns, and wisdom of legendary software engineers as Anthropic-compatible Skills.
