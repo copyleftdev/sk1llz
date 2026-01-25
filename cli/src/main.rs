@@ -280,10 +280,7 @@ fn cmd_info(name: &str) -> Result<()> {
     println!("  {}", skill.tags.join(", ").dimmed());
 
     println!("\n{}", "Install".bold());
-    println!(
-        "  {}",
-        format!("sk1llz install {}", skill.name).cyan()
-    );
+    println!("  {}", format!("sk1llz install {}", skill.name).cyan());
 
     println!("\n{}", "View Online".bold());
     println!(

@@ -97,7 +97,8 @@ jobs:
       - name: Regenerate and compare
         run: |
           python3 scripts/generate_manifest.py
-          git diff --exit-code skills.json || (echo "skills.json is out of date. Run scripts/generate_manifest.py" && exit 1)
+          # Ignore generated_at timestamp when comparing
+          git diff --exit-code -I '"generated_at":' skills.json || (echo "skills.json is out of date. Run scripts/generate_manifest.py" && exit 1)
 
   validate-skills:
     name: Validate Skills
