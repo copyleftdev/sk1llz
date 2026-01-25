@@ -1,0 +1,890 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-01-25T14:04:37.815792+00:00",
+  "repository": "https://github.com/copyleftdev/sk1llz",
+  "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
+  "skill_count": 54,
+  "skills": [
+    {
+      "id": "bianco-pyramid-of-pain",
+      "name": "bianco",
+      "description": "Apply David Bianco's threat hunting frameworks including the Pyramid of Pain and Threat Hunting Maturity Model. Emphasizes prioritizing detection by adversary cost and building mature hunting programs. Use when designing detection strategies or assessing hunting capability.",
+      "category": "domains",
+      "subcategory": "security",
+      "path": "domains/security/threat-hunting/bianco",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "security",
+        "threat_hunting",
+        "bianco"
+      ]
+    },
+    {
+      "id": "mitre-attack-framework",
+      "name": "mitre-attack",
+      "description": "Apply the MITRE ATT&CK framework for threat intelligence and detection. Provides a universal taxonomy of adversary tactics, techniques, and procedures (TTPs). Use when mapping threats, building detections, or assessing defensive coverage.",
+      "category": "domains",
+      "subcategory": "security",
+      "path": "domains/security/threat-hunting/mitre-attack",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "security",
+        "threat_hunting",
+        "mitre_attack"
+      ]
+    },
+    {
+      "id": "rodriguez-threat-hunter-playbook",
+      "name": "rodriguez",
+      "description": "Apply Roberto Rodriguez's threat hunting methodology with the Threat Hunter Playbook and HELK. Emphasizes documented hunts, open source infrastructure, and data-driven hunting. Use when building hunting programs or developing hunt playbooks.",
+      "category": "domains",
+      "subcategory": "security",
+      "path": "domains/security/threat-hunting/rodriguez",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "security",
+        "threat_hunting",
+        "rodriguez"
+      ]
+    },
+    {
+      "id": "roth-detection-engineering",
+      "name": "roth",
+      "description": "Apply Florian Roth's detection engineering methodology with YARA and Sigma rules. Emphasizes portable detection logic, community sharing, and signature quality. Use when creating detection rules that work across platforms.",
+      "category": "domains",
+      "subcategory": "security",
+      "path": "domains/security/threat-hunting/roth",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "security",
+        "threat_hunting",
+        "roth"
+      ]
+    },
+    {
+      "id": "dean-large-scale-systems",
+      "name": "dean",
+      "description": "Design large-scale systems using Jeff Dean's pragmatic approach. Emphasizes performance intuition, building reliable systems from unreliable components, and solving problems at Google scale. Use when building infrastructure that must handle millions of QPS, petabytes of data, or global distribution.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/dean",
+      "files": [
+        "SKILL.md",
+        "philosophy.md",
+        "references.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "dean"
+      ]
+    },
+    {
+      "id": "gray-transaction-systems",
+      "name": "gray",
+      "description": "Design data systems using Jim Gray's principles of transaction processing and fault tolerance. Emphasizes ACID properties, recovery mechanisms, and the science of making systems reliable. Use when building databases, payment systems, or any system where data integrity is paramount.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/gray",
+      "files": [
+        "SKILL.md",
+        "philosophy.md",
+        "references.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "gray"
+      ]
+    },
+    {
+      "id": "lamport-distributed-systems",
+      "name": "lamport",
+      "description": "Design distributed systems using Leslie Lamport's rigorous approach. Emphasizes formal reasoning, logical time, consensus protocols, and state machine replication. Use when building systems where correctness under concurrency and partial failure is critical.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/lamport",
+      "files": [
+        "SKILL.md",
+        "philosophy.md",
+        "references.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "lamport"
+      ]
+    },
+    {
+      "id": "lampson-system-design",
+      "name": "lampson",
+      "description": "Design systems using Butler Lampson's principles of abstraction, interfaces, and practical wisdom. Emphasizes clean abstractions, security foundations, and time-tested design hints. Use when making architectural decisions, designing APIs, or building systems that must evolve over decades.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/lampson",
+      "files": [
+        "SKILL.md",
+        "philosophy.md",
+        "references.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "lampson"
+      ]
+    },
+    {
+      "id": "vogels-cloud-architecture",
+      "name": "vogels",
+      "description": "Design cloud-native systems using Werner Vogels' principles of failure-first design, eventual consistency, and API-driven architecture. Emphasizes building for failure, customer obsession, and practical distributed systems. Use when building AWS-scale services, microservices, or any system that must be highly available.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/vogels",
+      "files": [
+        "SKILL.md",
+        "philosophy.md",
+        "references.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "vogels"
+      ]
+    },
+    {
+      "id": "alexandrescu-modern-cpp-design",
+      "name": "alexandrescu",
+      "description": "Write C++ code following Andrei Alexandrescu's Modern C++ Design principles. Emphasizes policy-based design, template metaprogramming, and type-safe generic abstractions. Use when designing flexible, reusable libraries or when compile-time computation beats runtime overhead.",
+      "category": "languages",
+      "subcategory": "cpp",
+      "path": "languages/cpp/alexandrescu",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "cpp",
+        "alexandrescu"
+      ]
+    },
+    {
+      "id": "meyers-effective-cpp",
+      "name": "meyers",
+      "description": "Write C++ code following Scott Meyers' Effective C++ principles. Emphasizes practical wisdom, specific guidelines with clear rationale, and avoiding common pitfalls. Use when writing production C++ code that must be correct, maintainable, and efficient.",
+      "category": "languages",
+      "subcategory": "cpp",
+      "path": "languages/cpp/meyers",
+      "files": [
+        "SKILL.md",
+        "references.md"
+      ],
+      "tags": [
+        "languages",
+        "cpp",
+        "meyers"
+      ]
+    },
+    {
+      "id": "parent-no-raw-loops",
+      "name": "parent",
+      "description": "Write C++ code following Sean Parent's \"No Raw Loops\" philosophy. Emphasizes algorithm-based thinking, composition over iteration, and treating code as mathematical reasoning. Use when refactoring or writing new C++ to maximize clarity and correctness.",
+      "category": "languages",
+      "subcategory": "cpp",
+      "path": "languages/cpp/parent",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "cpp",
+        "parent"
+      ]
+    },
+    {
+      "id": "stepanov-generic-programming",
+      "name": "stepanov",
+      "description": "Write C++ code following Alexander Stepanov's generic programming principles. Emphasizes algorithms over data structures, concepts as requirements, and mathematical rigor in interface design. Use when designing reusable algorithms or data structures that must work across types.",
+      "category": "languages",
+      "subcategory": "cpp",
+      "path": "languages/cpp/stepanov",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "cpp",
+        "stepanov"
+      ]
+    },
+    {
+      "id": "stroustrup-cpp-style",
+      "name": "stroustrup",
+      "description": "Write C++ code in the style of Bjarne Stroustrup, creator of C++. Emphasizes type safety, resource management via RAII, zero-overhead abstractions, and direct hardware mapping. Use when designing C++ systems, APIs, or when clarity and efficiency must coexist.",
+      "category": "languages",
+      "subcategory": "cpp",
+      "path": "languages/cpp/stroustrup",
+      "files": [
+        "SKILL.md",
+        "philosophy.md",
+        "references.md"
+      ],
+      "tags": [
+        "languages",
+        "cpp",
+        "stroustrup"
+      ]
+    },
+    {
+      "id": "sutter-exceptional-cpp",
+      "name": "sutter",
+      "description": "Write C++ code following Herb Sutter's exceptional C++ principles. Emphasizes exception safety, const correctness, modern idioms, and defensive programming. Use when writing robust, production-quality C++ that must handle errors gracefully.",
+      "category": "languages",
+      "subcategory": "cpp",
+      "path": "languages/cpp/sutter",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "cpp",
+        "sutter"
+      ]
+    },
+    {
+      "id": "cheney-practical-go",
+      "name": "cheney",
+      "description": "Write Go code in the style of Dave Cheney, Go community leader. Emphasizes practical patterns, clear error handling, and performance awareness. Use when writing production Go that needs to be maintainable and performant.",
+      "category": "languages",
+      "subcategory": "go",
+      "path": "languages/go/cheney",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "go",
+        "cheney"
+      ]
+    },
+    {
+      "id": "cox-tooling-excellence",
+      "name": "cox",
+      "description": "Write Go code in the style of Russ Cox, Go tech lead. Emphasizes tooling, module design, correctness, and backward compatibility. Use when designing packages, modules, or tools that others will depend on.",
+      "category": "languages",
+      "subcategory": "go",
+      "path": "languages/go/cox",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "go",
+        "cox"
+      ]
+    },
+    {
+      "id": "griesemer-precise-go",
+      "name": "griesemer",
+      "description": "Write Go code in the style of Robert Griesemer, co-creator of Go. Emphasizes clean syntax, precise semantics, and well-defined type system behavior. Use when designing APIs, type hierarchies, or code that requires precise specification.",
+      "category": "languages",
+      "subcategory": "go",
+      "path": "languages/go/griesemer",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "go",
+        "griesemer"
+      ]
+    },
+    {
+      "id": "kennedy-mechanical-sympathy",
+      "name": "kennedy",
+      "description": "Write Go code in the style of Bill Kennedy, author of Go in Action. Emphasizes mechanical sympathy, data-oriented design, and understanding how Go code executes. Use when writing performance-critical Go or when teaching Go fundamentals.",
+      "category": "languages",
+      "subcategory": "go",
+      "path": "languages/go/kennedy",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "go",
+        "kennedy"
+      ]
+    },
+    {
+      "id": "pike-simplicity-first",
+      "name": "pike",
+      "description": "Write Go code in the style of Rob Pike, co-creator of Go. Emphasizes radical simplicity, concurrency through communication, and composition over inheritance. Use when writing Go that should be clear, concurrent, and maintainable.",
+      "category": "languages",
+      "subcategory": "go",
+      "path": "languages/go/pike",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "go",
+        "pike"
+      ]
+    },
+    {
+      "id": "thompson-unix-philosophy",
+      "name": "thompson",
+      "description": "Write Go code in the style of Ken Thompson, co-creator of Go, Unix, and C. Emphasizes Unix philosophy, minimalism, and programs that do one thing well. Use when designing tools, CLIs, or systems that should be composable and focused.",
+      "category": "languages",
+      "subcategory": "go",
+      "path": "languages/go/thompson",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "go",
+        "thompson"
+      ]
+    },
+    {
+      "id": "abramov-state-composition",
+      "name": "abramov",
+      "description": "Write JavaScript code in the style of Dan Abramov, co-creator of Redux and React core team member. Emphasizes predictable state management, composition over inheritance, and developer experience. Use when building React applications or managing complex state.",
+      "category": "languages",
+      "subcategory": "javascript",
+      "path": "languages/javascript/abramov",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "javascript",
+        "abramov"
+      ]
+    },
+    {
+      "id": "crockford-good-parts",
+      "name": "crockford",
+      "description": "Write JavaScript code in the style of Douglas Crockford, author of \"JavaScript: The Good Parts\". Emphasizes using only the reliable subset of JavaScript, avoiding problematic features, and writing clear, maintainable code. Use when writing robust, quality JavaScript.",
+      "category": "languages",
+      "subcategory": "javascript",
+      "path": "languages/javascript/crockford",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "javascript",
+        "crockford"
+      ]
+    },
+    {
+      "id": "dodds-testing-practices",
+      "name": "dodds",
+      "description": "Write JavaScript code in the style of Kent C. Dodds, testing advocate and React educator. Emphasizes testing best practices, React patterns, and developer productivity. Use when writing tests or building maintainable React applications.",
+      "category": "languages",
+      "subcategory": "javascript",
+      "path": "languages/javascript/dodds",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "javascript",
+        "dodds"
+      ]
+    },
+    {
+      "id": "eich-language-fundamentals",
+      "name": "eich",
+      "description": "Write JavaScript code with deep understanding of the language fundamentals as envisioned by Brendan Eich, creator of JavaScript. Emphasizes first-class functions, prototypes, and the dynamic nature of the language. Use when leveraging JavaScript's unique characteristics.",
+      "category": "languages",
+      "subcategory": "javascript",
+      "path": "languages/javascript/eich",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "javascript",
+        "eich"
+      ]
+    },
+    {
+      "id": "osmani-patterns-performance",
+      "name": "osmani",
+      "description": "Write JavaScript code in the style of Addy Osmani, author of \"Learning JavaScript Design Patterns\" and Chrome DevTools engineer. Emphasizes design patterns, performance optimization, and progressive web apps. Use when building performant, well-structured applications.",
+      "category": "languages",
+      "subcategory": "javascript",
+      "path": "languages/javascript/osmani",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "javascript",
+        "osmani"
+      ]
+    },
+    {
+      "id": "simpson-you-dont-know-js",
+      "name": "simpson",
+      "description": "Write JavaScript code in the style of Kyle Simpson, author of \"You Don't Know JS\". Emphasizes deep understanding of JavaScript mechanics\u2014scope, closures, this, prototypes, and async. Use when you need to truly understand JavaScript behavior.",
+      "category": "languages",
+      "subcategory": "javascript",
+      "path": "languages/javascript/simpson",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "javascript",
+        "simpson"
+      ]
+    },
+    {
+      "id": "beazley-deep-python",
+      "name": "beazley",
+      "description": "Write Python code in the style of David Beazley, author of Python Cookbook. Emphasizes generators, coroutines, metaprogramming, and understanding Python's internals. Use when writing advanced Python that requires deep language mastery.",
+      "category": "languages",
+      "subcategory": "python",
+      "path": "languages/python/beazley",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "python",
+        "beazley"
+      ]
+    },
+    {
+      "id": "hettinger-idiomatic-python",
+      "name": "hettinger",
+      "description": "Write Python code in the style of Raymond Hettinger, Python core developer. Emphasizes beautiful, idiomatic code using iterators, generators, and built-in tools elegantly. Use when transforming code into clean, Pythonic solutions.",
+      "category": "languages",
+      "subcategory": "python",
+      "path": "languages/python/hettinger",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "python",
+        "hettinger"
+      ]
+    },
+    {
+      "id": "ramalho-fluent-python",
+      "name": "ramalho",
+      "description": "Write Python code in the style of Luciano Ramalho, author of Fluent Python. Emphasizes deep understanding of Python's data model, special methods, and advanced idioms. Use when writing code that leverages Python's full power elegantly.",
+      "category": "languages",
+      "subcategory": "python",
+      "path": "languages/python/ramalho",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "python",
+        "ramalho"
+      ]
+    },
+    {
+      "id": "reitz-api-design",
+      "name": "reitz",
+      "description": "Write Python code in the style of Kenneth Reitz, creator of Requests. Emphasizes beautiful API design, simplicity for users, and the \"for humans\" philosophy. Use when designing libraries, APIs, or any interface that other developers will consume.",
+      "category": "languages",
+      "subcategory": "python",
+      "path": "languages/python/reitz",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "python",
+        "reitz"
+      ]
+    },
+    {
+      "id": "ronacher-pragmatic-design",
+      "name": "ronacher",
+      "description": "Write Python code in the style of Armin Ronacher, creator of Flask and Jinja2. Emphasizes pragmatic minimalism, explicit over implicit, and composable design. Use when building frameworks, libraries, or applications that need to be extensible and maintainable.",
+      "category": "languages",
+      "subcategory": "python",
+      "path": "languages/python/ronacher",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "python",
+        "ronacher"
+      ]
+    },
+    {
+      "id": "vanrossum-pythonic-style",
+      "name": "vanrossum",
+      "description": "Write Python code in the style of Guido van Rossum, creator of Python. Emphasizes readability, simplicity, and the Pythonic way. Use when writing Python that should be clear, maintainable, and follow the language's design philosophy.",
+      "category": "languages",
+      "subcategory": "python",
+      "path": "languages/python/vanrossum",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "python",
+        "vanrossum"
+      ]
+    },
+    {
+      "id": "bos-concurrency-rust",
+      "name": "bos",
+      "description": "Write Rust code in the style of Mara Bos, Rust library team lead and author of \"Rust Atomics and Locks.\" Emphasizes low-level concurrency, atomics, and understanding the memory model. Use when writing concurrent or lock-free code.",
+      "category": "languages",
+      "subcategory": "rust",
+      "path": "languages/rust/bos",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "rust",
+        "bos"
+      ]
+    },
+    {
+      "id": "hoare-rust-origins",
+      "name": "hoare",
+      "description": "Write Rust code informed by Graydon Hoare's original vision for Rust. Emphasizes memory safety without GC, practical systems programming, and learning from C/C++ mistakes. Use when designing safe systems code or understanding Rust's fundamental choices.",
+      "category": "languages",
+      "subcategory": "rust",
+      "path": "languages/rust/hoare",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "rust",
+        "hoare"
+      ]
+    },
+    {
+      "id": "klabnik-teaching-rust",
+      "name": "klabnik",
+      "description": "Write Rust code in the style of Steve Klabnik, author of \"The Rust Programming Language.\" Emphasizes clear, idiomatic code that teaches as it goes. Use when writing example code, documentation, or code that others will learn from.",
+      "category": "languages",
+      "subcategory": "rust",
+      "path": "languages/rust/klabnik",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "rust",
+        "klabnik"
+      ]
+    },
+    {
+      "id": "matsakis-ownership-mastery",
+      "name": "matsakis",
+      "description": "Write Rust code in the style of Niko Matsakis, Rust language team lead. Emphasizes deep understanding of ownership, lifetimes, and the borrow checker. Use when working with complex lifetime scenarios or designing APIs that interact with the ownership system.",
+      "category": "languages",
+      "subcategory": "rust",
+      "path": "languages/rust/matsakis",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "rust",
+        "matsakis"
+      ]
+    },
+    {
+      "id": "nichols-practical-rust",
+      "name": "nichols",
+      "description": "Write Rust code in the style of Carol Nichols, co-author of The Rust Book. Emphasizes practical patterns, clear explanations, and real-world applicability. Use when writing production Rust or explaining Rust to others.",
+      "category": "languages",
+      "subcategory": "rust",
+      "path": "languages/rust/nichols",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "rust",
+        "nichols"
+      ]
+    },
+    {
+      "id": "turon-api-design",
+      "name": "turon",
+      "description": "Write Rust code in the style of Aaron Turon, former Rust team lead. Emphasizes API design, async Rust, and ecosystem architecture. Use when designing public APIs, async systems, or library interfaces.",
+      "category": "languages",
+      "subcategory": "rust",
+      "path": "languages/rust/turon",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "rust",
+        "turon"
+      ]
+    },
+    {
+      "id": "cro-practical-zig",
+      "name": "cro",
+      "description": "Write Zig code in the style of Loris Cro, VP Community at Zig Software Foundation. Emphasizes practical patterns, build system mastery, and teaching Zig effectively. Use when building real applications or learning Zig idioms.",
+      "category": "languages",
+      "subcategory": "zig",
+      "path": "languages/zig/cro",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "zig",
+        "cro"
+      ]
+    },
+    {
+      "id": "kelley-zig-philosophy",
+      "name": "kelley",
+      "description": "Write Zig code in the style of Andrew Kelley, creator of Zig. Emphasizes simplicity, explicit behavior, compile-time metaprogramming, and being a better C. Use when writing systems code that prioritizes clarity and safety.",
+      "category": "languages",
+      "subcategory": "zig",
+      "path": "languages/zig/kelley",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "languages",
+        "zig",
+        "kelley"
+      ]
+    },
+    {
+      "id": "google-continuous-fuzzing",
+      "name": "continuous-fuzzing",
+      "description": "Apply Google's continuous fuzzing methodology using OSS-Fuzz and ClusterFuzz. Emphasizes coverage-guided fuzzing, automated bug triage, and integration into CI/CD. Use when building robust testing infrastructure or finding security vulnerabilities at scale.",
+      "category": "organizations",
+      "subcategory": "google",
+      "path": "organizations/google/continuous-fuzzing",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "google",
+        "continuous_fuzzing"
+      ]
+    },
+    {
+      "id": "google-sre",
+      "name": "sre",
+      "description": "Apply Google's Site Reliability Engineering methodology. Emphasizes error budgets, SLO-driven operations, toil elimination, and blameless postmortems. Use when building and operating reliable services at scale.",
+      "category": "organizations",
+      "subcategory": "google",
+      "path": "organizations/google/sre",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "google",
+        "sre"
+      ]
+    },
+    {
+      "id": "gremlin-enterprise-chaos",
+      "name": "enterprise-chaos",
+      "description": "Apply Gremlin's enterprise chaos engineering methodology. Emphasizes categorized failure injection, safety controls, and structured experimentation. Use when implementing chaos engineering in enterprise environments with compliance requirements.",
+      "category": "organizations",
+      "subcategory": "gremlin",
+      "path": "organizations/gremlin/enterprise-chaos",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "gremlin",
+        "enterprise_chaos"
+      ]
+    },
+    {
+      "id": "netflix-chaos-engineering",
+      "name": "chaos-engineering",
+      "description": "Apply Netflix's chaos engineering methodology to build resilient systems. Emphasizes controlled failure injection, steady-state hypothesis testing, and building confidence through experimentation. Use when you need to verify system resilience under turbulent conditions.",
+      "category": "organizations",
+      "subcategory": "netflix",
+      "path": "organizations/netflix/chaos-engineering",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "netflix",
+        "chaos_engineering"
+      ]
+    },
+    {
+      "id": "dean-large-scale-systems",
+      "name": "dean",
+      "description": "Design distributed systems in the style of Jeff Dean, Google Senior Fellow behind MapReduce, BigTable, Spanner, and TensorFlow. Emphasizes practical large-scale system design, performance optimization, and building infrastructure that serves billions. Use when designing systems that must scale massively.",
+      "category": "paradigms",
+      "subcategory": "distributed",
+      "path": "paradigms/distributed/dean",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "distributed",
+        "dean"
+      ]
+    },
+    {
+      "id": "kleppmann-data-intensive",
+      "name": "kleppmann",
+      "description": "Design distributed systems in the style of Martin Kleppmann, author of \"Designing Data-Intensive Applications\". Emphasizes understanding data systems deeply, making informed trade-offs, and building reliable data infrastructure. Use when designing databases, streaming systems, or data pipelines.",
+      "category": "paradigms",
+      "subcategory": "distributed",
+      "path": "paradigms/distributed/kleppmann",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "distributed",
+        "kleppmann"
+      ]
+    },
+    {
+      "id": "lamport-formal-distributed",
+      "name": "lamport",
+      "description": "Design distributed systems in the style of Leslie Lamport, creator of Paxos, TLA+, and LaTeX. Emphasizes formal specification, logical time, and rigorous reasoning about concurrent systems. Use when designing consensus protocols or proving system correctness.",
+      "category": "paradigms",
+      "subcategory": "distributed",
+      "path": "paradigms/distributed/lamport",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "distributed",
+        "lamport"
+      ]
+    },
+    {
+      "id": "hickey-simple-made-easy",
+      "name": "hickey",
+      "description": "Write functional code in the style of Rich Hickey, creator of Clojure. Emphasizes simplicity over easiness, immutability, data-oriented programming, and managing state explicitly. Use when designing systems that need to be understood and maintained.",
+      "category": "paradigms",
+      "subcategory": "functional",
+      "path": "paradigms/functional/hickey",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "functional",
+        "hickey"
+      ]
+    },
+    {
+      "id": "peyton-jones-practical-haskell",
+      "name": "peyton-jones",
+      "description": "Write functional code in the style of Simon Peyton Jones, lead architect of GHC. Emphasizes practical laziness, compiler-friendly code, and making functional programming work in the real world. Use when writing performant Haskell or understanding evaluation strategies.",
+      "category": "paradigms",
+      "subcategory": "functional",
+      "path": "paradigms/functional/peyton-jones",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "functional",
+        "peyton_jones"
+      ]
+    },
+    {
+      "id": "wadler-monadic-elegance",
+      "name": "wadler",
+      "description": "Write functional code in the style of Philip Wadler, type theorist and monad evangelist. Emphasizes monadic composition, type-driven design, and the deep connection between logic and computation. Use when designing composable abstractions or understanding categorical patterns.",
+      "category": "paradigms",
+      "subcategory": "functional",
+      "path": "paradigms/functional/wadler",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "functional",
+        "wadler"
+      ]
+    },
+    {
+      "id": "ritchie-c-mastery",
+      "name": "ritchie",
+      "description": "Write systems code in the style of Dennis Ritchie, co-creator of Unix and creator of C. Emphasizes clean abstraction, portable systems code, and the art of language design. Use when writing C or designing system interfaces.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/ritchie",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "ritchie"
+      ]
+    },
+    {
+      "id": "thompson-elegant-systems",
+      "name": "thompson",
+      "description": "Write systems code in the style of Ken Thompson, co-creator of Unix, C, Go, UTF-8, and Plan 9. Emphasizes radical simplicity, elegant algorithms, and small composable tools. Use when designing systems that must endure.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/thompson",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "thompson"
+      ]
+    },
+    {
+      "id": "torvalds-kernel-pragmatism",
+      "name": "torvalds",
+      "description": "Write systems code in the style of Linus Torvalds, creator of Linux and Git. Emphasizes pragmatic excellence, performance awareness, subsystem design, and uncompromising code review. Use when writing kernel-level code or high-performance systems.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/torvalds",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "torvalds"
+      ]
+    }
+  ]
+}
