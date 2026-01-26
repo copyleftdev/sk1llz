@@ -46,10 +46,15 @@ enum Commands {
     Install {
         /// Skill name or ID
         name: String,
-        /// Target directory (default: ~/.claude/skills)
+        /// Target directory (overrides automatic detection)
         #[arg(short, long)]
         target: Option<PathBuf>,
+        /// Install to global ~/.claude/skills instead of project-local
+        #[arg(short, long)]
+        global: bool,
     },
+    /// Show where skills would be installed
+    Where,
     /// Update the local skill index
     Update,
     /// Generate shell completions
@@ -92,6 +97,48 @@ fn get_cache_dir() -> Result<PathBuf> {
 
 fn get_manifest_path() -> Result<PathBuf> {
     Ok(get_cache_dir()?.join("skills.json"))
+}
+
+/// Resolve the skills directory based on context:
+/// 1. If in a project with .claude/skills/, use that (project-local)
+/// 2. Otherwise, use ~/.claude/skills/ (global)
+fn resolve_skills_dir(force_global: bool) -> Result<PathBuf> {
+    if !force_global {
+        // Check for project-local .claude/skills/ in current directory
+        if let Ok(cwd) = std::env::current_dir() {
+            let local_skills = cwd.join(".claude").join("skills");
+            // Use local if .claude directory exists (even if skills/ doesn't yet)
+            let local_claude = cwd.join(".claude");
+            if local_claude.exists() && local_claude.is_dir() {
+                return Ok(local_skills);
+            }
+        }
+    }
+
+    // Fall back to global
+    let global = dirs::home_dir()
+        .context("Could not find home directory")?
+        .join(".claude")
+        .join("skills");
+    Ok(global)
+}
+
+/// Get both local and global skill directories for display
+fn get_skill_locations() -> (Option<PathBuf>, PathBuf) {
+    let global = dirs::home_dir()
+        .map(|h| h.join(".claude").join("skills"))
+        .unwrap_or_else(|| PathBuf::from("~/.claude/skills"));
+
+    let local = std::env::current_dir().ok().and_then(|cwd| {
+        let local_claude = cwd.join(".claude");
+        if local_claude.exists() && local_claude.is_dir() {
+            Some(cwd.join(".claude").join("skills"))
+        } else {
+            None
+        }
+    });
+
+    (local, global)
 }
 
 fn fetch_manifest() -> Result<Manifest> {
@@ -291,7 +338,7 @@ fn cmd_info(name: &str) -> Result<()> {
     Ok(())
 }
 
-fn cmd_install(name: &str, target: Option<PathBuf>) -> Result<()> {
+fn cmd_install(name: &str, target: Option<PathBuf>, global: bool) -> Result<()> {
     let manifest = load_manifest()?;
 
     let skill = manifest
@@ -303,13 +350,20 @@ fn cmd_install(name: &str, target: Option<PathBuf>) -> Result<()> {
         })
         .context(format!("Skill '{}' not found", name))?;
 
-    let target_dir = target.unwrap_or_else(|| {
-        dirs::home_dir()
-            .expect("Could not find home directory")
-            .join(".claude")
-            .join("skills")
-            .join(&skill.name)
-    });
+    // Determine location type before consuming target
+    let location_type = if target.is_some() {
+        "custom"
+    } else if global {
+        "global"
+    } else {
+        let (local, _) = get_skill_locations();
+        if local.is_some() { "project-local" } else { "global" }
+    };
+
+    let target_dir = match target {
+        Some(t) => t,
+        None => resolve_skills_dir(global)?.join(&skill.name),
+    };
 
     fs::create_dir_all(&target_dir)?;
 
@@ -338,13 +392,75 @@ fn cmd_install(name: &str, target: Option<PathBuf>) -> Result<()> {
     pb.finish_with_message("Done!");
 
     println!(
-        "\n{} Installed {} to {}",
+        "\n{} Installed {} to {} ({})",
         "✓".green().bold(),
         skill.name.cyan(),
-        target_dir.display().to_string().green()
+        target_dir.display().to_string().green(),
+        location_type.dimmed()
     );
 
     Ok(())
+}
+
+fn cmd_where() -> Result<()> {
+    let (local, global) = get_skill_locations();
+
+    println!("\n{}", "Skill Installation Locations".bold().cyan());
+    println!("{}", "─".repeat(40).dimmed());
+
+    if let Some(local_path) = &local {
+        let exists = local_path.exists();
+        let status = if exists {
+            format!("({} skills)", count_skills(local_path))
+        } else {
+            "(will be created)".to_string()
+        };
+        println!(
+            "  {} {} {} {}",
+            "→".green().bold(),
+            "Project-local:".bold(),
+            local_path.display().to_string().green(),
+            status.dimmed()
+        );
+        println!("    {}", "(active - .claude/ detected)".cyan());
+    } else {
+        println!(
+            "  {} {}",
+            "○".dimmed(),
+            "Project-local: not available (no .claude/ in current directory)".dimmed()
+        );
+    }
+
+    let global_exists = global.exists();
+    let global_status = if global_exists {
+        format!("({} skills)", count_skills(&global))
+    } else {
+        "(will be created)".to_string()
+    };
+    
+    let active = if local.is_none() { " (active)" } else { "" };
+    println!(
+        "  {} {} {} {}{}",
+        if local.is_none() { "→".green().bold() } else { "○".dimmed() },
+        "Global:".bold(),
+        global.display().to_string().green(),
+        global_status.dimmed(),
+        active.cyan()
+    );
+
+    println!();
+    println!("{}", "Usage".bold());
+    println!("  {} install to project-local (if .claude/ exists)", "sk1llz install <skill>".cyan());
+    println!("  {} force global installation", "sk1llz install <skill> --global".cyan());
+    println!("  {} initialize project-local skills", "mkdir -p .claude/skills".cyan());
+
+    Ok(())
+}
+
+fn count_skills(dir: &PathBuf) -> usize {
+    fs::read_dir(dir)
+        .map(|entries| entries.filter_map(|e| e.ok()).filter(|e| e.path().is_dir()).count())
+        .unwrap_or(0)
 }
 
 fn cmd_update() -> Result<()> {
@@ -374,7 +490,8 @@ fn main() -> Result<()> {
         Commands::List { category } => cmd_list(category),
         Commands::Search { query } => cmd_search(&query),
         Commands::Info { name } => cmd_info(&name),
-        Commands::Install { name, target } => cmd_install(&name, target),
+        Commands::Install { name, target, global } => cmd_install(&name, target, global),
+        Commands::Where => cmd_where(),
         Commands::Update => cmd_update(),
         Commands::Completions { shell } => cmd_completions(shell),
     }

@@ -44,14 +44,42 @@ sk1llz search "rust safety"
 sk1llz info lamport
 sk1llz info stroustrup
 
-# Install a skill to ~/.claude/skills/
+# Show where skills would be installed
+sk1llz where
+
+# Install a skill (project-local if .claude/ exists, otherwise global)
 sk1llz install lamport
+
+# Force install to global ~/.claude/skills/
+sk1llz install lamport --global
 
 # Install to a custom location
 sk1llz install lamport --target ./my-skills/
 
 # Update the skill index
 sk1llz update
+```
+
+## Skill Location Resolution
+
+The CLI automatically detects the best installation location:
+
+1. **Project-local** (`./.claude/skills/`): Used if a `.claude/` directory exists in the current working directory
+2. **Global** (`~/.claude/skills/`): Fallback when no project-local config exists
+
+This allows you to:
+- Install skills globally for use across all projects
+- Install skills locally to a specific project (version-controlled, team-shared)
+
+```bash
+# Check which location is active
+sk1llz where
+
+# Initialize project-local skills
+mkdir -p .claude/skills
+
+# Force global even when .claude/ exists locally
+sk1llz install lamport --global
 ```
 
 ## How It Works
