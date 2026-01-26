@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T14:16:32.583781+00:00",
+  "generated_at": "2026-01-26T14:21:24.015290+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 66,
+  "skill_count": 67,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -225,6 +225,22 @@
         "domains",
         "trading",
         "mean_reversion"
+      ]
+    },
+    {
+      "id": "minervini-swing-trading",
+      "name": "swing-trading",
+      "description": "Trade swing setups in the style of Mark Minervini, 3x US Investing Champion with 220%+ annual returns. Emphasizes SEPA methodology, trend templates, volatility contraction patterns (VCP), and strict risk management. Use when swing trading momentum stocks, identifying breakout setups, or building systematic trend-following strategies.",
+      "category": "domains",
+      "subcategory": "trading",
+      "path": "domains/trading/swing-trading",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "trading",
+        "swing_trading"
       ]
     },
     {
