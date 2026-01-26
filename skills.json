@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T18:32:36.554710+00:00",
+  "generated_at": "2026-01-26T18:35:57.284670+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 76,
+  "skill_count": 77,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -83,6 +83,22 @@
         "domains",
         "networking",
         "jacobson"
+      ]
+    },
+    {
+      "id": "stevens-network-protocols",
+      "name": "stevens",
+      "description": "Understand network protocols in the style of W. Richard Stevens, author of TCP/IP Illustrated. Emphasizes deep protocol understanding through packet analysis, layered thinking, and knowing exactly what happens at every byte. Use when debugging network issues, implementing protocols, or building networked applications.",
+      "category": "domains",
+      "subcategory": "networking",
+      "path": "domains/networking/stevens",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "networking",
+        "stevens"
       ]
     },
     {
