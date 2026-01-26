@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T18:05:30.817842+00:00",
+  "generated_at": "2026-01-26T18:12:35.941893+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 69,
+  "skill_count": 71,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -225,6 +225,38 @@
         "domains",
         "testing",
         "bach"
+      ]
+    },
+    {
+      "id": "beck-test-driven-development",
+      "name": "beck-tdd",
+      "description": "Develop software in the style of Kent Beck, creator of Test-Driven Development and Extreme Programming. Emphasizes red-green-refactor, tests-first design, small steps, and emergent architecture. Use when writing new features, refactoring legacy code, or establishing development discipline.",
+      "category": "domains",
+      "subcategory": "testing",
+      "path": "domains/testing/beck-tdd",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "testing",
+        "beck_tdd"
+      ]
+    },
+    {
+      "id": "bolton-rapid-software-testing",
+      "name": "bolton-rst",
+      "description": "Test software in the style of Michael Bolton, Rapid Software Testing co-creator with James Bach. Emphasizes the distinction between testing and checking, critical thinking, oracles, and the social nature of quality. Use when designing test strategies, evaluating test automation, or developing critical thinking in testers.",
+      "category": "domains",
+      "subcategory": "testing",
+      "path": "domains/testing/bolton-rst",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "testing",
+        "bolton_rst"
       ]
     },
     {
