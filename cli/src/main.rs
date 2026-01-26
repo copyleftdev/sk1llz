@@ -1,5 +1,5 @@
 use anyhow::{Context, Result};
-use clap::{CommandFactory, Parser, Subcommand};
+use clap::{CommandFactory, Parser, Subcommand, ValueEnum};
 use clap_complete::{generate, Shell};
 use colored::Colorize;
 use fuzzy_matcher::skim::SkimMatcherV2;
@@ -7,8 +7,9 @@ use fuzzy_matcher::FuzzyMatcher;
 use indicatif::{ProgressBar, ProgressStyle};
 use serde::{Deserialize, Serialize};
 use std::fs;
-use std::io;
+use std::io::{self, Write};
 use std::path::PathBuf;
+use std::time::SystemTime;
 
 const MANIFEST_URL: &str =
     "https://raw.githubusercontent.com/copyleftdev/sk1llz/master/skills.json";
@@ -19,9 +20,26 @@ const RAW_BASE_URL: &str = "https://raw.githubusercontent.com/copyleftdev/sk1llz
 #[command(author = "copyleftdev")]
 #[command(version)]
 #[command(about = "A package manager for AI coding skills", long_about = None)]
+#[command(after_help = "Examples:
+  sk1llz list                    List all available skills
+  sk1llz search rust             Search for Rust-related skills
+  sk1llz install torvalds        Install a skill by name
+  sk1llz info lamport            Show details about a skill
+
+Use 'sk1llz <command> --help' for more information about a command.")]
 struct Cli {
+    /// Output format (text or json)
+    #[arg(long, short = 'o', global = true, value_enum, default_value = "text")]
+    format: OutputFormat,
+
     #[command(subcommand)]
     command: Commands,
+}
+
+#[derive(ValueEnum, Clone, Copy, PartialEq)]
+enum OutputFormat {
+    Text,
+    Json,
 }
 
 #[derive(Subcommand)]
@@ -57,6 +75,18 @@ enum Commands {
     Where,
     /// Update the local skill index
     Update,
+    /// Initialize skill directory in current project
+    Init,
+    /// Remove an installed skill
+    Uninstall {
+        /// Skill name
+        name: String,
+        /// Skip confirmation prompt
+        #[arg(short = 'y', long)]
+        yes: bool,
+    },
+    /// Check your setup for common issues
+    Doctor,
     /// Generate shell completions
     Completions {
         /// Shell type
@@ -175,7 +205,7 @@ fn load_manifest() -> Result<Manifest> {
     }
 }
 
-fn cmd_list(category: Option<String>) -> Result<()> {
+fn cmd_list(category: Option<String>, format: OutputFormat) -> Result<()> {
     let manifest = load_manifest()?;
 
     let skills: Vec<_> = match &category {
@@ -186,6 +216,15 @@ fn cmd_list(category: Option<String>) -> Result<()> {
             .collect(),
         None => manifest.skills.iter().collect(),
     };
+
+    if format == OutputFormat::Json {
+        let output = serde_json::json!({
+            "count": skills.len(),
+            "skills": skills,
+        });
+        println!("{}", serde_json::to_string_pretty(&output)?);
+        return Ok(());
+    }
 
     if skills.is_empty() {
         println!("{}", "No skills found.".yellow());
@@ -231,7 +270,7 @@ fn cmd_list(category: Option<String>) -> Result<()> {
     Ok(())
 }
 
-fn cmd_search(query: &str) -> Result<()> {
+fn cmd_search(query: &str, format: OutputFormat) -> Result<()> {
     let manifest = load_manifest()?;
     let matcher = SkimMatcherV2::default();
 
@@ -259,6 +298,17 @@ fn cmd_search(query: &str) -> Result<()> {
         .collect();
 
     results.sort_by(|a, b| b.1.cmp(&a.1));
+
+    if format == OutputFormat::Json {
+        let skills: Vec<_> = results.iter().map(|(s, _)| *s).collect();
+        let output = serde_json::json!({
+            "query": query,
+            "count": skills.len(),
+            "skills": skills,
+        });
+        println!("{}", serde_json::to_string_pretty(&output)?);
+        return Ok(());
+    }
 
     if results.is_empty() {
         println!("{}", format!("No skills matching '{}'", query).yellow());
@@ -297,17 +347,42 @@ fn cmd_search(query: &str) -> Result<()> {
     Ok(())
 }
 
-fn cmd_info(name: &str) -> Result<()> {
+fn cmd_info(name: &str, format: OutputFormat) -> Result<()> {
     let manifest = load_manifest()?;
 
-    let skill = manifest
-        .skills
-        .iter()
-        .find(|s| {
-            s.name.to_lowercase() == name.to_lowercase()
-                || s.id.to_lowercase() == name.to_lowercase()
-        })
-        .context(format!("Skill '{}' not found", name))?;
+    let skill = manifest.skills.iter().find(|s| {
+        s.name.to_lowercase() == name.to_lowercase() || s.id.to_lowercase() == name.to_lowercase()
+    });
+
+    let skill = match skill {
+        Some(s) => s,
+        None => {
+            let suggestions = find_similar_skills(name, &manifest.skills);
+            println!(
+                "{} Skill '{}' not found.\n",
+                "Error:".red().bold(),
+                name.yellow()
+            );
+            if !suggestions.is_empty() {
+                println!("{}", "Did you mean one of these?".cyan());
+                for suggestion in &suggestions {
+                    println!("  • {}", suggestion.green());
+                }
+                println!();
+            }
+            println!(
+                "{} Use '{}' to see all available skills.",
+                "Hint:".blue().bold(),
+                "sk1llz list".cyan()
+            );
+            return Ok(());
+        }
+    };
+
+    if format == OutputFormat::Json {
+        println!("{}", serde_json::to_string_pretty(&skill)?);
+        return Ok(());
+    }
 
     println!("\n{}", skill.name.bold().cyan().underline());
     println!("{}: {}", "ID".bold(), skill.id);
@@ -491,6 +566,207 @@ fn cmd_update() -> Result<()> {
     Ok(())
 }
 
+fn cmd_init() -> Result<()> {
+    let cwd = std::env::current_dir().context("Could not get current directory")?;
+    let claude_dir = cwd.join(".claude");
+    let skills_dir = claude_dir.join("skills");
+
+    if skills_dir.exists() {
+        println!(
+            "{} Project already initialized at {}",
+            "✓".green().bold(),
+            skills_dir.display().to_string().cyan()
+        );
+        return Ok(());
+    }
+
+    fs::create_dir_all(&skills_dir)?;
+    fs::write(skills_dir.join(".gitkeep"), "")?;
+
+    println!(
+        "{} Initialized sk1llz in {}\n",
+        "✓".green().bold(),
+        skills_dir.display().to_string().cyan()
+    );
+
+    println!("{}", "Next steps:".bold());
+    println!("  1. Install some skills:");
+    println!("     {}", "sk1llz install torvalds".cyan());
+    println!("  2. View installed skills:");
+    println!("     {}", "sk1llz where".cyan());
+
+    Ok(())
+}
+
+fn cmd_uninstall(name: &str, yes: bool) -> Result<()> {
+    let (local, global) = get_skill_locations();
+
+    let mut found_at: Option<PathBuf> = None;
+
+    if let Some(local_path) = &local {
+        let skill_path = local_path.join(name);
+        if skill_path.exists() {
+            found_at = Some(skill_path);
+        }
+    }
+
+    if found_at.is_none() {
+        let skill_path = global.join(name);
+        if skill_path.exists() {
+            found_at = Some(skill_path);
+        }
+    }
+
+    let path = match found_at {
+        Some(p) => p,
+        None => {
+            println!(
+                "{} Skill '{}' is not installed.\n",
+                "Error:".red().bold(),
+                name.yellow()
+            );
+            println!(
+                "{} Use '{}' to see installed skills.",
+                "Hint:".blue().bold(),
+                "sk1llz where".cyan()
+            );
+            return Ok(());
+        }
+    };
+
+    if !yes {
+        println!(
+            "{} Remove skill '{}' from {}?",
+            "Confirm:".yellow().bold(),
+            name.cyan(),
+            path.display().to_string().dimmed()
+        );
+        print!("  Type 'yes' to confirm: ");
+        io::stdout().flush()?;
+
+        let mut input = String::new();
+        io::stdin().read_line(&mut input)?;
+
+        if input.trim().to_lowercase() != "yes" {
+            println!("{}", "Cancelled.".dimmed());
+            return Ok(());
+        }
+    }
+
+    fs::remove_dir_all(&path)?;
+
+    println!(
+        "{} Removed {} from {}",
+        "✓".green().bold(),
+        name.cyan(),
+        path.display().to_string().dimmed()
+    );
+
+    Ok(())
+}
+
+fn cmd_doctor() -> Result<()> {
+    println!("\n{}", "sk1llz doctor".bold().cyan());
+    println!("{}\n", "Checking your setup...".dimmed());
+
+    let mut issues: Vec<String> = Vec::new();
+
+    // Check 1: Cache directory
+    print!("  Checking cache directory... ");
+    match get_cache_dir() {
+        Ok(path) if path.exists() => {
+            println!("{}", "OK".green());
+        }
+        Ok(_) => {
+            println!("{}", "MISSING".yellow());
+            issues.push("Cache directory doesn't exist. Fix: Run 'sk1llz update'".to_string());
+        }
+        Err(e) => {
+            println!("{}", "ERROR".red());
+            issues.push(format!("Cannot determine cache directory: {}", e));
+        }
+    }
+
+    // Check 2: Manifest freshness
+    print!("  Checking skill index... ");
+    match check_manifest_age() {
+        Ok(days) if days < 7 => {
+            println!("{} ({} days old)", "OK".green(), days);
+        }
+        Ok(days) => {
+            println!("{} ({} days old)", "STALE".yellow(), days);
+            issues.push("Skill index is stale. Fix: Run 'sk1llz update'".to_string());
+        }
+        Err(_) => {
+            println!("{}", "MISSING".yellow());
+            issues.push("No local skill index. Fix: Run 'sk1llz update'".to_string());
+        }
+    }
+
+    // Check 3: Installation locations
+    print!("  Checking installation directories... ");
+    let (local, global) = get_skill_locations();
+    if local.is_some() || global.exists() {
+        println!("{}", "OK".green());
+    } else {
+        println!("{}", "NONE".yellow());
+        issues.push("No skill directories found. Fix: Run 'sk1llz init'".to_string());
+    }
+
+    // Check 4: Network connectivity
+    print!("  Checking network... ");
+    match reqwest::blocking::get(MANIFEST_URL) {
+        Ok(r) if r.status().is_success() => {
+            println!("{}", "OK".green());
+        }
+        _ => {
+            println!("{}", "FAILED".red());
+            issues
+                .push("Cannot reach skill repository. Check your internet connection.".to_string());
+        }
+    }
+
+    // Summary
+    println!();
+    if issues.is_empty() {
+        println!("{} All checks passed!", "✓".green().bold());
+    } else {
+        println!("{} {} issue(s) found:\n", "⚠".yellow().bold(), issues.len());
+        for issue in issues {
+            println!("  • {}", issue);
+        }
+    }
+
+    Ok(())
+}
+
+fn check_manifest_age() -> Result<u64> {
+    let path = get_manifest_path()?;
+    let metadata = fs::metadata(&path)?;
+    let modified = metadata.modified()?;
+    let age = SystemTime::now().duration_since(modified)?;
+    Ok(age.as_secs() / 86400)
+}
+
+fn find_similar_skills(query: &str, skills: &[Skill]) -> Vec<String> {
+    let matcher = SkimMatcherV2::default();
+
+    let mut scored: Vec<_> = skills
+        .iter()
+        .filter_map(|s| {
+            let score = matcher.fuzzy_match(&s.name, query).unwrap_or(0);
+            if score > 20 {
+                Some((s.name.clone(), score))
+            } else {
+                None
+            }
+        })
+        .collect();
+
+    scored.sort_by(|a, b| b.1.cmp(&a.1));
+    scored.into_iter().take(3).map(|(name, _)| name).collect()
+}
+
 fn cmd_completions(shell: Shell) -> Result<()> {
     let mut cmd = Cli::command();
     generate(shell, &mut cmd, "sk1llz", &mut io::stdout());
@@ -509,9 +785,9 @@ fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::List { category } => cmd_list(category),
-        Commands::Search { query } => cmd_search(&query),
-        Commands::Info { name } => cmd_info(&name),
+        Commands::List { category } => cmd_list(category, cli.format),
+        Commands::Search { query } => cmd_search(&query, cli.format),
+        Commands::Info { name } => cmd_info(&name, cli.format),
         Commands::Install {
             name,
             target,
@@ -519,6 +795,9 @@ fn main() -> Result<()> {
         } => cmd_install(&name, target, global),
         Commands::Where => cmd_where(),
         Commands::Update => cmd_update(),
+        Commands::Init => cmd_init(),
+        Commands::Uninstall { name, yes } => cmd_uninstall(&name, yes),
+        Commands::Doctor => cmd_doctor(),
         Commands::Completions { shell } => cmd_completions(shell),
     }
 }

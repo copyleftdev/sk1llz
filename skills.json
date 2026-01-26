@@ -1,10 +1,26 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T18:35:57.284670+00:00",
+  "generated_at": "2026-01-26T18:45:03.658561+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 77,
+  "skill_count": 78,
   "skills": [
+    {
+      "id": "hashimoto-cli-ux",
+      "name": "hashimoto",
+      "description": "Design CLI tools in the style of Mitchell Hashimoto, founder of HashiCorp. Emphasizes consistent command patterns, helpful error messages, progressive disclosure, and machine-readable output. Use when building command-line tools that developers will love.",
+      "category": "domains",
+      "subcategory": "cli-design",
+      "path": "domains/cli-design/hashimoto",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "cli_design",
+        "hashimoto"
+      ]
+    },
     {
       "id": "helland-distributed-data",
       "name": "helland",
