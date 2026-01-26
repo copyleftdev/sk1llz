@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T18:16:49.082891+00:00",
+  "generated_at": "2026-01-26T18:21:01.865492+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 72,
+  "skill_count": 74,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -276,6 +276,22 @@
       ]
     },
     {
+      "id": "maciver-hypothesis-testing",
+      "name": "hypothesis",
+      "description": "Test software in the style of David MacIver, creator of Hypothesis. Emphasizes sophisticated shrinking, example databases, stateful testing, and practical property-based testing in Python. Use when testing Python code with complex data structures, APIs, or stateful systems.",
+      "category": "domains",
+      "subcategory": "testing",
+      "path": "domains/testing/hypothesis",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "testing",
+        "hypothesis"
+      ]
+    },
+    {
       "id": "lipton-mutation-testing",
       "name": "mutation-testing",
       "description": "Evaluate test quality in the style of Richard Lipton, father of mutation testing. Emphasizes injecting small faults (mutants) to measure test effectiveness, the competent programmer hypothesis, and the coupling effect. Use when assessing test suite quality, improving test coverage, or building mutation testing tools.",
@@ -289,6 +305,22 @@
         "domains",
         "testing",
         "mutation_testing"
+      ]
+    },
+    {
+      "id": "hughes-property-based-testing",
+      "name": "property-based",
+      "description": "Test software in the style of John Hughes, inventor of QuickCheck and property-based testing. Emphasizes specifying properties that should hold for all inputs, generating random test cases, and shrinking failures to minimal examples. Use when testing algorithms, data structures, parsers, serializers, or any code with clear invariants.",
+      "category": "domains",
+      "subcategory": "testing",
+      "path": "domains/testing/property-based",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "testing",
+        "property_based"
       ]
     },
     {
