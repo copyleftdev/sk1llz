@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T06:44:31.626291+00:00",
+  "generated_at": "2026-01-26T14:16:32.583781+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 65,
+  "skill_count": 66,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -209,6 +209,22 @@
         "domains",
         "systems_architecture",
         "vogels"
+      ]
+    },
+    {
+      "id": "scarface-mean-reversion",
+      "name": "mean-reversion",
+      "description": "Trade mean reversion setups in the style of Scarface Trades, the mean reversion specialist known for mathematical precision and statistical edge. Emphasizes standard deviation bands, RSI extremes, and calculated entries with defined risk. Use when trading overextended moves, fading extremes, or building systematic reversion strategies.",
+      "category": "domains",
+      "subcategory": "trading",
+      "path": "domains/trading/mean-reversion",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "trading",
+        "mean_reversion"
       ]
     },
     {
