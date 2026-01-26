@@ -1,10 +1,58 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-25T14:04:37.815792+00:00",
+  "generated_at": "2026-01-26T06:15:11.237068+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 54,
+  "skill_count": 57,
   "skills": [
+    {
+      "id": "helland-distributed-data",
+      "name": "helland",
+      "description": "Design scalable data systems in the style of Pat Helland, distributed systems veteran from Tandem, Microsoft, and Amazon. Emphasizes life beyond distributed transactions, idempotency, and practical patterns for data at scale. Use when building systems that must scale beyond single-node ACID transactions.",
+      "category": "domains",
+      "subcategory": "databases",
+      "path": "domains/databases/helland",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "databases",
+        "helland"
+      ]
+    },
+    {
+      "id": "pavlo-database-performance",
+      "name": "pavlo",
+      "description": "Optimize databases in the style of Andy Pavlo, CMU professor and database performance expert. Emphasizes understanding internals, benchmarking rigorously, and making informed architectural choices. Use when tuning query performance, designing storage engines, or evaluating database technologies.",
+      "category": "domains",
+      "subcategory": "databases",
+      "path": "domains/databases/pavlo",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "databases",
+        "pavlo"
+      ]
+    },
+    {
+      "id": "stonebraker-database-architecture",
+      "name": "stonebraker",
+      "description": "Design databases in the style of Michael Stonebraker, Turing Award winner and creator of Ingres, Postgres, VoltDB, and Vertica. Emphasizes clean architecture, separation of OLTP/OLAP, and building systems that last decades. Use when designing database internals, storage engines, or making fundamental architectural decisions.",
+      "category": "domains",
+      "subcategory": "databases",
+      "path": "domains/databases/stonebraker",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "databases",
+        "stonebraker"
+      ]
+    },
     {
       "id": "bianco-pyramid-of-pain",
       "name": "bianco",
