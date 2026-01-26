@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T18:12:35.941893+00:00",
+  "generated_at": "2026-01-26T18:16:49.082891+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 71,
+  "skill_count": 72,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -273,6 +273,22 @@
         "domains",
         "testing",
         "deterministic_simulation"
+      ]
+    },
+    {
+      "id": "lipton-mutation-testing",
+      "name": "mutation-testing",
+      "description": "Evaluate test quality in the style of Richard Lipton, father of mutation testing. Emphasizes injecting small faults (mutants) to measure test effectiveness, the competent programmer hypothesis, and the coupling effect. Use when assessing test suite quality, improving test coverage, or building mutation testing tools.",
+      "category": "domains",
+      "subcategory": "testing",
+      "path": "domains/testing/mutation-testing",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "testing",
+        "mutation_testing"
       ]
     },
     {
