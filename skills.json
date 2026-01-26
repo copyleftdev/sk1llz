@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T18:21:01.865492+00:00",
+  "generated_at": "2026-01-26T18:32:36.554710+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 74,
+  "skill_count": 76,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -51,6 +51,38 @@
         "domains",
         "databases",
         "stonebraker"
+      ]
+    },
+    {
+      "id": "gettys-bufferbloat",
+      "name": "gettys-bufferbloat",
+      "description": "Engineer low-latency networks in the style of Jim Gettys, discoverer of bufferbloat. Emphasizes understanding excessive buffering, queue management, latency under load, and the fq_codel solution. Use when diagnosing network latency issues, optimizing for real-time applications, or implementing queue management.",
+      "category": "domains",
+      "subcategory": "networking",
+      "path": "domains/networking/gettys-bufferbloat",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "networking",
+        "gettys_bufferbloat"
+      ]
+    },
+    {
+      "id": "jacobson-network-performance",
+      "name": "jacobson",
+      "description": "Engineer network systems in the style of Van Jacobson, the architect of TCP congestion control who saved the internet from collapse. Emphasizes congestion avoidance, RTT-based adaptation, queue management, and understanding network dynamics. Use when optimizing network performance, implementing congestion control, or diagnosing latency issues.",
+      "category": "domains",
+      "subcategory": "networking",
+      "path": "domains/networking/jacobson",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "networking",
+        "jacobson"
       ]
     },
     {
