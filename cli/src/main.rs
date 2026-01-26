@@ -357,7 +357,11 @@ fn cmd_install(name: &str, target: Option<PathBuf>, global: bool) -> Result<()> 
         "global"
     } else {
         let (local, _) = get_skill_locations();
-        if local.is_some() { "project-local" } else { "global" }
+        if local.is_some() {
+            "project-local"
+        } else {
+            "global"
+        }
     };
 
     let target_dir = match target {
@@ -437,11 +441,15 @@ fn cmd_where() -> Result<()> {
     } else {
         "(will be created)".to_string()
     };
-    
+
     let active = if local.is_none() { " (active)" } else { "" };
     println!(
         "  {} {} {} {}{}",
-        if local.is_none() { "→".green().bold() } else { "○".dimmed() },
+        if local.is_none() {
+            "→".green().bold()
+        } else {
+            "○".dimmed()
+        },
         "Global:".bold(),
         global.display().to_string().green(),
         global_status.dimmed(),
@@ -450,16 +458,30 @@ fn cmd_where() -> Result<()> {
 
     println!();
     println!("{}", "Usage".bold());
-    println!("  {} install to project-local (if .claude/ exists)", "sk1llz install <skill>".cyan());
-    println!("  {} force global installation", "sk1llz install <skill> --global".cyan());
-    println!("  {} initialize project-local skills", "mkdir -p .claude/skills".cyan());
+    println!(
+        "  {} install to project-local (if .claude/ exists)",
+        "sk1llz install <skill>".cyan()
+    );
+    println!(
+        "  {} force global installation",
+        "sk1llz install <skill> --global".cyan()
+    );
+    println!(
+        "  {} initialize project-local skills",
+        "mkdir -p .claude/skills".cyan()
+    );
 
     Ok(())
 }
 
 fn count_skills(dir: &PathBuf) -> usize {
     fs::read_dir(dir)
-        .map(|entries| entries.filter_map(|e| e.ok()).filter(|e| e.path().is_dir()).count())
+        .map(|entries| {
+            entries
+                .filter_map(|e| e.ok())
+                .filter(|e| e.path().is_dir())
+                .count()
+        })
         .unwrap_or(0)
 }
 
@@ -490,7 +512,11 @@ fn main() -> Result<()> {
         Commands::List { category } => cmd_list(category),
         Commands::Search { query } => cmd_search(&query),
         Commands::Info { name } => cmd_info(&name),
-        Commands::Install { name, target, global } => cmd_install(&name, target, global),
+        Commands::Install {
+            name,
+            target,
+            global,
+        } => cmd_install(&name, target, global),
         Commands::Where => cmd_where(),
         Commands::Update => cmd_update(),
         Commands::Completions { shell } => cmd_completions(shell),
