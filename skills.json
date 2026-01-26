@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T06:15:11.237068+00:00",
+  "generated_at": "2026-01-26T06:44:31.626291+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 57,
+  "skill_count": 65,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -727,6 +727,51 @@
       ]
     },
     {
+      "id": "aqr-factor-investing",
+      "name": "aqr",
+      "description": "Build investment systems in the style of AQR Capital Management, the quantitative investment firm pioneering factor investing. Emphasizes academic rigor, transparent methodology, and systematic factor exposure. Use when building factor models, conducting asset pricing research, or designing systematic portfolios.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/aqr",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "aqr"
+      ]
+    },
+    {
+      "id": "citadel-low-latency-systems",
+      "name": "citadel",
+      "description": "Build trading systems in the style of Citadel Securities, the world's largest market maker. Emphasizes ultra-low latency, deterministic execution, kernel bypass networking, and high-frequency trading infrastructure. Use when building latency-critical systems, market making engines, or high-performance trading platforms.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/citadel",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "citadel"
+      ]
+    },
+    {
+      "id": "de-shaw-computational-finance",
+      "name": "de-shaw",
+      "description": "Build trading systems in the style of D.E. Shaw, the pioneering computational finance firm. Emphasizes systematic strategies, rigorous quantitative research, and world-class technology infrastructure. Use when building research platforms, systematic trading strategies, or quantitative finance infrastructure.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/de-shaw",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "de_shaw"
+      ]
+    },
+    {
       "id": "google-continuous-fuzzing",
       "name": "continuous-fuzzing",
       "description": "Apply Google's continuous fuzzing methodology using OSS-Fuzz and ClusterFuzz. Emphasizes coverage-guided fuzzing, automated bug triage, and integration into CI/CD. Use when building robust testing infrastructure or finding security vulnerabilities at scale.",
@@ -775,6 +820,36 @@
       ]
     },
     {
+      "id": "jane-street-functional-trading",
+      "name": "jane-street",
+      "description": "Build trading systems in the style of Jane Street, the elite market maker known for functional programming and intellectual rigor. Emphasizes OCaml, correctness by construction, real-time systems, and principled risk management. Use when building market making systems, pricing engines, or mission-critical financial software.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/jane-street",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "jane_street"
+      ]
+    },
+    {
+      "id": "jump-trading-fpga-hft",
+      "name": "jump-trading",
+      "description": "Build trading systems in the style of Jump Trading, the high-frequency trading firm pioneering FPGA-based trading. Emphasizes hardware acceleration, network optimization, and nanosecond-level execution. Use when building FPGA trading systems, network-optimized infrastructure, or ultra-low-latency order execution.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/jump-trading",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "jump_trading"
+      ]
+    },
+    {
       "id": "netflix-chaos-engineering",
       "name": "chaos-engineering",
       "description": "Apply Netflix's chaos engineering methodology to build resilient systems. Emphasizes controlled failure injection, steady-state hypothesis testing, and building confidence through experimentation. Use when you need to verify system resilience under turbulent conditions.",
@@ -788,6 +863,51 @@
         "organizations",
         "netflix",
         "chaos_engineering"
+      ]
+    },
+    {
+      "id": "renaissance-statistical-arbitrage",
+      "name": "renaissance",
+      "description": "Build trading systems in the style of Renaissance Technologies, the most successful quantitative hedge fund in history. Emphasizes statistical arbitrage, signal processing, and rigorous scientific methodology. Use when developing alpha research, signal extraction, or systematic trading strategies.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/renaissance",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "renaissance"
+      ]
+    },
+    {
+      "id": "two-sigma-ml-at-scale",
+      "name": "two-sigma",
+      "description": "Build trading systems in the style of Two Sigma, the systematic investment manager pioneering machine learning at scale. Emphasizes alternative data, distributed computing, feature engineering, and rigorous ML infrastructure. Use when building ML pipelines for alpha research, feature stores, or large-scale backtesting systems.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/two-sigma",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "two_sigma"
+      ]
+    },
+    {
+      "id": "virtu-market-microstructure",
+      "name": "virtu",
+      "description": "Build trading systems in the style of Virtu Financial, the leading electronic market maker and execution services firm. Emphasizes market microstructure, optimal execution, order routing, and minimizing market impact. Use when building execution algorithms, smart order routers, or analyzing market microstructure.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/virtu",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "virtu"
       ]
     },
     {
