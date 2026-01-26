@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-26T17:59:49.482818+00:00",
+  "generated_at": "2026-01-26T18:05:30.817842+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 68,
+  "skill_count": 69,
   "skills": [
     {
       "id": "helland-distributed-data",
@@ -225,6 +225,22 @@
         "domains",
         "testing",
         "bach"
+      ]
+    },
+    {
+      "id": "tigerbeetle-deterministic-simulation",
+      "name": "deterministic-simulation",
+      "description": "Test distributed systems in the style of TigerBeetle and Joran Dirk Greef, using deterministic simulation and time compression. Emphasizes controlling all non-determinism, simulating years of operation in minutes, and finding bugs that would take decades to manifest in production. Use when testing distributed systems, consensus protocols, or any system where correctness under failure is critical.",
+      "category": "domains",
+      "subcategory": "testing",
+      "path": "domains/testing/deterministic-simulation",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "testing",
+        "deterministic_simulation"
       ]
     },
     {
