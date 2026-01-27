@@ -3,7 +3,7 @@
   "generated_at": "2026-01-26T18:45:03.658561+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 78,
+  "skill_count": 79,
   "skills": [
     {
       "id": "hashimoto-cli-ux",
@@ -1260,6 +1260,27 @@
         "paradigms",
         "systems",
         "torvalds"
+      ]
+    },
+    {
+      "id": "cloudflare-performance-engineering",
+      "name": "cloudflare-performance",
+      "description": "Engineer high-performance network systems in the style of Cloudflare's performance team. Emphasizes kernel bypass (XDP/eBPF), edge computing with V8 isolates, Rust for systems programming, smart routing, and measuring everything. Use when building globally distributed systems, DDoS mitigation, CDN infrastructure, or any system where every millisecond matters at massive scale.",
+      "category": "organizations",
+      "subcategory": "cloudflare",
+      "path": "organizations/cloudflare",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "cloudflare",
+        "performance",
+        "networking",
+        "edge_computing",
+        "xdp",
+        "ebpf",
+        "rust"
       ]
     }
   ]
