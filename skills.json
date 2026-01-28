@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-27T22:44:53.775883+00:00",
+  "generated_at": "2026-01-28T06:22:25.286568+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 79,
+  "skill_count": 80,
   "skills": [
     {
       "id": "hashimoto-cli-ux",
@@ -1008,6 +1008,22 @@
         "organizations",
         "google",
         "continuous_fuzzing"
+      ]
+    },
+    {
+      "id": "google-material-design",
+      "name": "material-design",
+      "description": "Design interfaces following Google's Material Design system, the unified visual language bridging digital and physical worlds. Emphasizes bold graphic design, intentional motion, adaptive layouts, and the material metaphor. Use when building modern, accessible, delightful user interfaces across platforms.",
+      "category": "organizations",
+      "subcategory": "google",
+      "path": "organizations/google/material-design",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "google",
+        "material_design"
       ]
     },
     {
