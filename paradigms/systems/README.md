@@ -17,6 +17,29 @@
 - **[Linus Torvalds](torvalds/)** — Creator of Linux kernel and Git
   - *Focus*: Pragmatic excellence, performance, code review, subsystem design
 
+### The Compiler Wizards
+
+- **[Chris Lattner](lattner/)** — Creator of LLVM, Clang, Swift, MLIR
+  - *Focus*: Compiler infrastructure, progressive lowering, library-first design
+
+- **[Anders Hejlsberg](hejlsberg/)** — Creator of Turbo Pascal, Delphi, C#, TypeScript
+  - *Focus*: Language design, type systems, IDE-driven development
+
+- **[Fabrice Bellard](bellard/)** — Creator of QEMU, FFmpeg, TinyCC, JSLinux
+  - *Focus*: Radical minimalism, solo mastery, making impossible things simple
+
+- **[Mike Pall](pall/)** — Creator of LuaJIT
+  - *Focus*: Trace-based JIT compilation, microarchitecture awareness
+
+- **[Casey Muratori](muratori/)** — Creator of Handmade Hero
+  - *Focus*: Performance-aware programming, data-oriented design, understanding hardware
+
+- **[Jonathan Blow](blow/)** — Creator of Braid, The Witness, Jai language
+  - *Focus*: Compile-time execution, programmer productivity, rejecting complexity
+
+- **[Cliff Click](click/)** — Architect of HotSpot C2 compiler
+  - *Focus*: Sea-of-nodes IR, speculative optimization, escape analysis
+
 ## Shared Principles
 
 These masters agree on:
