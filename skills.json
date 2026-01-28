@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-28T06:22:25.286568+00:00",
+  "generated_at": "2026-01-28T06:32:00.467472+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 80,
+  "skill_count": 87,
   "skills": [
     {
       "id": "hashimoto-cli-ux",
@@ -1243,6 +1243,118 @@
         "paradigms",
         "functional",
         "wadler"
+      ]
+    },
+    {
+      "id": "bellard-minimalist-wizardry",
+      "name": "bellard",
+      "description": "Write systems software in the style of Fabrice Bellard, creator of QEMU, FFmpeg, TinyCC, and JSLinux. Emphasizes extreme minimalism, solo mastery of complex domains, and making the impossible seem simple. Use when building emulators, compilers, codecs, or any system where performance and code density matter.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/bellard",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "bellard"
+      ]
+    },
+    {
+      "id": "blow-compiler-gamedev",
+      "name": "blow",
+      "description": "Design languages and write game engine code in the style of Jonathan Blow, creator of Braid, The Witness, and the Jai programming language. Emphasizes programmer productivity, compile-time execution, and rejecting complexity that doesn't serve the programmer. Use when designing languages, game engines, or performance-critical creative tools.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/blow",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "blow"
+      ]
+    },
+    {
+      "id": "click-jvm-optimization",
+      "name": "click",
+      "description": "Design JIT compilers and optimize managed runtimes in the style of Cliff Click, architect of the HotSpot JVM C2 compiler and creator of sea-of-nodes IR. Emphasizes advanced compiler optimizations, intermediate representation design, and making dynamic languages fast. Use when building JIT compilers, VMs, or working on compiler backends.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/click",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "click"
+      ]
+    },
+    {
+      "id": "hejlsberg-language-design",
+      "name": "hejlsberg",
+      "description": "Design languages and type systems in the style of Anders Hejlsberg, creator of Turbo Pascal, Delphi, C#, and TypeScript. Emphasizes practical type systems, developer productivity, gradual typing, and IDE-driven language design. Use when designing languages, type systems, or developer tools.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/hejlsberg",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "hejlsberg"
+      ]
+    },
+    {
+      "id": "lattner-compiler-infrastructure",
+      "name": "lattner",
+      "description": "Write compiler and toolchain code in the style of Chris Lattner, creator of LLVM, Clang, Swift, and MLIR. Emphasizes modular compiler design, reusable infrastructure, progressive lowering, and pragmatic language evolution. Use when building compilers, language tools, or performance-critical infrastructure.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/lattner",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "lattner"
+      ]
+    },
+    {
+      "id": "muratori-performance-aware",
+      "name": "muratori",
+      "description": "Write performance-aware code in the style of Casey Muratori, creator of Handmade Hero and performance optimization educator. Emphasizes understanding what the hardware actually does, rejecting unnecessary abstraction, and measuring everything. Use when writing performance-critical code or when you need to understand what's really happening on the machine.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/muratori",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "muratori"
+      ]
+    },
+    {
+      "id": "pall-jit-mastery",
+      "name": "pall",
+      "description": "Write high-performance JIT compilers and interpreters in the style of Mike Pall, creator of LuaJIT. Emphasizes trace-based compilation, aggressive optimization, and understanding CPU microarchitecture. Use when building JITs, interpreters, or any code where every cycle counts.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/pall",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "pall"
       ]
     },
     {
