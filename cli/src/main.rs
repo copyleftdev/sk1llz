@@ -11,9 +11,17 @@ use std::io::{self, Write};
 use std::path::PathBuf;
 use std::time::SystemTime;
 
-const MANIFEST_URL: &str =
-    "https://raw.githubusercontent.com/copyleftdev/sk1llz/master/skills.json";
-const RAW_BASE_URL: &str = "https://raw.githubusercontent.com/copyleftdev/sk1llz/master";
+fn get_manifest_url() -> String {
+    std::env::var("SKILLZ_MANIFEST_URL").unwrap_or_else(|_| {
+        "https://raw.githubusercontent.com/copyleftdev/sk1llz/master/skills.json".to_string()
+    })
+}
+
+fn get_raw_base_url() -> String {
+    std::env::var("SKILLZ_RAW_BASE_URL").unwrap_or_else(|_| {
+        "https://raw.githubusercontent.com/copyleftdev/sk1llz/master".to_string()
+    })
+}
 
 #[derive(Parser)]
 #[command(name = "sk1llz")]
@@ -180,7 +188,7 @@ fn fetch_manifest() -> Result<Manifest> {
     );
     pb.set_message("Fetching skill manifest...");
 
-    let response = reqwest::blocking::get(MANIFEST_URL)
+    let response = reqwest::blocking::get(get_manifest_url())
         .context("Failed to fetch manifest")?
         .json::<Manifest>()
         .context("Failed to parse manifest")?;
@@ -457,7 +465,7 @@ fn cmd_install(name: &str, target: Option<PathBuf>, global: bool) -> Result<()> 
     for file in &skill.files {
         pb.set_message(file.clone());
 
-        let url = format!("{}/{}/{}", RAW_BASE_URL, skill.path, file);
+        let url = format!("{}/{}/{}", get_raw_base_url(), skill.path, file);
         let content = reqwest::blocking::get(&url)
             .context(format!("Failed to fetch {}", file))?
             .text()?;
@@ -715,7 +723,7 @@ fn cmd_doctor() -> Result<()> {
 
     // Check 4: Network connectivity
     print!("  Checking network... ");
-    match reqwest::blocking::get(MANIFEST_URL) {
+    match reqwest::blocking::get(get_manifest_url()) {
         Ok(r) if r.status().is_success() => {
             println!("{}", "OK".green());
         }
@@ -799,5 +807,50 @@ fn main() -> Result<()> {
         Commands::Uninstall { name, yes } => cmd_uninstall(&name, yes),
         Commands::Doctor => cmd_doctor(),
         Commands::Completions { shell } => cmd_completions(shell),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_truncate() {
+        assert_eq!(truncate("hello world", 5), "he...");
+        assert_eq!(truncate("hello", 10), "hello");
+        assert_eq!(truncate("hello", 5), "hello");
+    }
+
+    #[test]
+    fn test_find_similar_skills() {
+        let skills = vec![
+            Skill {
+                id: "test-skill-1".to_string(),
+                name: "rust-expert".to_string(),
+                description: "Expert level Rust".to_string(),
+                category: "languages".to_string(),
+                subcategory: None,
+                path: "path/to/skill".to_string(),
+                files: vec![],
+                tags: vec!["rust".to_string()],
+            },
+            Skill {
+                id: "test-skill-2".to_string(),
+                name: "python-expert".to_string(),
+                description: "Expert level Python".to_string(),
+                category: "languages".to_string(),
+                subcategory: None,
+                path: "path/to/skill2".to_string(),
+                files: vec![],
+                tags: vec!["python".to_string()],
+            },
+        ];
+
+        let results = find_similar_skills("rust", &skills);
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0], "rust-expert");
+
+        let results = find_similar_skills("expert", &skills);
+        assert_eq!(results.len(), 2);
     }
 }
