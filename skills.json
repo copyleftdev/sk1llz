@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-28T06:32:00.467472+00:00",
+  "generated_at": "2026-01-29T08:29:28.179243+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
   "skill_count": 87,
@@ -633,7 +633,7 @@
     {
       "id": "crockford-good-parts",
       "name": "crockford",
-      "description": "Write JavaScript code in the style of Douglas Crockford, author of \"JavaScript: The Good Parts\". Emphasizes using only the reliable subset of JavaScript, avoiding problematic features, and writing clear, maintainable code. Use when writing robust, quality JavaScript.",
+      "description": "'Write JavaScript code in the style of Douglas Crockford, author of \"JavaScript: The Good Parts\". Emphasizes using only the reliable subset of JavaScript, avoiding problematic features, and writing clear, maintainable code. Use when writing robust, quality JavaScript.'",
       "category": "languages",
       "subcategory": "javascript",
       "path": "languages/javascript/crockford",
