@@ -1,10 +1,42 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-29T08:29:28.179243+00:00",
+  "generated_at": "2026-01-29T08:34:55.235812+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 87,
+  "skill_count": 89,
   "skills": [
+    {
+      "id": "lane-api-evangelist",
+      "name": "lane",
+      "description": "Design APIs using Kin Lane's \"API Evangelist\" philosophy. Emphasizes Design-First (OpenAPI), governance, treating APIs as products, and the political/business impact of interfaces. Use when building public platforms or large-scale internal ecosystems.",
+      "category": "domains",
+      "subcategory": "api-design",
+      "path": "domains/api-design/lane",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "api_design",
+        "lane"
+      ]
+    },
+    {
+      "id": "mendez-async-api",
+      "name": "mendez",
+      "description": "Design event-driven architectures using Fran M\u00e9ndez's \"AsyncAPI\" philosophy. Emphasizes Event-First design, treating message contracts with the same rigor as REST (AsyncAPI spec), and decoupling producers from consumers. Use when building message buses, IoT networks, or microservices that communicate asynchronously.",
+      "category": "domains",
+      "subcategory": "api-design",
+      "path": "domains/api-design/mendez",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "api_design",
+        "mendez"
+      ]
+    },
     {
       "id": "hashimoto-cli-ux",
       "name": "hashimoto",
