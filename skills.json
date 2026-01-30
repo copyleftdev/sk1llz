@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-29T14:22:42.063066+00:00",
+  "generated_at": "2026-01-30T04:13:27.473885+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 90,
+  "skill_count": 91,
   "skills": [
     {
       "id": "fielding-rest",
@@ -19,22 +19,6 @@
         "domains",
         "api_design",
         "fielding"
-      ]
-    },
-    {
-      "id": "fowler-systems-architecture",
-      "name": "fowler",
-      "description": "Design systems using Martin Fowler's principles of refactoring, continuous integration, and patterns of enterprise application architecture. Emphasizes clean code, evolution over revolution, and writing code for humans first. Use when designing enterprise systems, planning refactors, or establishing engineering culture.",
-      "category": "domains",
-      "subcategory": "systems-architecture",
-      "path": "domains/systems-architecture/fowler",
-      "files": [
-        "SKILL.md"
-      ],
-      "tags": [
-        "domains",
-        "systems_architecture",
-        "fowler"
       ]
     },
     {
@@ -265,6 +249,22 @@
         "domains",
         "systems_architecture",
         "dean"
+      ]
+    },
+    {
+      "id": "fowler",
+      "name": "fowler",
+      "description": "Design systems using Martin Fowler's principles of refactoring, continuous integration, and patterns of enterprise application architecture. Emphasizes clean code, evolution over revolution, and writing code for humans first. Use when designing enterprise systems, planning refactors, or establishing engineering culture.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/fowler",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "fowler"
       ]
     },
     {
