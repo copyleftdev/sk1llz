@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-30T04:13:27.473885+00:00",
+  "generated_at": "2026-01-30T04:18:53.771617+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 91,
+  "skill_count": 92,
   "skills": [
     {
       "id": "fielding-rest",
@@ -1123,6 +1123,21 @@
       ]
     },
     {
+      "id": "hashicorp",
+      "name": "hashicorp",
+      "description": "Build systems and organizations using the \"Tao of HashiCorp\". Emphasizes workflows over technologies, simple modular composable tools, immutability, and versioning driven by code. Use when designing platform engineering initiatives, DevOps workflows, or infrastructure automation.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/hashicorp",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "hashicorp"
+      ]
+    },
+    {
       "id": "jane-street-functional-trading",
       "name": "jane-street",
       "description": "Build trading systems in the style of Jane Street, the elite market maker known for functional programming and intellectual rigor. Emphasizes OCaml, correctness by construction, real-time systems, and principled risk management. Use when building market making systems, pricing engines, or mission-critical financial software.",
@@ -1467,22 +1482,6 @@
         "paradigms",
         "systems",
         "torvalds"
-      ]
-    },
-    {
-      "id": "hashicorp-tao",
-      "name": "hashicorp",
-      "description": "Build systems and organizations using the \"Tao of HashiCorp\". Emphasizes workflows over technologies, simple modular composable tools, immutability, and versioning driven by code. Use when designing platform engineering initiatives, DevOps workflows, or infrastructure automation.",
-      "category": "organizations",
-      "subcategory": "hashicorp",
-      "path": "organizations/hashicorp",
-      "files": [
-        "SKILL.md"
-      ],
-      "tags": [
-        "organizations",
-        "hashicorp",
-        "tao"
       ]
     }
   ]
