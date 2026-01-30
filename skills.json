@@ -22,6 +22,22 @@
       ]
     },
     {
+      "id": "fowler-systems-architecture",
+      "name": "fowler",
+      "description": "Design systems using Martin Fowler's principles of refactoring, continuous integration, and patterns of enterprise application architecture. Emphasizes clean code, evolution over revolution, and writing code for humans first. Use when designing enterprise systems, planning refactors, or establishing engineering culture.",
+      "category": "domains",
+      "subcategory": "systems-architecture",
+      "path": "domains/systems-architecture/fowler",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "systems_architecture",
+        "fowler"
+      ]
+    },
+    {
       "id": "lane-api-evangelist",
       "name": "lane",
       "description": "Design APIs using Kin Lane's \"API Evangelist\" philosophy. Emphasizes Design-First (OpenAPI), governance, treating APIs as products, and the political/business impact of interfaces. Use when building public platforms or large-scale internal ecosystems.",
