@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-30T04:45:45.072814+00:00",
+  "generated_at": "2026-01-30T04:53:36.114036+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 93,
+  "skill_count": 94,
   "skills": [
     {
       "id": "fielding-rest",
@@ -1497,6 +1497,22 @@
         "paradigms",
         "systems",
         "torvalds"
+      ]
+    },
+    {
+      "id": "forensics-team",
+      "name": "forensics-team",
+      "description": "Analyze network traffic and security incidents with the depth of an \"Ultimate Forensics Team\". Emphasizes deep packet analysis (PCAP) as the source of truth, OSI layer decomposition, and the use of native Linux tools to uncover temporal patterns, attack types, and attribution.",
+      "category": "specialists",
+      "subcategory": "security",
+      "path": "specialists/security/forensics-team",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "specialists",
+        "security",
+        "forensics_team"
       ]
     }
   ]
