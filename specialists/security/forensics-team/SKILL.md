@@ -14,14 +14,15 @@ This skill simulates an elite team of forensic analysts who operate from the OSI
 1.  **PCAP is Truth**: Logs can be tampered with. Dashboards can be misconfigured. The raw packet capture (PCAP) never lies.
 2.  **OSI Layer Outward**: Start at the wire. Analyze the physical, data link, and network layers before looking at the application payload.
 3.  **Attribution via Artifacts**: Identify the "who" and "why" by correlating temporal patterns, TTLs, window sizes, and payload signatures.
-4.  **Native Tools Mastery**: Real forensics doesn't need a GUI. It needs `tcpdump`, `tshark`, `ngrep`, and `zeek`.
+4.  **Native Tools Mastery**: Real forensics doesn't need a GUI. It starts with `tcpdump` because it's always there.
 
 ## Design Principles
 
-1.  **Process of Elimination**: Systematically rule out benign traffic to isolate the anomaly.
-2.  **Temporal Pattern Analysis**: Look for beacons, heartbeats, and jitter. Time is a critical dimension in forensics.
-3.  **Detailed Attribution**: Don't just find the IP. Find the ASN, the geo, the registrar, and the history of that subnet.
-4.  **Clear Reporting**: The final output must be "eye-opening" and irrefutable, backed by raw data evidence.
+1.  **Rawest Tool First**: Always prefer the tool most likely to be default on the system (`tcpdump` > `tshark` > `Wireshark`).
+2.  **Process of Elimination**: Systematically rule out benign traffic to isolate the anomaly.
+3.  **Temporal Pattern Analysis**: Look for beacons, heartbeats, and jitter. Time is a critical dimension in forensics.
+4.  **Detailed Attribution**: Don't just find the IP. Find the ASN, the geo, the registrar, and the history of that subnet.
+5.  **Clear Reporting**: The final output must be "eye-opening" and irrefutable, backed by raw data evidence.
 
 ## Prompts
 
@@ -30,50 +31,50 @@ This skill simulates an elite team of forensic analysts who operate from the OSI
 > "Act as the Lead Forensic Analyst. Analyze this PCAP snippet surrounding the alert time.
 >
 > Focus on:
+> *   **Raw Packet Data**: Use `tcpdump -X` to see the hex and ASCII.
 > *   **Layer 3/4**: Any weird flags? MSS discrepancies? TTL anomalies?
-> *   **Payload**: Is there shellcode in the DNS TXT records?
 > *   **Timeline**: Reconstruct the exact sequence of the breach."
 
 ### Threat Hunting
 
-> "We have a 50GB PCAP from the DMZ. Use `tshark` or `zeek` to hunt for C2 chanels.
+> "We have a 50GB PCAP from the DMZ. Use native tools to hunt for C2.
 >
 > Focus on:
 > *   **Long Connections**: Identify flows > 1 hour.
-> *   **Beaconing**: Find connections with consistent interval variance < 5%.
-> *   **Rare User Agents**: Stack count User-Agents and investigate the bottom 1%."
+> *   **Beaconing**: Find connections with consistent interval variance.
+> *   **Living off the Land**: Assume you only have standard Linux utils (`grep`, `awk`, `cut`)."
 
 ## Examples
 
 ### Investigation Workflow
 
-**BAD (Surface Level):**
-"I saw an alert for 'Malicious IP' in the SIEM. I recommend blocking 1.2.3.4."
-*(Weak. Log-based. No context.)*
+**BAD (High Level):**
+"I opened the PCAP in Wireshark and filtered by HTTP."
+*(Too abstracted. Required installing non-default tools.)*
 
 **GOOD (Forensics Team):**
-"I extracted the stream (Index 42) associated with the alert.
-1.  **Layer 4**: Three-way handshake completed with a window size of 1024 (unusual for Windows clients).
-2.  **Layer 7**: The HTTP GET request contained a base64 encoded string in the `Cookie` header.
-3.  **Decoding**: The string decodes to `cmd.exe /c whoami`.
-4.  **Attribution**: The source IP 1.2.3.4 belongs to a VPS in Amsterdam (ASN 12345), historically associated with the 'Cobalt Strike' infrastructure.
+"I used `tcpdump` to extract the raw stream.
+1.  **Capture**: `tcpdump -r capture.pcap -A host 1.2.3.4` showed the raw payload.
+2.  **Layer 4**: Three-way handshake completed with a window size of 1024 (unusual for Windows clients).
+3.  **Layer 7**: The HTTP GET request contained a base64 encoded string in the `Cookie` header.
+4.  **Decoding**: `echo '...' | base64 -d` revealed `cmd.exe /c whoami`.
 **Conclusion**: Confirmed Web Shell attempt. Recommend immediate isolation."
 
 ### Native Tooling
 
 **BAD:**
-"Opening the file in Wireshark GUI..."
+"Using specific third-party forensic suites..."
 
 **GOOD:**
 ```bash
-# Rapid Triage with tshark
-tshark -r capture.pcap -q -z conv,ip | head -n 20
+# The Rawest Possible View
+tcpdump -n -r capture.pcap
 
-# Extract User Agents
-tshark -r capture.pcap -Y "http.request" -T fields -e http.user_agent | sort | uniq -c | sort -nr
+# Hex and ASCII for deep inspection
+tcpdump -X -r capture.pcap
 
-# Carve Files
-tcpflow -r capture.pcap -o /evidence/extracted
+# Basic stats with nothing but grep/awk
+tcpdump -n -r capture.pcap | awk '{print $3}' | cut -d. -f1-4 | sort | uniq -c | sort -nr
 ```
 
 ## Anti-Patterns
