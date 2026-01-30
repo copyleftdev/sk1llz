@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-30T04:18:53.771617+00:00",
+  "generated_at": "2026-01-30T04:45:45.072814+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 92,
+  "skill_count": 93,
   "skills": [
     {
       "id": "fielding-rest",
@@ -1211,6 +1211,21 @@
       "tags": [
         "organizations",
         "two_sigma"
+      ]
+    },
+    {
+      "id": "uunet",
+      "name": "uunet",
+      "description": "Engineer at global scale in the style of UUNET (now Verizon Business). Emphasizes massive infrastructure resilience, \"plumbing\" the internet, pragmatic problem solving, and the evolution from moving bits to securing them (DBIR). Use when designing backbone networks, security operations centers, or large-scale distributed systems.",
+      "category": "organizations",
+      "subcategory": null,
+      "path": "organizations/uunet",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "organizations",
+        "uunet"
       ]
     },
     {
