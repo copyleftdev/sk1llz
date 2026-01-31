@@ -782,10 +782,11 @@ fn cmd_completions(shell: Shell) -> Result<()> {
 }
 
 fn truncate(s: &str, max: usize) -> String {
-    if s.len() <= max {
+    if s.chars().count() <= max {
         s.to_string()
     } else {
-        format!("{}...", &s[..max - 3])
+        let truncated: String = s.chars().take(max.saturating_sub(3)).collect();
+        format!("{}...", truncated)
     }
 }
 
@@ -816,9 +817,11 @@ mod tests {
 
     #[test]
     fn test_truncate() {
-        assert_eq!(truncate("hello world", 5), "he...");
+        assert_eq!(truncate("hello world", 8), "hello...");
         assert_eq!(truncate("hello", 10), "hello");
         assert_eq!(truncate("hello", 5), "hello");
+        // UTF-8 safety: should not panic on multi-byte characters
+        assert_eq!(truncate("Fran Méndez designs APIs", 10), "Fran Mé...");
     }
 
     #[test]
