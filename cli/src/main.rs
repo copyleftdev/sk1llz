@@ -980,13 +980,399 @@ const STOP_WORDS: &[&str] = &[
     "use",
 ];
 
+/// Lightweight Porter-style suffix stripping
+fn stem(word: &str) -> String {
+    let w = word.to_lowercase();
+    // Order matters: longest suffixes first
+    for suffix in &[
+        "ization", "isation", "fulness", "ousness", "iveness", "ational", "lessly", "ioning",
+        "encing", "ancing", "enting", "ating", "ening", "ivity", "ement", "ments", "ness", "able",
+        "ible", "ment", "tion", "sion", "ling", "ally", "ously", "ively", "ence", "ance", "ings",
+        "ful", "ous", "ive", "ing", "ers", "ity", "ent", "ant", "ism", "ist", "ess", "ary", "ory",
+        "ial", "ual", "ion", "ler", "ted", "ied", "les", "ies", "ize", "ise", "ate", "fy", "ly",
+        "ed", "er", "es", "al",
+    ] {
+        if w.len() > suffix.len() + 2 && w.ends_with(suffix) {
+            return w[..w.len() - suffix.len()].to_string();
+        }
+    }
+    // Trailing 's' (but not 'ss')
+    if w.len() > 3 && w.ends_with('s') && !w.ends_with("ss") {
+        return w[..w.len() - 1].to_string();
+    }
+    w
+}
+
+/// Synonym / concept expansion table
+/// Maps a term to related concepts that should also be searched
+fn expand_synonyms(token: &str) -> Vec<String> {
+    let expansions: &[(&str, &[&str])] = &[
+        (
+            "grep",
+            &[
+                "search", "regex", "pattern", "text", "matching", "filter", "find",
+            ],
+        ),
+        (
+            "ripgrep",
+            &[
+                "search",
+                "regex",
+                "pattern",
+                "performance",
+                "parallel",
+                "rust",
+                "cli",
+                "fast",
+            ],
+        ),
+        (
+            "regex",
+            &[
+                "pattern",
+                "matching",
+                "automaton",
+                "nfa",
+                "dfa",
+                "text",
+                "search",
+            ],
+        ),
+        (
+            "search",
+            &["find", "query", "index", "lookup", "filter", "match"],
+        ),
+        (
+            "cli",
+            &["command", "terminal", "shell", "interface", "tool"],
+        ),
+        ("terminal", &["cli", "shell", "console", "tui", "output"]),
+        (
+            "filesystem",
+            &[
+                "file",
+                "directory",
+                "path",
+                "traverse",
+                "walk",
+                "io",
+                "systems",
+            ],
+        ),
+        (
+            "traverse",
+            &["walk", "scan", "iterate", "directory", "recursive"],
+        ),
+        (
+            "parallel",
+            &["concurrent", "thread", "async", "performance", "fast"],
+        ),
+        (
+            "concurrent",
+            &["parallel", "thread", "async", "lock", "atomic"],
+        ),
+        (
+            "fast",
+            &[
+                "performance",
+                "speed",
+                "optimization",
+                "latency",
+                "efficient",
+            ],
+        ),
+        (
+            "performance",
+            &[
+                "fast",
+                "speed",
+                "optimization",
+                "latency",
+                "efficient",
+                "benchmark",
+            ],
+        ),
+        ("token", &["lexer", "parser", "text", "pattern", "string"]),
+        ("parser", &["lexer", "token", "ast", "grammar", "syntax"]),
+        (
+            "rust",
+            &["systems", "memory", "safety", "ownership", "performance"],
+        ),
+        (
+            "database",
+            &["sql", "query", "storage", "index", "transaction", "data"],
+        ),
+        (
+            "distributed",
+            &[
+                "consensus",
+                "replication",
+                "network",
+                "fault",
+                "tolerance",
+                "cluster",
+            ],
+        ),
+        (
+            "web",
+            &["http", "api", "server", "client", "request", "response"],
+        ),
+        (
+            "api",
+            &["rest", "http", "endpoint", "interface", "service", "design"],
+        ),
+        (
+            "security",
+            &["auth", "crypto", "encryption", "vulnerability", "threat"],
+        ),
+        (
+            "test",
+            &[
+                "testing",
+                "quality",
+                "assertion",
+                "coverage",
+                "verification",
+            ],
+        ),
+        (
+            "trading",
+            &["finance", "market", "exchange", "latency", "quantitative"],
+        ),
+        (
+            "network",
+            &["socket", "protocol", "tcp", "udp", "latency", "packet"],
+        ),
+        (
+            "compiler",
+            &[
+                "parser",
+                "lexer",
+                "ast",
+                "codegen",
+                "optimization",
+                "language",
+            ],
+        ),
+        (
+            "cloud",
+            &[
+                "infrastructure",
+                "deploy",
+                "container",
+                "kubernetes",
+                "aws",
+                "scale",
+            ],
+        ),
+        (
+            "machine",
+            &["learning", "model", "training", "inference", "neural"],
+        ),
+        (
+            "data",
+            &["pipeline", "processing", "storage", "analysis", "stream"],
+        ),
+        (
+            "microservice",
+            &["distributed", "api", "service", "container", "event"],
+        ),
+        (
+            "embedded",
+            &["hardware", "firmware", "iot", "realtime", "bare", "metal"],
+        ),
+        (
+            "operating",
+            &["kernel", "systems", "process", "memory", "scheduler"],
+        ),
+        (
+            "kernel",
+            &["operating", "systems", "driver", "scheduler", "memory"],
+        ),
+        (
+            "utf",
+            &[
+                "unicode",
+                "encoding",
+                "text",
+                "string",
+                "internationalization",
+            ],
+        ),
+        (
+            "unicode",
+            &["utf", "encoding", "text", "string", "character"],
+        ),
+        (
+            "index",
+            &["search", "lookup", "query", "structure", "tree", "hash"],
+        ),
+    ];
+
+    let stemmed = stem(token);
+    let mut results = Vec::new();
+    for &(key, synonyms) in expansions {
+        if token == key || stemmed == stem(key) {
+            for &syn in synonyms {
+                results.push(syn.to_string());
+            }
+        }
+    }
+    results
+}
+
+/// Domain concept detector: recognizes project archetypes and injects high-signal tags
+fn detect_domain_concepts(tokens: &[String]) -> Vec<String> {
+    let mut bonus_tokens = Vec::new();
+    let joined = tokens.join(" ");
+
+    // grep/search tool archetype
+    if joined.contains("grep")
+        || joined.contains("ripgrep")
+        || joined.contains("search tool")
+        || (joined.contains("search") && joined.contains("file"))
+        || (joined.contains("find") && joined.contains("text"))
+    {
+        for t in &[
+            "performance",
+            "systems",
+            "cli",
+            "regex",
+            "parallel",
+            "text",
+            "pattern",
+            "low-level",
+        ] {
+            bonus_tokens.push(t.to_string());
+        }
+    }
+
+    // web server archetype
+    if joined.contains("web server") || joined.contains("http server") || joined.contains("web app")
+    {
+        for t in &["api", "rest", "http", "middleware", "routing", "security"] {
+            bonus_tokens.push(t.to_string());
+        }
+    }
+
+    // database archetype
+    if joined.contains("database")
+        || joined.contains("storage engine")
+        || joined.contains("query engine")
+    {
+        for t in &[
+            "transaction",
+            "acid",
+            "btree",
+            "index",
+            "concurrency",
+            "recovery",
+            "data",
+        ] {
+            bonus_tokens.push(t.to_string());
+        }
+    }
+
+    // distributed system archetype
+    if joined.contains("distributed")
+        || joined.contains("microservice")
+        || joined.contains("cluster")
+    {
+        for t in &[
+            "consensus",
+            "replication",
+            "fault",
+            "network",
+            "eventual",
+            "consistency",
+        ] {
+            bonus_tokens.push(t.to_string());
+        }
+    }
+
+    // compiler/language archetype
+    if joined.contains("compiler") || joined.contains("language") || joined.contains("interpreter")
+    {
+        for t in &[
+            "parser",
+            "lexer",
+            "ast",
+            "codegen",
+            "type",
+            "grammar",
+            "optimization",
+        ] {
+            bonus_tokens.push(t.to_string());
+        }
+    }
+
+    // OS/kernel archetype
+    if joined.contains("operating system") || joined.contains("kernel") || joined.contains("os ") {
+        for t in &[
+            "systems",
+            "memory",
+            "scheduler",
+            "driver",
+            "process",
+            "interrupt",
+        ] {
+            bonus_tokens.push(t.to_string());
+        }
+    }
+
+    bonus_tokens
+}
+
+/// Core tokenizer: split, lowercase, filter stop words, add stems
 fn tokenize(text: &str) -> Vec<String> {
-    text.to_lowercase()
+    let raw: Vec<String> = text
+        .to_lowercase()
         .split(|c: char| !c.is_alphanumeric() && c != '+' && c != '#')
         .filter(|w| w.len() > 1)
         .filter(|w| !STOP_WORDS.contains(w))
         .map(String::from)
-        .collect()
+        .collect();
+
+    let mut tokens = Vec::new();
+    for t in &raw {
+        tokens.push(t.clone());
+        let s = stem(t);
+        if s != *t {
+            tokens.push(s);
+        }
+    }
+    tokens
+}
+
+/// Expanded tokens: synonyms + domain concepts (lower-signal, used for secondary scoring)
+fn tokenize_expanded(text: &str) -> Vec<String> {
+    let raw: Vec<String> = text
+        .to_lowercase()
+        .split(|c: char| !c.is_alphanumeric() && c != '+' && c != '#')
+        .filter(|w| w.len() > 1)
+        .filter(|w| !STOP_WORDS.contains(w))
+        .map(String::from)
+        .collect();
+
+    let mut expanded = Vec::new();
+    for t in &raw {
+        for syn in expand_synonyms(t) {
+            expanded.push(syn.clone());
+            let s = stem(&syn);
+            if s != syn {
+                expanded.push(s);
+            }
+        }
+    }
+    let domain = detect_domain_concepts(&raw);
+    for t in &domain {
+        expanded.push(t.clone());
+        let s = stem(t);
+        if s != *t {
+            expanded.push(s);
+        }
+    }
+    expanded
 }
 
 /// BM25 parameters
@@ -1107,53 +1493,177 @@ fn jaccard_similarity(a: &[String], b: &[String]) -> f64 {
     }
 }
 
-/// Select a diverse team: pick top scorers but ensure category coverage
+/// Detect which programming language(s) the query is about
+fn detect_query_languages(query: &str) -> Vec<String> {
+    let q = query.to_lowercase();
+    let lang_signals: &[(&str, &[&str])] = &[
+        ("rust", &["rust", "cargo", "crate", "ownership", "borrow"]),
+        ("go", &["golang", " go ", "goroutine", "gopher"]),
+        ("python", &["python", "pip", "django", "flask", "pytorch"]),
+        (
+            "javascript",
+            &[
+                "javascript",
+                "node",
+                "npm",
+                "react",
+                "vue",
+                "angular",
+                "deno",
+                "bun",
+            ],
+        ),
+        ("typescript", &["typescript"]),
+        ("c", &[" c ", "c language", "c programming"]),
+        ("cpp", &["c++", "cpp"]),
+        ("java", &["java ", "jvm", "spring", "maven", "gradle"]),
+        ("ruby", &["ruby", "rails", "gem"]),
+        ("zig", &["zig "]),
+    ];
+
+    let mut detected = Vec::new();
+    for &(lang, signals) in lang_signals {
+        // Pad query for word-boundary-like matching
+        let padded = format!(" {} ", q);
+        if signals.iter().any(|s| padded.contains(s)) {
+            detected.push(lang.to_string());
+        }
+    }
+    detected
+}
+
+/// Apply language affinity: boost skills matching query language, penalize mismatched language skills
+fn apply_language_affinity(
+    scores: &mut [(usize, f64)],
+    manifest: &Manifest,
+    query_languages: &[String],
+) {
+    if query_languages.is_empty() {
+        return;
+    }
+
+    for (idx, score) in scores.iter_mut() {
+        let skill = &manifest.skills[*idx];
+
+        // Check if this skill is in a language-specific category
+        let skill_lang = if skill.category == "languages" {
+            skill.subcategory.clone()
+        } else {
+            // Check tags for language signals
+            let lang_tags = [
+                "rust",
+                "go",
+                "python",
+                "javascript",
+                "typescript",
+                "c",
+                "cpp",
+                "java",
+                "ruby",
+                "zig",
+            ];
+            skill
+                .tags
+                .iter()
+                .find(|t| lang_tags.contains(&t.as_str()))
+                .cloned()
+        };
+
+        if let Some(ref sl) = skill_lang {
+            if query_languages.iter().any(|ql| ql == sl) {
+                // Matching language: mild 20% boost (relevance still dominates)
+                *score *= 1.2;
+            } else if skill.category == "languages" {
+                // Wrong language domain: heavy penalty
+                *score *= 0.15;
+            }
+        }
+    }
+
+    // Re-sort after affinity adjustment
+    scores.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+}
+
+/// Select team with relevance-first strategy, diversity as tiebreaker
 fn select_diverse_team(
     scores: &[(usize, f64)],
     manifest: &Manifest,
     max_size: usize,
+    query: &str,
 ) -> Vec<(usize, f64)> {
     if scores.is_empty() {
         return vec![];
     }
 
+    // Apply language affinity scoring
+    let query_languages = detect_query_languages(query);
+    let mut adjusted_scores = scores.to_vec();
+    apply_language_affinity(&mut adjusted_scores, manifest, &query_languages);
+
+    let top_score = adjusted_scores[0].1;
+    // Relevance floor: must be at least 30% of top score to be considered
+    let floor = top_score * 0.30;
+    let candidates: Vec<(usize, f64)> = adjusted_scores
+        .into_iter()
+        .filter(|(_, s)| *s >= floor)
+        .collect();
+
     let mut selected: Vec<(usize, f64)> = Vec::new();
     let mut categories_covered: std::collections::HashSet<String> =
         std::collections::HashSet::new();
 
-    // Phase 1: Greedy category coverage — pick the top scorer from each uncovered category
-    for &(idx, score) in scores {
+    // Phase 1: Fill first with top scorers (relevance-first)
+    // Take top ceil(max_size * 0.6) purely by score
+    let relevance_slots = (max_size as f64 * 0.6).ceil() as usize;
+    for &(idx, score) in &candidates {
+        if selected.len() >= relevance_slots {
+            break;
+        }
         let skill = &manifest.skills[idx];
         let cat_key = if let Some(sub) = &skill.subcategory {
             format!("{}/{}", skill.category, sub)
         } else {
             skill.category.clone()
         };
+        categories_covered.insert(cat_key);
+        selected.push((idx, score));
+    }
 
-        if !categories_covered.contains(&cat_key) && selected.len() < max_size {
+    // Phase 2: Fill remaining slots preferring uncovered categories (diversity as tiebreaker)
+    for &(idx, score) in &candidates {
+        if selected.len() >= max_size {
+            break;
+        }
+        if selected.iter().any(|(i, _)| *i == idx) {
+            continue;
+        }
+        let skill = &manifest.skills[idx];
+        let cat_key = if let Some(sub) = &skill.subcategory {
+            format!("{}/{}", skill.category, sub)
+        } else {
+            skill.category.clone()
+        };
+        if !categories_covered.contains(&cat_key) {
             categories_covered.insert(cat_key);
             selected.push((idx, score));
         }
     }
 
-    // Phase 2: Fill remaining slots with highest scorers not yet selected
-    if selected.len() < max_size {
-        for &(idx, score) in scores {
-            if selected.len() >= max_size {
-                break;
-            }
-            if !selected.iter().any(|(i, _)| *i == idx) {
-                selected.push((idx, score));
-            }
+    // Phase 3: Fill any remaining slots with next-best scorers
+    for &(idx, score) in &candidates {
+        if selected.len() >= max_size {
+            break;
+        }
+        if !selected.iter().any(|(i, _)| *i == idx) {
+            selected.push((idx, score));
         }
     }
 
-    // Phase 3: Boost with affinity — for each selected skill, check if a highly
-    // related skill (by tag overlap) is in the candidate pool but not selected
+    // Phase 4: Affinity swap — check if a highly complementary skill should replace the weakest
     let mut affinity_candidates: Vec<(usize, f64)> = Vec::new();
     for &(sel_idx, _) in &selected {
         let sel_tags = &manifest.skills[sel_idx].tags;
-        for &(cand_idx, cand_score) in scores {
+        for &(cand_idx, cand_score) in &candidates {
             if selected.iter().any(|(i, _)| *i == cand_idx) {
                 continue;
             }
@@ -1167,7 +1677,6 @@ fn select_diverse_team(
         }
     }
 
-    // Replace lowest scorer with best affinity candidate if it's better
     affinity_candidates.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
     if let Some(&(aff_idx, aff_score)) = affinity_candidates.first() {
         if let Some(min_pos) = selected
@@ -1288,12 +1797,44 @@ fn generate_rationale(skill: &Skill, query_tokens: &[String]) -> String {
     }
 }
 
+/// Two-tier BM25: combine raw token scores (high weight) with expanded token scores (low weight)
+fn two_tier_bm25(description: &str, docs: &[SkillDocument]) -> Vec<(usize, f64)> {
+    let raw_tokens = tokenize(description);
+    let expanded_tokens = tokenize_expanded(description);
+
+    let raw_scores = bm25_score(&raw_tokens, docs);
+    let expanded_scores = bm25_score(&expanded_tokens, docs);
+
+    // Build a map of idx -> expanded score
+    let exp_map: HashMap<usize, f64> = expanded_scores.into_iter().collect();
+
+    // Combine: 70% raw + 30% expanded
+    let mut combined: Vec<(usize, f64)> = raw_scores
+        .iter()
+        .map(|&(idx, raw_s)| {
+            let exp_s = exp_map.get(&idx).copied().unwrap_or(0.0);
+            (idx, raw_s * 0.7 + exp_s * 0.3)
+        })
+        .collect();
+
+    // Also add skills that only matched on expanded tokens (not in raw results)
+    let raw_idxs: std::collections::HashSet<usize> = raw_scores.iter().map(|(i, _)| *i).collect();
+    for (&idx, &exp_s) in &exp_map {
+        if !raw_idxs.contains(&idx) {
+            combined.push((idx, exp_s * 0.3));
+        }
+    }
+
+    combined.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+    combined
+}
+
 /// The main local team assembly engine
 fn local_assemble_team(description: &str, manifest: &Manifest) -> LlmTeamResponse {
     let query_tokens = tokenize(description);
     let docs = build_skill_documents(manifest);
-    let scores = bm25_score(&query_tokens, &docs);
-    let team = select_diverse_team(&scores, manifest, 6);
+    let scores = two_tier_bm25(description, &docs);
+    let team = select_diverse_team(&scores, manifest, 6, description);
 
     let team_name = generate_team_name(&query_tokens);
 
