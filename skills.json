@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-03-09T06:57:59.066474+00:00",
+  "generated_at": "2026-03-09T07:04:47.162155+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
-  "skill_count": 98,
+  "skill_count": 101,
   "skills": [
     {
       "id": "fielding-rest",
@@ -179,6 +179,38 @@
         "domains",
         "networking",
         "stevens"
+      ]
+    },
+    {
+      "id": "feynman-first-principles",
+      "name": "feynman",
+      "description": "Think and build in the style of Richard Feynman, Nobel laureate physicist and legendary problem solver. Emphasizes first-principles reasoning, playful exploration, ruthless simplification, and the Feynman Technique for deep understanding. Use when debugging impossible problems, designing from scratch, or when conventional wisdom has failed.",
+      "category": "domains",
+      "subcategory": "problem-solving",
+      "path": "domains/problem-solving/feynman",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "problem_solving",
+        "feynman"
+      ]
+    },
+    {
+      "id": "polya-how-to-solve-it",
+      "name": "polya",
+      "description": "Solve problems in the style of George P\u00f3lya, mathematician and author of \"How to Solve It.\" Emphasizes structured heuristics, analogy, decomposition, and working backward from the goal. Use when stuck on algorithmic problems, debugging complex systems, or designing solutions that require systematic creative thinking.",
+      "category": "domains",
+      "subcategory": "problem-solving",
+      "path": "domains/problem-solving/polya",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "domains",
+        "problem_solving",
+        "polya"
       ]
     },
     {
@@ -1467,6 +1499,22 @@
         "paradigms",
         "systems",
         "hejlsberg"
+      ]
+    },
+    {
+      "id": "kay-inventing-the-future",
+      "name": "kay",
+      "description": "Design and build software in the style of Alan Kay, inventor of object-oriented programming, Smalltalk, and the Dynabook concept. Emphasizes message-passing over method-calling, late binding, biological metaphors for system design, and building systems that can evolve. Use when designing extensible architectures, programming environments, or systems meant to outlast their creators.",
+      "category": "paradigms",
+      "subcategory": "systems",
+      "path": "paradigms/systems/kay",
+      "files": [
+        "SKILL.md"
+      ],
+      "tags": [
+        "paradigms",
+        "systems",
+        "kay"
       ]
     },
     {
