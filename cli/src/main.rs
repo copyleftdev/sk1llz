@@ -109,7 +109,7 @@ enum Commands {
 
 #[derive(Subcommand)]
 enum TeamCommand {
-    /// Use AI to assemble the ideal skill team for a project description
+    /// Assemble the ideal skill team for a project description
     Assemble {
         /// Project description (what you're building)
         description: String,
@@ -119,6 +119,9 @@ enum TeamCommand {
         /// Install skills globally
         #[arg(short, long)]
         global: bool,
+        /// Use AI (LLM) instead of local NLP engine
+        #[arg(long)]
+        ai: bool,
     },
     /// Analyze the current project and recommend skills
     Analyze {
@@ -131,6 +134,9 @@ enum TeamCommand {
         /// Install skills globally
         #[arg(short, long)]
         global: bool,
+        /// Use AI (LLM) instead of local NLP engine
+        #[arg(long)]
+        ai: bool,
     },
     /// Save currently installed skills as a reusable team
     Save {
@@ -866,6 +872,515 @@ struct LlmTeamMember {
     rationale: String,
 }
 
+// ─── Local NLP Engine ─────────────────────────────────────────────────────
+
+const STOP_WORDS: &[&str] = &[
+    "a",
+    "an",
+    "the",
+    "in",
+    "on",
+    "at",
+    "to",
+    "for",
+    "of",
+    "with",
+    "by",
+    "from",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "been",
+    "being",
+    "have",
+    "has",
+    "had",
+    "do",
+    "does",
+    "did",
+    "will",
+    "would",
+    "could",
+    "should",
+    "may",
+    "might",
+    "shall",
+    "can",
+    "need",
+    "must",
+    "and",
+    "or",
+    "but",
+    "if",
+    "then",
+    "else",
+    "when",
+    "up",
+    "out",
+    "so",
+    "no",
+    "not",
+    "only",
+    "very",
+    "just",
+    "that",
+    "this",
+    "it",
+    "its",
+    "i",
+    "we",
+    "you",
+    "they",
+    "he",
+    "she",
+    "my",
+    "your",
+    "our",
+    "their",
+    "what",
+    "which",
+    "who",
+    "whom",
+    "how",
+    "all",
+    "each",
+    "every",
+    "both",
+    "few",
+    "more",
+    "most",
+    "some",
+    "any",
+    "such",
+    "than",
+    "too",
+    "also",
+    "into",
+    "over",
+    "after",
+    "before",
+    "between",
+    "under",
+    "about",
+    "using",
+    "like",
+    "want",
+    "building",
+    "build",
+    "create",
+    "creating",
+    "make",
+    "making",
+    "write",
+    "writing",
+    "develop",
+    "developing",
+    "use",
+];
+
+fn tokenize(text: &str) -> Vec<String> {
+    text.to_lowercase()
+        .split(|c: char| !c.is_alphanumeric() && c != '+' && c != '#')
+        .filter(|w| w.len() > 1)
+        .filter(|w| !STOP_WORDS.contains(w))
+        .map(String::from)
+        .collect()
+}
+
+/// BM25 parameters
+const BM25_K1: f64 = 1.5;
+const BM25_B: f64 = 0.75;
+
+struct SkillDocument {
+    skill_idx: usize,
+    tokens: Vec<String>,
+    len: usize,
+}
+
+fn build_skill_documents(manifest: &Manifest) -> Vec<SkillDocument> {
+    manifest
+        .skills
+        .iter()
+        .enumerate()
+        .map(|(idx, skill)| {
+            let mut text = String::new();
+            // Weight: id tokens appear 3x, tags 3x, description 1x, category 2x
+            for _ in 0..3 {
+                text.push(' ');
+                text.push_str(&skill.id.replace('-', " "));
+            }
+            for _ in 0..3 {
+                for tag in &skill.tags {
+                    text.push(' ');
+                    text.push_str(tag);
+                }
+            }
+            for _ in 0..2 {
+                text.push(' ');
+                text.push_str(&skill.category);
+                if let Some(sub) = &skill.subcategory {
+                    text.push(' ');
+                    text.push_str(sub);
+                }
+            }
+            text.push(' ');
+            text.push_str(&skill.description);
+            // Also add the skill name with high weight
+            for _ in 0..3 {
+                text.push(' ');
+                text.push_str(&skill.name);
+            }
+
+            let tokens = tokenize(&text);
+            let len = tokens.len();
+            SkillDocument {
+                skill_idx: idx,
+                tokens,
+                len,
+            }
+        })
+        .collect()
+}
+
+fn bm25_score(query_tokens: &[String], docs: &[SkillDocument]) -> Vec<(usize, f64)> {
+    let n = docs.len() as f64;
+    let avg_dl: f64 = docs.iter().map(|d| d.len as f64).sum::<f64>() / n;
+
+    // Compute document frequency for each query term
+    let mut df: HashMap<String, usize> = HashMap::new();
+    for token in query_tokens {
+        if df.contains_key(token) {
+            continue;
+        }
+        let count = docs.iter().filter(|d| d.tokens.contains(token)).count();
+        df.insert(token.clone(), count);
+    }
+
+    let mut scores: Vec<(usize, f64)> = docs
+        .iter()
+        .map(|doc| {
+            let dl = doc.len as f64;
+            let mut score = 0.0;
+
+            for token in query_tokens {
+                let tf = doc.tokens.iter().filter(|t| *t == token).count() as f64;
+                let doc_freq = *df.get(token).unwrap_or(&0) as f64;
+
+                if doc_freq == 0.0 || tf == 0.0 {
+                    continue;
+                }
+
+                // IDF component (BM25 variant)
+                let idf = ((n - doc_freq + 0.5) / (doc_freq + 0.5) + 1.0).ln();
+
+                // TF component with length normalization
+                let tf_norm = (tf * (BM25_K1 + 1.0))
+                    / (tf + BM25_K1 * (1.0 - BM25_B + BM25_B * (dl / avg_dl)));
+
+                score += idf * tf_norm;
+            }
+
+            (doc.skill_idx, score)
+        })
+        .filter(|(_, s)| *s > 0.0)
+        .collect();
+
+    scores.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+    scores
+}
+
+/// Jaccard similarity between two tag sets
+fn jaccard_similarity(a: &[String], b: &[String]) -> f64 {
+    if a.is_empty() && b.is_empty() {
+        return 0.0;
+    }
+    let set_a: std::collections::HashSet<&str> = a.iter().map(|s| s.as_str()).collect();
+    let set_b: std::collections::HashSet<&str> = b.iter().map(|s| s.as_str()).collect();
+    let intersection = set_a.intersection(&set_b).count() as f64;
+    let union = set_a.union(&set_b).count() as f64;
+    if union == 0.0 {
+        0.0
+    } else {
+        intersection / union
+    }
+}
+
+/// Select a diverse team: pick top scorers but ensure category coverage
+fn select_diverse_team(
+    scores: &[(usize, f64)],
+    manifest: &Manifest,
+    max_size: usize,
+) -> Vec<(usize, f64)> {
+    if scores.is_empty() {
+        return vec![];
+    }
+
+    let mut selected: Vec<(usize, f64)> = Vec::new();
+    let mut categories_covered: std::collections::HashSet<String> =
+        std::collections::HashSet::new();
+
+    // Phase 1: Greedy category coverage — pick the top scorer from each uncovered category
+    for &(idx, score) in scores {
+        let skill = &manifest.skills[idx];
+        let cat_key = if let Some(sub) = &skill.subcategory {
+            format!("{}/{}", skill.category, sub)
+        } else {
+            skill.category.clone()
+        };
+
+        if !categories_covered.contains(&cat_key) && selected.len() < max_size {
+            categories_covered.insert(cat_key);
+            selected.push((idx, score));
+        }
+    }
+
+    // Phase 2: Fill remaining slots with highest scorers not yet selected
+    if selected.len() < max_size {
+        for &(idx, score) in scores {
+            if selected.len() >= max_size {
+                break;
+            }
+            if !selected.iter().any(|(i, _)| *i == idx) {
+                selected.push((idx, score));
+            }
+        }
+    }
+
+    // Phase 3: Boost with affinity — for each selected skill, check if a highly
+    // related skill (by tag overlap) is in the candidate pool but not selected
+    let mut affinity_candidates: Vec<(usize, f64)> = Vec::new();
+    for &(sel_idx, _) in &selected {
+        let sel_tags = &manifest.skills[sel_idx].tags;
+        for &(cand_idx, cand_score) in scores {
+            if selected.iter().any(|(i, _)| *i == cand_idx) {
+                continue;
+            }
+            if affinity_candidates.iter().any(|(i, _)| *i == cand_idx) {
+                continue;
+            }
+            let sim = jaccard_similarity(sel_tags, &manifest.skills[cand_idx].tags);
+            if sim > 0.3 {
+                affinity_candidates.push((cand_idx, cand_score * (1.0 + sim)));
+            }
+        }
+    }
+
+    // Replace lowest scorer with best affinity candidate if it's better
+    affinity_candidates.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+    if let Some(&(aff_idx, aff_score)) = affinity_candidates.first() {
+        if let Some(min_pos) = selected
+            .iter()
+            .enumerate()
+            .min_by(|a, b| {
+                a.1 .1
+                    .partial_cmp(&b.1 .1)
+                    .unwrap_or(std::cmp::Ordering::Equal)
+            })
+            .map(|(pos, _)| pos)
+        {
+            if selected.len() >= max_size && aff_score > selected[min_pos].1 {
+                selected[min_pos] = (aff_idx, aff_score);
+            }
+        }
+    }
+
+    selected
+}
+
+/// Assign a role based on category and subcategory
+fn assign_role(skill: &Skill) -> String {
+    match (skill.category.as_str(), skill.subcategory.as_deref()) {
+        ("languages", Some(lang)) => format!("{} Language Expert", capitalize(lang)),
+        ("languages", None) => "Language Expert".to_string(),
+        ("paradigms", Some("functional")) => "Functional Design Lead".to_string(),
+        ("paradigms", Some("systems")) => "Systems Architecture Lead".to_string(),
+        ("paradigms", Some("distributed")) => "Distributed Systems Architect".to_string(),
+        ("paradigms", _) => "Paradigm Specialist".to_string(),
+        ("domains", Some("testing")) => "Quality & Testing Lead".to_string(),
+        ("domains", Some("systems-architecture")) => "Systems Architect".to_string(),
+        ("domains", Some("databases")) => "Data & Storage Lead".to_string(),
+        ("domains", Some("networking")) => "Networking Specialist".to_string(),
+        ("domains", Some("security")) => "Security Lead".to_string(),
+        ("domains", Some("api-design")) => "API Design Lead".to_string(),
+        ("domains", Some("cli-design")) => "CLI/UX Lead".to_string(),
+        ("domains", Some("problem-solving")) => "Problem-Solving Strategist".to_string(),
+        ("domains", Some("trading")) => "Quantitative Strategist".to_string(),
+        ("domains", Some("search")) => "Search & Retrieval Specialist".to_string(),
+        ("domains", _) => "Domain Expert".to_string(),
+        ("organizations", _) => "Organizational Practice Lead".to_string(),
+        ("specialists", _) => "Specialist".to_string(),
+        _ => "Team Member".to_string(),
+    }
+}
+
+fn capitalize(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().to_string() + c.as_str(),
+    }
+}
+
+/// Generate a team name from the query tokens
+fn generate_team_name(query_tokens: &[String]) -> String {
+    let adjectives = [
+        "Iron", "Shadow", "Apex", "Storm", "Quantum", "Forge", "Nova", "Titan", "Cipher", "Pulse",
+    ];
+    let nouns = [
+        "Legion",
+        "Vanguard",
+        "Council",
+        "Order",
+        "Assembly",
+        "Coalition",
+        "Syndicate",
+        "Guild",
+        "Brigade",
+        "Collective",
+    ];
+
+    // Deterministic but varied: hash the query to pick adjective + noun
+    let hash: usize = query_tokens
+        .iter()
+        .map(|t| t.bytes().map(|b| b as usize).sum::<usize>())
+        .sum();
+    let adj = adjectives[hash % adjectives.len()];
+    let noun = nouns[(hash / adjectives.len()) % nouns.len()];
+    format!("{} {}", adj, noun)
+}
+
+/// Generate a rationale for why this skill matches the query
+fn generate_rationale(skill: &Skill, query_tokens: &[String]) -> String {
+    let skill_tokens = tokenize(&format!(
+        "{} {} {}",
+        skill.id,
+        skill.description,
+        skill.tags.join(" ")
+    ));
+    let matching: Vec<&String> = query_tokens
+        .iter()
+        .filter(|qt| {
+            skill_tokens
+                .iter()
+                .any(|st| st.contains(qt.as_str()) || qt.contains(st.as_str()))
+        })
+        .collect();
+
+    if matching.is_empty() {
+        format!(
+            "Complements the team with {} expertise in {}",
+            skill.category,
+            skill.subcategory.as_deref().unwrap_or(&skill.name)
+        )
+    } else {
+        format!(
+            "Directly relevant — matches: {}. {}",
+            matching
+                .iter()
+                .take(3)
+                .map(|s| s.as_str())
+                .collect::<Vec<_>>()
+                .join(", "),
+            truncate(&skill.description, 80)
+        )
+    }
+}
+
+/// The main local team assembly engine
+fn local_assemble_team(description: &str, manifest: &Manifest) -> LlmTeamResponse {
+    let query_tokens = tokenize(description);
+    let docs = build_skill_documents(manifest);
+    let scores = bm25_score(&query_tokens, &docs);
+    let team = select_diverse_team(&scores, manifest, 6);
+
+    let team_name = generate_team_name(&query_tokens);
+
+    let members: Vec<LlmTeamMember> = team
+        .iter()
+        .map(|(idx, _score)| {
+            let skill = &manifest.skills[*idx];
+            LlmTeamMember {
+                skill_id: skill.id.clone(),
+                role: assign_role(skill),
+                rationale: generate_rationale(skill, &query_tokens),
+            }
+        })
+        .collect();
+
+    let summary = if members.is_empty() {
+        "No matching skills found for this description.".to_string()
+    } else {
+        let categories: Vec<String> = members
+            .iter()
+            .filter_map(|m| {
+                manifest
+                    .skills
+                    .iter()
+                    .find(|s| s.id == m.skill_id)
+                    .map(|s| s.category.clone())
+            })
+            .collect::<std::collections::HashSet<_>>()
+            .into_iter()
+            .collect();
+        format!(
+            "A {} skill team spanning {}",
+            members.len(),
+            categories.join(", ")
+        )
+    };
+
+    LlmTeamResponse {
+        team_name,
+        summary,
+        members,
+    }
+}
+
+/// Local analysis-based team assembly
+fn local_analyze_team(analysis: &str, manifest: &Manifest) -> LlmTeamResponse {
+    // Extract key terms from the analysis output
+    let mut query_parts: Vec<String> = Vec::new();
+
+    for line in analysis.lines() {
+        if line.starts_with("Frameworks detected:") {
+            let frameworks = line.trim_start_matches("Frameworks detected:").trim();
+            query_parts.push(frameworks.to_lowercase());
+        }
+        if line.trim().starts_with('.') {
+            // File extension line like "  .rs: 42"
+            let ext = line
+                .trim()
+                .split(':')
+                .next()
+                .unwrap_or("")
+                .trim_start_matches('.');
+            match ext {
+                "rs" => query_parts.push("rust systems performance".to_string()),
+                "go" => query_parts.push("go golang concurrency".to_string()),
+                "py" => query_parts.push("python".to_string()),
+                "js" | "jsx" => query_parts.push("javascript".to_string()),
+                "ts" | "tsx" => query_parts.push("typescript javascript".to_string()),
+                "c" | "h" => query_parts.push("c systems".to_string()),
+                "cpp" | "cc" | "cxx" | "hpp" => query_parts.push("c++ cpp".to_string()),
+                "rb" => query_parts.push("ruby".to_string()),
+                "java" => query_parts.push("java".to_string()),
+                "zig" => query_parts.push("zig systems".to_string()),
+                "md" => query_parts.push("documentation".to_string()),
+                "yml" | "yaml" => query_parts.push("configuration infrastructure".to_string()),
+                "toml" => query_parts.push("rust configuration".to_string()),
+                "sql" => query_parts.push("database sql".to_string()),
+                "proto" => query_parts.push("api distributed".to_string()),
+                _ => {}
+            }
+        }
+    }
+
+    let combined = query_parts.join(" ");
+    local_assemble_team(&combined, manifest)
+}
+
 // ─── LLM Integration ──────────────────────────────────────────────────────
 
 fn get_anthropic_key() -> Option<String> {
@@ -1150,24 +1665,33 @@ fn get_teams_dir() -> Result<PathBuf> {
     Ok(dir)
 }
 
-fn cmd_team_assemble(description: &str, auto_install: bool, global: bool) -> Result<()> {
+fn cmd_team_assemble(description: &str, auto_install: bool, global: bool, ai: bool) -> Result<()> {
     let manifest = load_manifest()?;
-    let catalog = build_skill_catalog(&manifest);
-    let prompt = build_team_prompt(description, &catalog);
 
-    let pb = ProgressBar::new_spinner();
-    pb.set_style(
-        ProgressStyle::default_spinner()
-            .template("{spinner:.cyan} {msg}")
-            .unwrap(),
-    );
-    pb.set_message("Consulting the AI oracle...");
-    pb.enable_steady_tick(std::time::Duration::from_millis(80));
+    let team = if ai {
+        let catalog = build_skill_catalog(&manifest);
+        let prompt = build_team_prompt(description, &catalog);
 
-    let raw = call_llm(&prompt)?;
-    pb.finish_and_clear();
+        let pb = ProgressBar::new_spinner();
+        pb.set_style(
+            ProgressStyle::default_spinner()
+                .template("{spinner:.cyan} {msg}")
+                .unwrap(),
+        );
+        pb.set_message("Consulting the AI oracle...");
+        pb.enable_steady_tick(std::time::Duration::from_millis(80));
 
-    let team = parse_llm_team(&raw)?;
+        let raw = call_llm(&prompt)?;
+        pb.finish_and_clear();
+        parse_llm_team(&raw)?
+    } else {
+        println!(
+            "\n{} {}",
+            "⚙".bold(),
+            "Local NLP engine (BM25 + tag affinity + category diversity)".dimmed()
+        );
+        local_assemble_team(description, &manifest)
+    };
 
     // Validate skill IDs against manifest
     let valid_ids: Vec<String> = manifest.skills.iter().map(|s| s.id.clone()).collect();
@@ -1236,7 +1760,7 @@ fn cmd_team_assemble(description: &str, auto_install: bool, global: bool) -> Res
     Ok(())
 }
 
-fn cmd_team_analyze(path: &Path, auto_install: bool, global: bool) -> Result<()> {
+fn cmd_team_analyze(path: &Path, auto_install: bool, global: bool, ai: bool) -> Result<()> {
     let pb = ProgressBar::new_spinner();
     pb.set_style(
         ProgressStyle::default_spinner()
@@ -1247,14 +1771,24 @@ fn cmd_team_analyze(path: &Path, auto_install: bool, global: bool) -> Result<()>
     pb.enable_steady_tick(std::time::Duration::from_millis(80));
 
     let analysis = analyze_project(path)?;
-    pb.set_message("Project scanned. Consulting the AI oracle...");
-
     let manifest = load_manifest()?;
-    let catalog = build_skill_catalog(&manifest);
-    let prompt = build_analyze_prompt(&analysis, &catalog);
 
-    let raw = call_llm(&prompt)?;
-    pb.finish_and_clear();
+    let team = if ai {
+        pb.set_message("Project scanned. Consulting the AI oracle...");
+        let catalog = build_skill_catalog(&manifest);
+        let prompt = build_analyze_prompt(&analysis, &catalog);
+        let raw = call_llm(&prompt)?;
+        pb.finish_and_clear();
+        parse_llm_team(&raw)?
+    } else {
+        pb.finish_and_clear();
+        println!(
+            "\n{} {}",
+            "⚙".bold(),
+            "Local NLP engine (BM25 + tag affinity + category diversity)".dimmed()
+        );
+        local_analyze_team(&analysis, &manifest)
+    };
 
     println!("\n{}", "Project Analysis".bold().cyan());
     println!("{}", "─".repeat(40).dimmed());
@@ -1262,8 +1796,6 @@ fn cmd_team_analyze(path: &Path, auto_install: bool, global: bool) -> Result<()>
         println!("  {}", line.dimmed());
     }
     println!();
-
-    let team = parse_llm_team(&raw)?;
 
     let valid_ids: Vec<String> = manifest.skills.iter().map(|s| s.id.clone()).collect();
 
@@ -1600,12 +2132,14 @@ fn main() -> Result<()> {
                 description,
                 install,
                 global,
-            } => cmd_team_assemble(&description, install, global),
+                ai,
+            } => cmd_team_assemble(&description, install, global, ai),
             TeamCommand::Analyze {
                 path,
                 install,
                 global,
-            } => cmd_team_analyze(&path, install, global),
+                ai,
+            } => cmd_team_analyze(&path, install, global, ai),
             TeamCommand::Save { name, description } => cmd_team_save(&name, description),
             TeamCommand::List => cmd_team_list(),
             TeamCommand::Install { name, global } => cmd_team_install(&name, global),
