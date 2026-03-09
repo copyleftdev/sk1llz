@@ -1,6 +1,7 @@
 ---
 name: de-shaw-computational-finance
 description: Build trading systems in the style of D.E. Shaw, the pioneering computational finance firm. Emphasizes systematic strategies, rigorous quantitative research, and world-class technology infrastructure. Use when building research platforms, systematic trading strategies, or quantitative finance infrastructure.
+tags: trading, computational-finance, quantitative, simulation, risk-management, hpc, finance, algorithms
 ---
 
 # D.E. Shaw Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​‌​‌‌‍‌‌​​​‌‌​‍​‌​​‌‌​‌‍​‌‌‌​‌‌​‍​​​​‌​‌​‍‌​‌‌‌‌‌​⁠‍⁠

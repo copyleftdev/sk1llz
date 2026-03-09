@@ -1,6 +1,7 @@
 ---
 name: hashicorp
 description: Build systems and organizations using the "Tao of HashiCorp". Emphasizes workflows over technologies, simple modular composable tools, immutability, and versioning driven by code. Use when designing platform engineering initiatives, DevOps workflows, or infrastructure automation.
+tags: infrastructure, terraform, vault, consul, nomad, iac, devops, automation, workflows, cloud, deployment
 ---
 
 # HashiCorp Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌‌​​​‍​​​​‌​​‌‍‌‌‌‌​​​‌‍‌‌‌‌‌‌‌‌‍​​​​‌​‌​‍‌​‌‌‌​‌‌⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: uunet
 description: Engineer at global scale in the style of UUNET (now Verizon Business). Emphasizes massive infrastructure resilience, "plumbing" the internet, pragmatic problem solving, and the evolution from moving bits to securing them (DBIR). Use when designing backbone networks, security operations centers, or large-scale distributed systems.
+tags: networking, infrastructure, bgp, peering, isp, routing, scale, backbone, internet, operations
 ---
 
 # UUNET Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​​​‌‌​‍​​‌‌​​‌‌‍​‌‌​‌​​​‍‌​​​‌​​‌‍​​​​‌​‌​‍​​​‌​‌​​⁠‍⁠

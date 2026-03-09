@@ -1,6 +1,7 @@
 ---
 name: bianco-pyramid-of-pain
 description: Apply David Bianco's threat hunting frameworks including the Pyramid of Pain and Threat Hunting Maturity Model. Emphasizes prioritizing detection by adversary cost and building mature hunting programs. Use when designing detection strategies or assessing hunting capability.
+tags: threat-intelligence, indicators, detection, adversary, ioc, ttps, hunting, defense, attribution
 ---
 
 # David Bianco — Threat Hunting Frameworks⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​‌​‌‌‌‍‌​‌‌​​​‌‍‌​‌‌‌‌​​‍​​​​​​‌​‍​​​​‌​‌​‍​‌‌‌​​​​⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: alexandrescu-modern-cpp-design
 description: Write C++ code following Andrei Alexandrescu's Modern C++ Design principles. Emphasizes policy-based design, template metaprogramming, and type-safe generic abstractions. Use when designing flexible, reusable libraries or when compile-time computation beats runtime overhead.
+tags: templates, metaprogramming, generic-programming, policy-design, smart-pointers, move-semantics, patterns
 ---
 
 # Andrei Alexandrescu Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​​‌‌​‍‌​​‌‌‌​‌‍‌​​‌‌‌‌‌‍‌‌​​​​‌​‍​​​​‌​‌​‍‌‌​​‌‌‌​⁠‍⁠

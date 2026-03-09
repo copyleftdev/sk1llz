@@ -1,6 +1,7 @@
 ---
 name: ramalho-fluent-python
 description: Write Python code in the style of Luciano Ramalho, author of Fluent Python. Emphasizes deep understanding of Python's data model, special methods, and advanced idioms. Use when writing code that leverages Python's full power elegantly.
+tags: data-model, protocols, type-hints, iterators, generators, descriptors, metaprogramming, advanced, idioms
 ---
 
 # Luciano Ramalho Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌​‌​‌‍‌​​​‌​​‌‍‌​‌​‌‌‌​‍​​‌​​‌​‌‍​​​​‌​‌​‍​​​‌‌​‌‌⁠‍⁠

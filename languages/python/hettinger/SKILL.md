@@ -1,6 +1,7 @@
 ---
 name: hettinger-idiomatic-python
 description: Write Python code in the style of Raymond Hettinger, Python core developer. Emphasizes beautiful, idiomatic code using iterators, generators, and built-in tools elegantly. Use when transforming code into clean, Pythonic solutions.
+tags: itertools, collections, decorators, idioms, readability, functional, generators, clean-code, pythonic
 ---
 
 # Raymond Hettinger Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​‌​‌​​‍​‌‌​​​‌​‍‌‌​​​​​​‍‌​​​​​‌​‍​​​​‌​‌​‍‌‌‌​​​‌​⁠‍⁠

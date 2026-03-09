@@ -1,6 +1,7 @@
 ---
 name: beazley-deep-python
 description: Write Python code in the style of David Beazley, author of Python Cookbook. Emphasizes generators, coroutines, metaprogramming, and understanding Python's internals. Use when writing advanced Python that requires deep language mastery.
+tags: generators, coroutines, metaprogramming, decorators, async, concurrency, internals, advanced, performance
 ---
 
 # David Beazley Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​​‌​‌‍​‌‌‌​‌‌‌‍​​​‌​​‌‌‍​‌‌‌​‌​​‍​​​​‌​​‌‍‌​‌​‌‌​‌⁠‍⁠

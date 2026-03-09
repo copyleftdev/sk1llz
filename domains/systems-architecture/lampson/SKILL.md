@@ -1,6 +1,7 @@
 ---
 name: lampson-system-design
 description: Design systems using Butler Lampson's principles of abstraction, interfaces, and practical wisdom. Emphasizes clean abstractions, security foundations, and time-tested design hints. Use when making architectural decisions, designing APIs, or building systems that must evolve over decades.
+tags: system-design, abstraction, interfaces, security, hints, architecture, naming, performance, modularity
 ---
 
 # Butler Lampson Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌​​‌​‌‍‌‌​​​‌‌​‍​​‌‌​​​‌‍​‌​​​‌‌‌‍​​​​‌​​‌‍‌‌​​‌‌​‌⁠‍⁠

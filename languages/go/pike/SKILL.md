@@ -1,6 +1,7 @@
 ---
 name: pike-simplicity-first
 description: Write Go code in the style of Rob Pike, co-creator of Go. Emphasizes radical simplicity, concurrency through communication, and composition over inheritance. Use when writing Go that should be clear, concurrent, and maintainable.
+tags: simplicity, concurrency, channels, goroutines, composition, unix, plan9, interfaces, communication
 ---
 
 # Rob Pike Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​‌‌​​‍‌‌​​‌​​​‍‌‌​‌​‌​​‍​​​‌‌‌​​‍​​​​‌​‌​‍​‌‌​‌‌‌​⁠‍⁠

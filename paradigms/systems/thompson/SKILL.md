@@ -1,6 +1,7 @@
 ---
 name: thompson-elegant-systems
 description: Write systems code in the style of Ken Thompson, co-creator of Unix, C, Go, UTF-8, and Plan 9. Emphasizes radical simplicity, elegant algorithms, and small composable tools. Use when designing systems that must endure.
+tags: unix, utf-8, grep, regex, plan9, systems, encoding, text-processing, simplicity, operating-system, shell, pipes
 ---
 
 # Ken Thompson Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​​‌​‌‌‍‌​‌​​​‌‌‍​​‌​​​​​‍‌‌​‌​​‌​‍​​​​‌​‌​‍​​​​‌​‌​⁠‍⁠

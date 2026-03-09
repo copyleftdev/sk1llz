@@ -1,6 +1,7 @@
 ---
 name: meyers-effective-cpp
 description: Write C++ code following Scott Meyers' Effective C++ principles. Emphasizes practical wisdom, specific guidelines with clear rationale, and avoiding common pitfalls. Use when writing production C++ code that must be correct, maintainable, and efficient.
+tags: raii, smart-pointers, const, move-semantics, templates, exceptions, best-practices, resource-management
 ---
 
 # Scott Meyers Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​‌​​​​‍​​​​‌‌​​‍​‌‌​‌‌‌​‍​​​​​​‌‌‍​​​​‌​​‌‍‌​‌‌​‌‌‌⁠‍⁠

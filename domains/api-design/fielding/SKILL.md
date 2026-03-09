@@ -1,6 +1,7 @@
 ---
 name: fielding-rest
 description: Design network-based software architectures using Roy Fielding's REST principles. Emphasizes the constraints of the web—statelessness, cacheability, uniform interfaces, and HATEOAS. Use when designing web APIs that must endure for decades.
+tags: rest, http, stateless, hateoas, caching, uniform-interface, web-api, resources, hypermedia, architecture
 ---
 
 # Roy Fielding Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​​‌​​‍​​‌‌​​​‌‍‌‌​‌​‌‌‌‍​​​​‌‌​‌‍​​​​‌​‌​‍​‌‌​​​‌‌⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: google-sre
 description: Apply Google's Site Reliability Engineering methodology. Emphasizes error budgets, SLO-driven operations, toil elimination, and blameless postmortems. Use when building and operating reliable services at scale.
+tags: sre, reliability, monitoring, slo, error-budget, incident-response, toil, automation, observability, on-call
 ---
 
 # Google Site Reliability Engineering (SRE)⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​​​‌​​‍‌​‌‌‌‌‌‌‍‌​​​​​‌​‍​‌​‌​‌‌​‍​​​​‌​‌​‍​​​​​‌​‌⁠‍⁠

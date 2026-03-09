@@ -1,6 +1,7 @@
 ---
 name: bolton-rapid-software-testing
 description: Test software in the style of Michael Bolton, Rapid Software Testing co-creator with James Bach. Emphasizes the distinction between testing and checking, critical thinking, oracles, and the social nature of quality. Use when designing test strategies, evaluating test automation, or developing critical thinking in testers.
+tags: rapid-testing, context-driven, heuristics, oracles, risk-based, exploratory, skills, critical-thinking
 ---
 
 # Michael Bolton Rapid Software Testing Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​​‌‌‌‍​​‌‌​​​​‍‌​‌​​‌​‌‍‌‌‌‌​‌​​‍​​​​‌​‌‌‍​​​‌‌​‌​⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: citadel-low-latency-systems
 description: Build trading systems in the style of Citadel Securities, the world's largest market maker. Emphasizes ultra-low latency, deterministic execution, kernel bypass networking, and high-frequency trading infrastructure. Use when building latency-critical systems, market making engines, or high-performance trading platforms.
+tags: trading, low-latency, market-making, hft, fpga, networking, systems, performance, finance, real-time
 ---
 
 # Citadel Securities Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​​​​‌​‍‌​​‌‌‌‌‌‍‌‌​​​‌‌‌‍​‌​‌​​‌‌‍​​​​‌​‌​‍​​‌​​‌​‌⁠‍⁠

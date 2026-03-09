@@ -1,6 +1,7 @@
 ---
 name: lipton-mutation-testing
 description: Evaluate test quality in the style of Richard Lipton, father of mutation testing. Emphasizes injecting small faults (mutants) to measure test effectiveness, the competent programmer hypothesis, and the coupling effect. Use when assessing test suite quality, improving test coverage, or building mutation testing tools.
+tags: mutation-testing, test-quality, fault-injection, test-effectiveness, coverage, test-generation, quality
 ---
 
 # Richard Lipton Mutation Testing Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​‌​​​‍‌‌​‌​​​​‍‌​​‌‌​‌‌‍‌​‌​‌‌​​‍​​​​‌​‌‌‍​‌‌​‌​​‌⁠‍⁠

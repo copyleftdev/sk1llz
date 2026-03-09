@@ -1,6 +1,7 @@
 ---
 name: vanrossum-pythonic-style
 description: Write Python code in the style of Guido van Rossum, creator of Python. Emphasizes readability, simplicity, and the Pythonic way. Use when writing Python that should be clear, maintainable, and follow the language's design philosophy.
+tags: zen, readability, simplicity, pep8, language-design, clean-code, standard-library, idioms, beginner-friendly
 ---
 
 # Guido van Rossum Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​​‌‌‌‍‌​​‌​​​‌‍​‌​‌​‌​‌‍​​​‌‌‌‌​‍​​​​‌​‌​‍​​‌‌​‌​‌⁠‍⁠

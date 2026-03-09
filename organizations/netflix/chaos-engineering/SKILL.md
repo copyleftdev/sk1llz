@@ -1,6 +1,7 @@
 ---
 name: netflix-chaos-engineering
 description: Apply Netflix's chaos engineering methodology to build resilient systems. Emphasizes controlled failure injection, steady-state hypothesis testing, and building confidence through experimentation. Use when you need to verify system resilience under turbulent conditions.
+tags: chaos-engineering, resilience, fault-tolerance, microservices, distributed, failure, testing, reliability, cloud
 ---
 
 # Netflix Chaos Engineering⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​‌‌​‌‍​‌‌​​‌‌‌‍​‌​‌‌​​​‍‌​‌​‌‌‌‌‍​​​​‌​‌​‍‌‌​​​‌​‌⁠‍⁠

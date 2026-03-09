@@ -1,6 +1,7 @@
 ---
 name: kleppmann-data-intensive
 description: Design distributed systems in the style of Martin Kleppmann, author of "Designing Data-Intensive Applications". Emphasizes understanding data systems deeply, making informed trade-offs, and building reliable data infrastructure. Use when designing databases, streaming systems, or data pipelines.
+tags: crdt, replication, streaming, consistency, event-sourcing, databases, partitioning, consensus, data-pipelines, real-time, collaborative
 ---
 
 # Martin Kleppmann Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​​‌‌​‍‌​‌‌‌​​‌‍​​‌‌‌‌‌​‍​‌​‌‌‌‌​‍​​​​‌​‌​‍​​​​​‌​‌⁠‍⁠

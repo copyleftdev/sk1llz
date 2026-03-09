@@ -1,6 +1,7 @@
 ---
 name: osmani-patterns-performance
 description: Write JavaScript code in the style of Addy Osmani, author of "Learning JavaScript Design Patterns" and Chrome DevTools engineer. Emphasizes design patterns, performance optimization, and progressive web apps. Use when building performant, well-structured applications.
+tags: design-patterns, performance, web, loading, caching, lazy-loading, bundling, optimization, frontend, browser
 ---
 
 # Addy Osmani Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​​‌‌​‍‌‌​‌​‌‌‌‍​​​‌‌‌‌​‍​​‌‌‌‌​‌‍​​​​‌​‌​‍‌​​​​​‌​⁠‍⁠

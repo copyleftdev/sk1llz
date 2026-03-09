@@ -1,6 +1,7 @@
 ---
 name: bos-concurrency-rust
 description: Write Rust code in the style of Mara Bos, Rust library team lead and author of "Rust Atomics and Locks." Emphasizes low-level concurrency, atomics, and understanding the memory model. Use when writing concurrent or lock-free code.
+tags: concurrency, atomics, locks, threads, parallel, memory-model, mutex, sync, async, low-level, systems, performance
 ---
 
 # Mara Bos Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​​‌​‌‍​‌‌‌‌​‌‌‍​‌​‌‌‌‌​‍​‌​‌‌​‌‌‍​​​​‌​‌​‍‌​​​​​‌‌⁠‍⁠

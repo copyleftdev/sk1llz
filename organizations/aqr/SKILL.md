@@ -1,6 +1,7 @@
 ---
 name: aqr-factor-investing
 description: Build investment systems in the style of AQR Capital Management, the quantitative investment firm pioneering factor investing. Emphasizes academic rigor, transparent methodology, and systematic factor exposure. Use when building factor models, conducting asset pricing research, or designing systematic portfolios.
+tags: quantitative, factor-investing, risk-management, portfolio, backtesting, finance, statistics, hedge-fund
 ---
 
 # AQR Capital Management Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌‌‌​‌‍​​​‌‌‌​​‍‌​‌​​​​​‍‌‌​‌​‌​‌‍​​​​‌​‌​‍‌​‌‌‌​​​⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: minervini-swing-trading
 description: Trade swing setups in the style of Mark Minervini, 3x US Investing Champion with 220%+ annual returns. Emphasizes SEPA methodology, trend templates, volatility contraction patterns (VCP), and strict risk management. Use when swing trading momentum stocks, identifying breakout setups, or building systematic trend-following strategies.
+tags: swing-trading, momentum, technical-analysis, stocks, trading, finance, trend-following, risk-management, screening
 ---
 
 # Mark Minervini Swing Trading Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌​‌‌‌​‍​‌‌‌‌‌‌‌‍​​‌​‌‌‌‌‍​‌‌‌​‌​​‍​​​​‌​​‌‍‌​‌‌‌​‌​⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: gremlin-enterprise-chaos
 description: Apply Gremlin's enterprise chaos engineering methodology. Emphasizes categorized failure injection, safety controls, and structured experimentation. Use when implementing chaos engineering in enterprise environments with compliance requirements.
+tags: chaos-engineering, fault-injection, resilience, gameday, blast-radius, reliability, failure-modes, testing
 ---
 
 # Gremlin Enterprise Chaos Engineering⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​‌‌‌‌​‍‌‌​​​‌‌‌‍​‌​‌​‌​​‍‌​​‌​​‌‌‍​​​​‌​‌​‍‌​‌‌​‌‌​⁠‍⁠

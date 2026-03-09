@@ -1,6 +1,7 @@
 ---
 name: stevens-network-protocols
 description: Understand network protocols in the style of W. Richard Stevens, author of TCP/IP Illustrated. Emphasizes deep protocol understanding through packet analysis, layered thinking, and knowing exactly what happens at every byte. Use when debugging network issues, implementing protocols, or building networked applications.
+tags: networking, tcp, udp, sockets, unix, protocols, ip, http, systems-programming, low-level
 ---
 
 # W. Richard Stevens Network Protocol Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​‌​​‌‌‍‌​‌‌​​​‌‍​‌‌‌‌​‌‌‍​​‌​‌‌‌‌‍​​​​‌​​‌‍‌‌​‌‌​​​⁠‍⁠

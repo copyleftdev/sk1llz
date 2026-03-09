@@ -1,6 +1,7 @@
 ---
 name: polya-how-to-solve-it
 description: Solve problems in the style of George Pólya, mathematician and author of "How to Solve It." Emphasizes structured heuristics, analogy, decomposition, and working backward from the goal. Use when stuck on algorithmic problems, debugging complex systems, or designing solutions that require systematic creative thinking.
+tags: heuristics, decomposition, analogy, working-backward, problem-solving, mathematical, strategy, systematic
 ---
 
 # George Pólya Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​‌‌‌​​​‌‍​​​​‌​​​‍‌‌​‌‌​‌‌‍​​​​‌‌​‌‍‌​​‌​​‌​‍‌​‌‌​​‌‌‍​​​​‌​​‌‍‌‌‌‌‌‌​‌⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: bach-exploratory-testing
 description: Test software in the style of James Bach, pioneer of exploratory testing and context-driven testing. Emphasizes skilled human investigation, heuristics-based test design, and adapting to context rather than following rigid scripts. Use when designing test strategies, performing exploratory testing, or building thinking testers.
+tags: exploratory-testing, test-design, heuristics, risk-based, session-based, manual-testing, quality, critical-thinking
 ---
 
 # James Bach Exploratory Testing Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​​​‌‌​‍​​​‌​​​​‍‌​‌‌​‌‌​‍​​‌‌​‌​‌‍​​​​‌​​‌‍‌‌‌​‌​‌‌⁠‍⁠

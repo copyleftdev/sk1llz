@@ -1,6 +1,7 @@
 ---
 name: hoare-rust-origins
 description: Write Rust code informed by Graydon Hoare's original vision for Rust. Emphasizes memory safety without GC, practical systems programming, and learning from C/C++ mistakes. Use when designing safe systems code or understanding Rust's fundamental choices.
+tags: ownership, borrowing, memory-safety, type-system, systems, compiler, safety, zero-cost-abstractions, performance
 ---
 
 # Graydon Hoare Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌​​‌​‌‍‌‌​​​​‌‌‍​​​​‌‌​‌‍‌​​‌‌​‌​‍​​​​‌​‌​‍​‌‌‌‌​​‌⁠‍⁠

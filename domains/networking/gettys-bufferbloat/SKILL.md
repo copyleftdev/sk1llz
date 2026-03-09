@@ -1,6 +1,7 @@
 ---
 name: gettys-bufferbloat
 description: Engineer low-latency networks in the style of Jim Gettys, discoverer of bufferbloat. Emphasizes understanding excessive buffering, queue management, latency under load, and the fq_codel solution. Use when diagnosing network latency issues, optimizing for real-time applications, or implementing queue management.
+tags: networking, latency, bufferbloat, tcp, congestion, aqm, queuing, real-time, bandwidth, packet-loss
 ---
 
 # Jim Gettys Bufferbloat Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​‌‌​‌‍​‌​‌​​‌​‍​​‌​​​​‌‍​​​​​‌​‌‍​​​​‌​​‌‍​‌​​‌‌‌‌⁠‍⁠

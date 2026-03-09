@@ -1,6 +1,7 @@
 ---
 name: matsakis-ownership-mastery
 description: Write Rust code in the style of Niko Matsakis, Rust language team lead. Emphasizes deep understanding of ownership, lifetimes, and the borrow checker. Use when working with complex lifetime scenarios or designing APIs that interact with the ownership system.
+tags: ownership, lifetimes, borrow-checker, type-system, generics, traits, async, compiler, language-design
 ---
 
 # Niko Matsakis Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​​‌‌​‌‍​​‌‌‌​‌​‍‌​‌‌‌‌‌​‍‌‌​‌‌‌‌‌‍​​​​‌​‌​‍​‌​​‌‌‌​⁠‍⁠

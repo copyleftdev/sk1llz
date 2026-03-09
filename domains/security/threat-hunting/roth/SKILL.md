@@ -1,6 +1,7 @@
 ---
 name: roth-detection-engineering
 description: Apply Florian Roth's detection engineering methodology with YARA and Sigma rules. Emphasizes portable detection logic, community sharing, and signature quality. Use when creating detection rules that work across platforms.
+tags: yara, sigma, detection-rules, malware, ioc, scanning, community, open-source, threat-detection
 ---
 
 # Florian Roth — Detection Engineering⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​‌‌‌​​‍​‌​‌​​‌​‍‌‌‌‌​‌​​‍​​‌​​‌‌​‍​​​​‌​‌​‍‌​‌‌​​‌​⁠‍⁠

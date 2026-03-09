@@ -1,6 +1,7 @@
 ---
 name: torvalds-kernel-pragmatism
 description: Write systems code in the style of Linus Torvalds, creator of Linux and Git. Emphasizes pragmatic excellence, performance awareness, subsystem design, and uncompromising code review. Use when writing kernel-level code or high-performance systems.
+tags: linux, kernel, git, systems, open-source, pragmatic, performance, drivers, scheduling, memory-management
 ---
 
 # Linus Torvalds Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌​‌‌‌‍​‌‌​​‌​‌‍‌​‌​​‌‌‌‍​‌‌​‌‌‌‌‍​​​​‌​‌​‍​‌​‌‌‌​​⁠‍⁠

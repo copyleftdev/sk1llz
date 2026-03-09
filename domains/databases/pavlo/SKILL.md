@@ -1,6 +1,7 @@
 ---
 name: pavlo-database-performance
 description: Optimize databases in the style of Andy Pavlo, CMU professor and database performance expert. Emphasizes understanding internals, benchmarking rigorously, and making informed architectural choices. Use when tuning query performance, designing storage engines, or evaluating database technologies.
+tags: databases, query-optimization, indexing, storage-engines, btree, lsm-tree, olap, oltp, benchmarking, sql
 ---
 
 # Andy Pavlo Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​‌‌‌​​‍‌​‌‌​​‌​‍‌​​​‌‌​‌‍​‌‌‌​​​​‍​​​​‌​‌​‍‌​‌‌​‌​‌⁠‍⁠

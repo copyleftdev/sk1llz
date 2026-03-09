@@ -1,6 +1,7 @@
 ---
 name: gray-transaction-systems
 description: Design data systems using Jim Gray's principles of transaction processing and fault tolerance. Emphasizes ACID properties, recovery mechanisms, and the science of making systems reliable. Use when building databases, payment systems, or any system where data integrity is paramount.
+tags: transactions, acid, recovery, fault-tolerance, two-phase-commit, databases, reliability, distributed, logging
 ---
 
 # Jim Gray Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​‌‌‌‌‌‍‌​​​‌​‌‌‍​​​​‌‌‌​‍‌​​‌​​​​‍​​​​‌​‌​‍​‌‌‌​​‌​⁠‍⁠

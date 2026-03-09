@@ -1,6 +1,7 @@
 ---
 name: feynman-first-principles
 description: Think and build in the style of Richard Feynman, Nobel laureate physicist and legendary problem solver. Emphasizes first-principles reasoning, playful exploration, ruthless simplification, and the Feynman Technique for deep understanding. Use when debugging impossible problems, designing from scratch, or when conventional wisdom has failed.
+tags: first-principles, reasoning, simplification, mental-models, physics, teaching, curiosity, debugging, fundamentals
 ---
 
 # Richard Feynman Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​‌‌‌​​​‌‍​​​​‌​​​‍​​​​​‌‌‌‍‌‌‌​​‌‌​‍‌‌‌​​‌‌‌‍‌​‌​‌​​‌‍​​​​‌​‌​‍​‌​​‌‌​‌⁠‍⁠

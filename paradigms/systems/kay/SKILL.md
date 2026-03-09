@@ -1,6 +1,7 @@
 ---
 name: kay-inventing-the-future
 description: Design and build software in the style of Alan Kay, inventor of object-oriented programming, Smalltalk, and the Dynabook concept. Emphasizes message-passing over method-calling, late binding, biological metaphors for system design, and building systems that can evolve. Use when designing extensible architectures, programming environments, or systems meant to outlast their creators.
+tags: oop, message-passing, smalltalk, late-binding, biological-metaphor, gui, xerox-parc, education, vision
 ---
 
 # Alan Kay Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​‌‌‌​​​‌‍​​​​‌​​​‍​​​​‌‌‌​‍‌​​‌​‌​‌‍‌‌‌‌​‌​‌‍‌​‌​​​‌‌‍​​​​‌​‌​‍​​​​‌​‌‌⁠‍⁠

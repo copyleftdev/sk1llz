@@ -1,6 +1,7 @@
 ---
 name: s2-geometry-spatial-indexing
 description: Index and query geospatial data using Google's S2 Geometry library. Emphasizes hierarchical cell decomposition, Hilbert curves for locality preservation, and efficient spatial operations on spherical geometry. Use when building location-based services, proximity search, geofencing, or any system that needs to efficiently query geographic data.
+tags: spatial-indexing, geospatial, s2, cells, regions, coordinates, geographic, mapping, location, queries
 ---
 
 # S2 Geometry Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​‌‌‌‌‍​​‌​​‌​‌‍​‌‌‌‌​​​‍​​​​​​‌​‍​​​​‌​​‌‍‌‌​‌‌​​​⁠‍⁠

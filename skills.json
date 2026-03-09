@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-03-09T07:04:47.162155+00:00",
+  "generated_at": "2026-03-09T09:25:22.582508+00:00",
   "repository": "https://github.com/copyleftdev/sk1llz",
   "raw_base_url": "https://raw.githubusercontent.com/copyleftdev/sk1llz/master",
   "skill_count": 101,
@@ -18,7 +18,17 @@
       "tags": [
         "domains",
         "api_design",
-        "fielding"
+        "fielding",
+        "rest",
+        "http",
+        "stateless",
+        "hateoas",
+        "caching",
+        "uniform_interface",
+        "web_api",
+        "resources",
+        "hypermedia",
+        "architecture"
       ]
     },
     {
@@ -34,7 +44,15 @@
       "tags": [
         "domains",
         "api_design",
-        "lane"
+        "lane",
+        "api",
+        "developer_experience",
+        "documentation",
+        "evangelism",
+        "sdk",
+        "onboarding",
+        "rest",
+        "community"
       ]
     },
     {
@@ -50,7 +68,17 @@
       "tags": [
         "domains",
         "api_design",
-        "mendez"
+        "mendez",
+        "async_api",
+        "event_driven",
+        "message_broker",
+        "pubsub",
+        "kafka",
+        "rabbitmq",
+        "websocket",
+        "streaming",
+        "microservices",
+        "mqtt"
       ]
     },
     {
@@ -66,7 +94,17 @@
       "tags": [
         "domains",
         "cli_design",
-        "hashimoto"
+        "hashimoto",
+        "cli",
+        "command_line",
+        "terminal",
+        "flags",
+        "help_text",
+        "output_formatting",
+        "progressive_disclosure",
+        "ux",
+        "tool",
+        "shell"
       ]
     },
     {
@@ -82,7 +120,15 @@
       "tags": [
         "domains",
         "databases",
-        "helland"
+        "helland",
+        "distributed",
+        "transactions",
+        "idempotency",
+        "scalability",
+        "partitioning",
+        "replication",
+        "eventual_consistency",
+        "microservices"
       ]
     },
     {
@@ -98,7 +144,16 @@
       "tags": [
         "domains",
         "databases",
-        "pavlo"
+        "pavlo",
+        "query_optimization",
+        "indexing",
+        "storage_engines",
+        "btree",
+        "lsm_tree",
+        "olap",
+        "oltp",
+        "benchmarking",
+        "sql"
       ]
     },
     {
@@ -114,7 +169,15 @@
       "tags": [
         "domains",
         "databases",
-        "stonebraker"
+        "stonebraker",
+        "relational",
+        "acid",
+        "transactions",
+        "query_processing",
+        "storage",
+        "schema_design",
+        "sql",
+        "distributed_db"
       ]
     },
     {
@@ -130,7 +193,16 @@
       "tags": [
         "domains",
         "geospatial",
-        "s2_geometry"
+        "s2_geometry",
+        "spatial_indexing",
+        "s2",
+        "cells",
+        "regions",
+        "coordinates",
+        "geographic",
+        "mapping",
+        "location",
+        "queries"
       ]
     },
     {
@@ -146,7 +218,16 @@
       "tags": [
         "domains",
         "networking",
-        "gettys_bufferbloat"
+        "gettys_bufferbloat",
+        "latency",
+        "bufferbloat",
+        "tcp",
+        "congestion",
+        "aqm",
+        "queuing",
+        "real_time",
+        "bandwidth",
+        "packet_loss"
       ]
     },
     {
@@ -162,7 +243,15 @@
       "tags": [
         "domains",
         "networking",
-        "jacobson"
+        "jacobson",
+        "performance",
+        "measurement",
+        "protocols",
+        "tcp",
+        "congestion",
+        "monitoring",
+        "throughput",
+        "latency"
       ]
     },
     {
@@ -178,7 +267,16 @@
       "tags": [
         "domains",
         "networking",
-        "stevens"
+        "stevens",
+        "tcp",
+        "udp",
+        "sockets",
+        "unix",
+        "protocols",
+        "ip",
+        "http",
+        "systems_programming",
+        "low_level"
       ]
     },
     {
@@ -194,7 +292,16 @@
       "tags": [
         "domains",
         "problem_solving",
-        "feynman"
+        "feynman",
+        "first_principles",
+        "reasoning",
+        "simplification",
+        "mental_models",
+        "physics",
+        "teaching",
+        "curiosity",
+        "debugging",
+        "fundamentals"
       ]
     },
     {
@@ -210,7 +317,14 @@
       "tags": [
         "domains",
         "problem_solving",
-        "polya"
+        "polya",
+        "heuristics",
+        "decomposition",
+        "analogy",
+        "working_backward",
+        "mathematical",
+        "strategy",
+        "systematic"
       ]
     },
     {
@@ -226,7 +340,16 @@
       "tags": [
         "domains",
         "search",
-        "google_search_architecture"
+        "google_search_architecture",
+        "indexing",
+        "ranking",
+        "crawling",
+        "information_retrieval",
+        "pagerank",
+        "distributed",
+        "scale",
+        "query",
+        "text"
       ]
     },
     {
@@ -243,7 +366,16 @@
         "domains",
         "security",
         "threat_hunting",
-        "bianco"
+        "bianco",
+        "threat_intelligence",
+        "indicators",
+        "detection",
+        "adversary",
+        "ioc",
+        "ttps",
+        "hunting",
+        "defense",
+        "attribution"
       ]
     },
     {
@@ -260,7 +392,17 @@
         "domains",
         "security",
         "threat_hunting",
-        "mitre_attack"
+        "mitre_attack",
+        "mitre",
+        "attack_framework",
+        "ttps",
+        "tactics",
+        "techniques",
+        "detection",
+        "adversary",
+        "threat_model",
+        "defense",
+        "coverage"
       ]
     },
     {
@@ -277,7 +419,15 @@
         "domains",
         "security",
         "threat_hunting",
-        "rodriguez"
+        "rodriguez",
+        "jupyter",
+        "analytics",
+        "detection",
+        "siem",
+        "log_analysis",
+        "sigma",
+        "endpoint",
+        "investigation"
       ]
     },
     {
@@ -294,7 +444,16 @@
         "domains",
         "security",
         "threat_hunting",
-        "roth"
+        "roth",
+        "yara",
+        "sigma",
+        "detection_rules",
+        "malware",
+        "ioc",
+        "scanning",
+        "community",
+        "open_source",
+        "threat_detection"
       ]
     },
     {
@@ -312,7 +471,17 @@
       "tags": [
         "domains",
         "systems_architecture",
-        "dean"
+        "dean",
+        "mapreduce",
+        "bigtable",
+        "spanner",
+        "distributed",
+        "scale",
+        "fault_tolerance",
+        "infrastructure",
+        "google",
+        "data_processing",
+        "parallel"
       ]
     },
     {
@@ -328,7 +497,16 @@
       "tags": [
         "domains",
         "systems_architecture",
-        "fowler"
+        "fowler",
+        "refactoring",
+        "code_smells",
+        "clean_code",
+        "design_patterns",
+        "legacy_code",
+        "incremental",
+        "testing",
+        "oop",
+        "architecture"
       ]
     },
     {
@@ -346,7 +524,16 @@
       "tags": [
         "domains",
         "systems_architecture",
-        "gray"
+        "gray",
+        "transactions",
+        "acid",
+        "recovery",
+        "fault_tolerance",
+        "two_phase_commit",
+        "databases",
+        "reliability",
+        "distributed",
+        "logging"
       ]
     },
     {
@@ -364,7 +551,15 @@
       "tags": [
         "domains",
         "systems_architecture",
-        "lamport"
+        "lamport",
+        "paxos",
+        "consensus",
+        "tla+",
+        "formal_verification",
+        "logical_clocks",
+        "state_machine_replication",
+        "byzantine",
+        "distributed_transactions"
       ]
     },
     {
@@ -382,7 +577,16 @@
       "tags": [
         "domains",
         "systems_architecture",
-        "lampson"
+        "lampson",
+        "system_design",
+        "abstraction",
+        "interfaces",
+        "security",
+        "hints",
+        "architecture",
+        "naming",
+        "performance",
+        "modularity"
       ]
     },
     {
@@ -400,7 +604,17 @@
       "tags": [
         "domains",
         "systems_architecture",
-        "vogels"
+        "vogels",
+        "cloud",
+        "aws",
+        "eventual_consistency",
+        "api",
+        "microservices",
+        "scalability",
+        "failure",
+        "distributed",
+        "serverless",
+        "dynamo"
       ]
     },
     {
@@ -416,7 +630,15 @@
       "tags": [
         "domains",
         "testing",
-        "bach"
+        "bach",
+        "exploratory_testing",
+        "test_design",
+        "heuristics",
+        "risk_based",
+        "session_based",
+        "manual_testing",
+        "quality",
+        "critical_thinking"
       ]
     },
     {
@@ -432,7 +654,16 @@
       "tags": [
         "domains",
         "testing",
-        "beck_tdd"
+        "beck_tdd",
+        "tdd",
+        "test_driven",
+        "red_green_refactor",
+        "unit_testing",
+        "design",
+        "refactoring",
+        "xp",
+        "agile",
+        "clean_code"
       ]
     },
     {
@@ -448,7 +679,15 @@
       "tags": [
         "domains",
         "testing",
-        "bolton_rst"
+        "bolton_rst",
+        "rapid_testing",
+        "context_driven",
+        "heuristics",
+        "oracles",
+        "risk_based",
+        "exploratory",
+        "skills",
+        "critical_thinking"
       ]
     },
     {
@@ -464,7 +703,13 @@
       "tags": [
         "domains",
         "testing",
-        "deterministic_simulation"
+        "deterministic_simulation",
+        "distributed",
+        "consensus",
+        "fault_injection",
+        "time_compression",
+        "correctness",
+        "reliability"
       ]
     },
     {
@@ -480,7 +725,14 @@
       "tags": [
         "domains",
         "testing",
-        "hypothesis"
+        "hypothesis",
+        "property_based_testing",
+        "python",
+        "generators",
+        "shrinking",
+        "fuzzing",
+        "automated_testing",
+        "strategies"
       ]
     },
     {
@@ -496,7 +748,13 @@
       "tags": [
         "domains",
         "testing",
-        "mutation_testing"
+        "mutation_testing",
+        "test_quality",
+        "fault_injection",
+        "test_effectiveness",
+        "coverage",
+        "test_generation",
+        "quality"
       ]
     },
     {
@@ -512,7 +770,16 @@
       "tags": [
         "domains",
         "testing",
-        "property_based"
+        "property_based",
+        "property_based_testing",
+        "quickcheck",
+        "generators",
+        "shrinking",
+        "invariants",
+        "fuzzing",
+        "random_testing",
+        "formal",
+        "specification"
       ]
     },
     {
@@ -528,7 +795,14 @@
       "tags": [
         "domains",
         "trading",
-        "mean_reversion"
+        "mean_reversion",
+        "statistical",
+        "quantitative",
+        "pairs_trading",
+        "finance",
+        "signals",
+        "backtesting",
+        "strategy"
       ]
     },
     {
@@ -544,7 +818,14 @@
       "tags": [
         "domains",
         "trading",
-        "swing_trading"
+        "swing_trading",
+        "momentum",
+        "technical_analysis",
+        "stocks",
+        "finance",
+        "trend_following",
+        "risk_management",
+        "screening"
       ]
     },
     {
@@ -560,7 +841,14 @@
       "tags": [
         "languages",
         "cpp",
-        "alexandrescu"
+        "alexandrescu",
+        "templates",
+        "metaprogramming",
+        "generic_programming",
+        "policy_design",
+        "smart_pointers",
+        "move_semantics",
+        "patterns"
       ]
     },
     {
@@ -577,7 +865,15 @@
       "tags": [
         "languages",
         "cpp",
-        "meyers"
+        "meyers",
+        "raii",
+        "smart_pointers",
+        "const",
+        "move_semantics",
+        "templates",
+        "exceptions",
+        "best_practices",
+        "resource_management"
       ]
     },
     {
@@ -593,7 +889,14 @@
       "tags": [
         "languages",
         "cpp",
-        "parent"
+        "parent",
+        "algorithms",
+        "data_structures",
+        "value_semantics",
+        "no_raw_loops",
+        "stl",
+        "generic_programming",
+        "clean_code"
       ]
     },
     {
@@ -609,7 +912,15 @@
       "tags": [
         "languages",
         "cpp",
-        "stepanov"
+        "stepanov",
+        "generic_programming",
+        "algorithms",
+        "iterators",
+        "concepts",
+        "stl",
+        "mathematical",
+        "abstraction",
+        "templates"
       ]
     },
     {
@@ -627,7 +938,16 @@
       "tags": [
         "languages",
         "cpp",
-        "stroustrup"
+        "stroustrup",
+        "oop",
+        "raii",
+        "type_safety",
+        "resource_management",
+        "templates",
+        "exceptions",
+        "language_design",
+        "performance",
+        "systems"
       ]
     },
     {
@@ -643,7 +963,15 @@
       "tags": [
         "languages",
         "cpp",
-        "sutter"
+        "sutter",
+        "concurrency",
+        "move_semantics",
+        "smart_pointers",
+        "const",
+        "exceptions",
+        "guidelines",
+        "modern",
+        "best_practices"
       ]
     },
     {
@@ -659,7 +987,16 @@
       "tags": [
         "languages",
         "go",
-        "cheney"
+        "cheney",
+        "error_handling",
+        "interfaces",
+        "composition",
+        "testing",
+        "performance",
+        "profiling",
+        "simplicity",
+        "practical",
+        "production"
       ]
     },
     {
@@ -675,7 +1012,15 @@
       "tags": [
         "languages",
         "go",
-        "cox"
+        "cox",
+        "tooling",
+        "modules",
+        "testing",
+        "build_systems",
+        "developer_experience",
+        "code_review",
+        "automation",
+        "standard_library"
       ]
     },
     {
@@ -691,7 +1036,14 @@
       "tags": [
         "languages",
         "go",
-        "griesemer"
+        "griesemer",
+        "generics",
+        "type_parameters",
+        "interfaces",
+        "compiler",
+        "language_design",
+        "type_system",
+        "constraints"
       ]
     },
     {
@@ -707,7 +1059,16 @@
       "tags": [
         "languages",
         "go",
-        "kennedy"
+        "kennedy",
+        "performance",
+        "data_oriented",
+        "cache",
+        "memory",
+        "profiling",
+        "benchmarking",
+        "goroutines",
+        "scheduler",
+        "hardware"
       ]
     },
     {
@@ -723,7 +1084,16 @@
       "tags": [
         "languages",
         "go",
-        "pike"
+        "pike",
+        "simplicity",
+        "concurrency",
+        "channels",
+        "goroutines",
+        "composition",
+        "unix",
+        "plan9",
+        "interfaces",
+        "communication"
       ]
     },
     {
@@ -739,7 +1109,19 @@
       "tags": [
         "languages",
         "go",
-        "thompson"
+        "thompson",
+        "unix",
+        "utf_8",
+        "grep",
+        "regex",
+        "plan9",
+        "systems",
+        "encoding",
+        "text_processing",
+        "simplicity",
+        "operating_system",
+        "shell",
+        "pipes"
       ]
     },
     {
@@ -755,7 +1137,17 @@
       "tags": [
         "languages",
         "javascript",
-        "abramov"
+        "abramov",
+        "react",
+        "components",
+        "state",
+        "hooks",
+        "rendering",
+        "virtual_dom",
+        "ui",
+        "frontend",
+        "mental_models",
+        "declarative"
       ]
     },
     {
@@ -771,7 +1163,17 @@
       "tags": [
         "languages",
         "javascript",
-        "crockford"
+        "crockford",
+        "closures",
+        "prototypes",
+        "objects",
+        "functions",
+        "scope",
+        "json",
+        "patterns",
+        "clean_code",
+        "browser",
+        "web"
       ]
     },
     {
@@ -787,7 +1189,15 @@
       "tags": [
         "languages",
         "javascript",
-        "dodds"
+        "dodds",
+        "testing",
+        "react",
+        "integration_testing",
+        "test_library",
+        "accessibility",
+        "best_practices",
+        "frontend",
+        "automation"
       ]
     },
     {
@@ -803,7 +1213,15 @@
       "tags": [
         "languages",
         "javascript",
-        "eich"
+        "eich",
+        "language_design",
+        "prototypes",
+        "closures",
+        "browser",
+        "web",
+        "ecmascript",
+        "dynamic",
+        "scripting"
       ]
     },
     {
@@ -819,7 +1237,17 @@
       "tags": [
         "languages",
         "javascript",
-        "osmani"
+        "osmani",
+        "design_patterns",
+        "performance",
+        "web",
+        "loading",
+        "caching",
+        "lazy_loading",
+        "bundling",
+        "optimization",
+        "frontend",
+        "browser"
       ]
     },
     {
@@ -835,7 +1263,17 @@
       "tags": [
         "languages",
         "javascript",
-        "simpson"
+        "simpson",
+        "scope",
+        "closures",
+        "this",
+        "prototypes",
+        "async",
+        "promises",
+        "generators",
+        "coercion",
+        "types",
+        "deep_understanding"
       ]
     },
     {
@@ -851,7 +1289,16 @@
       "tags": [
         "languages",
         "python",
-        "beazley"
+        "beazley",
+        "generators",
+        "coroutines",
+        "metaprogramming",
+        "decorators",
+        "async",
+        "concurrency",
+        "internals",
+        "advanced",
+        "performance"
       ]
     },
     {
@@ -867,7 +1314,16 @@
       "tags": [
         "languages",
         "python",
-        "hettinger"
+        "hettinger",
+        "itertools",
+        "collections",
+        "decorators",
+        "idioms",
+        "readability",
+        "functional",
+        "generators",
+        "clean_code",
+        "pythonic"
       ]
     },
     {
@@ -883,7 +1339,16 @@
       "tags": [
         "languages",
         "python",
-        "ramalho"
+        "ramalho",
+        "data_model",
+        "protocols",
+        "type_hints",
+        "iterators",
+        "generators",
+        "descriptors",
+        "metaprogramming",
+        "advanced",
+        "idioms"
       ]
     },
     {
@@ -899,7 +1364,15 @@
       "tags": [
         "languages",
         "python",
-        "reitz"
+        "reitz",
+        "api_design",
+        "requests",
+        "http",
+        "packaging",
+        "simplicity",
+        "developer_experience",
+        "library_design",
+        "pythonic"
       ]
     },
     {
@@ -915,7 +1388,17 @@
       "tags": [
         "languages",
         "python",
-        "ronacher"
+        "ronacher",
+        "flask",
+        "web",
+        "wsgi",
+        "templating",
+        "api",
+        "middleware",
+        "pragmatic",
+        "library_design",
+        "click",
+        "cli"
       ]
     },
     {
@@ -931,7 +1414,16 @@
       "tags": [
         "languages",
         "python",
-        "vanrossum"
+        "vanrossum",
+        "zen",
+        "readability",
+        "simplicity",
+        "pep8",
+        "language_design",
+        "clean_code",
+        "standard_library",
+        "idioms",
+        "beginner_friendly"
       ]
     },
     {
@@ -947,7 +1439,19 @@
       "tags": [
         "languages",
         "rust",
-        "bos"
+        "bos",
+        "concurrency",
+        "atomics",
+        "locks",
+        "threads",
+        "parallel",
+        "memory_model",
+        "mutex",
+        "sync",
+        "async",
+        "low_level",
+        "systems",
+        "performance"
       ]
     },
     {
@@ -963,7 +1467,16 @@
       "tags": [
         "languages",
         "rust",
-        "hoare"
+        "hoare",
+        "ownership",
+        "borrowing",
+        "memory_safety",
+        "type_system",
+        "systems",
+        "compiler",
+        "safety",
+        "zero_cost_abstractions",
+        "performance"
       ]
     },
     {
@@ -979,7 +1492,17 @@
       "tags": [
         "languages",
         "rust",
-        "klabnik"
+        "klabnik",
+        "documentation",
+        "learning",
+        "idioms",
+        "traits",
+        "generics",
+        "error_handling",
+        "cargo",
+        "crates",
+        "beginner_friendly",
+        "practical"
       ]
     },
     {
@@ -997,7 +1520,20 @@
       "tags": [
         "languages",
         "rust",
-        "levien"
+        "levien",
+        "gui",
+        "native_ui",
+        "rendering",
+        "gpu",
+        "graphics",
+        "2d",
+        "vector",
+        "canvas",
+        "widget",
+        "reactive",
+        "layout",
+        "vello",
+        "druid"
       ]
     },
     {
@@ -1013,7 +1549,16 @@
       "tags": [
         "languages",
         "rust",
-        "matsakis"
+        "matsakis",
+        "ownership",
+        "lifetimes",
+        "borrow_checker",
+        "type_system",
+        "generics",
+        "traits",
+        "async",
+        "compiler",
+        "language_design"
       ]
     },
     {
@@ -1029,7 +1574,16 @@
       "tags": [
         "languages",
         "rust",
-        "nichols"
+        "nichols",
+        "idioms",
+        "practical",
+        "error_handling",
+        "testing",
+        "documentation",
+        "crates",
+        "community",
+        "beginner_friendly",
+        "patterns"
       ]
     },
     {
@@ -1045,7 +1599,16 @@
       "tags": [
         "languages",
         "rust",
-        "turon"
+        "turon",
+        "api_design",
+        "async",
+        "futures",
+        "ecosystem",
+        "library_design",
+        "traits",
+        "concurrency",
+        "ergonomics",
+        "public_api"
       ]
     },
     {
@@ -1061,7 +1624,14 @@
       "tags": [
         "languages",
         "zig",
-        "cro"
+        "cro",
+        "comptime",
+        "allocators",
+        "safety",
+        "systems",
+        "build_system",
+        "cross_compilation",
+        "simplicity"
       ]
     },
     {
@@ -1077,7 +1647,15 @@
       "tags": [
         "languages",
         "zig",
-        "kelley"
+        "kelley",
+        "comptime",
+        "allocators",
+        "manual_memory",
+        "simplicity",
+        "explicit",
+        "no_hidden_control_flow",
+        "systems",
+        "safety"
       ]
     },
     {
@@ -1092,7 +1670,15 @@
       ],
       "tags": [
         "organizations",
-        "aqr"
+        "aqr",
+        "quantitative",
+        "factor_investing",
+        "risk_management",
+        "portfolio",
+        "backtesting",
+        "finance",
+        "statistics",
+        "hedge_fund"
       ]
     },
     {
@@ -1107,7 +1693,17 @@
       ],
       "tags": [
         "organizations",
-        "citadel"
+        "citadel",
+        "trading",
+        "low_latency",
+        "market_making",
+        "hft",
+        "fpga",
+        "networking",
+        "systems",
+        "performance",
+        "finance",
+        "real_time"
       ]
     },
     {
@@ -1122,7 +1718,19 @@
       ],
       "tags": [
         "organizations",
-        "cloudflare"
+        "cloudflare",
+        "cdn",
+        "networking",
+        "performance",
+        "edge_computing",
+        "dns",
+        "http",
+        "tls",
+        "security",
+        "proxy",
+        "scale",
+        "systems",
+        "rust"
       ]
     },
     {
@@ -1137,7 +1745,15 @@
       ],
       "tags": [
         "organizations",
-        "de_shaw"
+        "de_shaw",
+        "trading",
+        "computational_finance",
+        "quantitative",
+        "simulation",
+        "risk_management",
+        "hpc",
+        "finance",
+        "algorithms"
       ]
     },
     {
@@ -1153,7 +1769,16 @@
       "tags": [
         "organizations",
         "google",
-        "continuous_fuzzing"
+        "continuous_fuzzing",
+        "fuzzing",
+        "oss_fuzz",
+        "coverage_guided",
+        "sanitizers",
+        "security",
+        "testing",
+        "crash",
+        "vulnerability",
+        "automated"
       ]
     },
     {
@@ -1169,7 +1794,17 @@
       "tags": [
         "organizations",
         "google",
-        "material_design"
+        "material_design",
+        "ui",
+        "ux",
+        "design_system",
+        "components",
+        "animation",
+        "accessibility",
+        "responsive",
+        "mobile",
+        "web",
+        "visual"
       ]
     },
     {
@@ -1185,7 +1820,16 @@
       "tags": [
         "organizations",
         "google",
-        "sre"
+        "sre",
+        "reliability",
+        "monitoring",
+        "slo",
+        "error_budget",
+        "incident_response",
+        "toil",
+        "automation",
+        "observability",
+        "on_call"
       ]
     },
     {
@@ -1201,7 +1845,15 @@
       "tags": [
         "organizations",
         "gremlin",
-        "enterprise_chaos"
+        "enterprise_chaos",
+        "chaos_engineering",
+        "fault_injection",
+        "resilience",
+        "gameday",
+        "blast_radius",
+        "reliability",
+        "failure_modes",
+        "testing"
       ]
     },
     {
@@ -1216,7 +1868,18 @@
       ],
       "tags": [
         "organizations",
-        "hashicorp"
+        "hashicorp",
+        "infrastructure",
+        "terraform",
+        "vault",
+        "consul",
+        "nomad",
+        "iac",
+        "devops",
+        "automation",
+        "workflows",
+        "cloud",
+        "deployment"
       ]
     },
     {
@@ -1231,7 +1894,16 @@
       ],
       "tags": [
         "organizations",
-        "jane_street"
+        "jane_street",
+        "ocaml",
+        "functional",
+        "trading",
+        "market_making",
+        "finance",
+        "type_safety",
+        "correctness",
+        "low_latency",
+        "quantitative"
       ]
     },
     {
@@ -1246,7 +1918,17 @@
       ],
       "tags": [
         "organizations",
-        "jump_trading"
+        "jump_trading",
+        "fpga",
+        "hft",
+        "low_latency",
+        "trading",
+        "hardware",
+        "networking",
+        "market_making",
+        "colocation",
+        "systems",
+        "real_time"
       ]
     },
     {
@@ -1262,7 +1944,15 @@
       "tags": [
         "organizations",
         "netflix",
-        "chaos_engineering"
+        "chaos_engineering",
+        "resilience",
+        "fault_tolerance",
+        "microservices",
+        "distributed",
+        "failure",
+        "testing",
+        "reliability",
+        "cloud"
       ]
     },
     {
@@ -1277,7 +1967,15 @@
       ],
       "tags": [
         "organizations",
-        "renaissance"
+        "renaissance",
+        "statistical_arbitrage",
+        "quantitative",
+        "machine_learning",
+        "finance",
+        "signals",
+        "backtesting",
+        "hedge_fund",
+        "data"
       ]
     },
     {
@@ -1292,7 +1990,16 @@
       ],
       "tags": [
         "organizations",
-        "two_sigma"
+        "two_sigma",
+        "machine_learning",
+        "data_science",
+        "scale",
+        "pipelines",
+        "finance",
+        "quantitative",
+        "modeling",
+        "infrastructure",
+        "ml_ops"
       ]
     },
     {
@@ -1307,7 +2014,17 @@
       ],
       "tags": [
         "organizations",
-        "uunet"
+        "uunet",
+        "networking",
+        "infrastructure",
+        "bgp",
+        "peering",
+        "isp",
+        "routing",
+        "scale",
+        "backbone",
+        "internet",
+        "operations"
       ]
     },
     {
@@ -1322,7 +2039,15 @@
       ],
       "tags": [
         "organizations",
-        "virtu"
+        "virtu",
+        "market_microstructure",
+        "electronic_trading",
+        "order_book",
+        "execution",
+        "hft",
+        "finance",
+        "latency",
+        "market_making"
       ]
     },
     {
@@ -1338,7 +2063,16 @@
       "tags": [
         "paradigms",
         "distributed",
-        "dean"
+        "dean",
+        "mapreduce",
+        "bigtable",
+        "spanner",
+        "scale",
+        "fault_tolerance",
+        "infrastructure",
+        "google",
+        "data_processing",
+        "parallel"
       ]
     },
     {
@@ -1354,7 +2088,18 @@
       "tags": [
         "paradigms",
         "distributed",
-        "kleppmann"
+        "kleppmann",
+        "crdt",
+        "replication",
+        "streaming",
+        "consistency",
+        "event_sourcing",
+        "databases",
+        "partitioning",
+        "consensus",
+        "data_pipelines",
+        "real_time",
+        "collaborative"
       ]
     },
     {
@@ -1370,7 +2115,15 @@
       "tags": [
         "paradigms",
         "distributed",
-        "lamport"
+        "lamport",
+        "paxos",
+        "consensus",
+        "tla+",
+        "formal_verification",
+        "logical_clocks",
+        "state_machine_replication",
+        "byzantine",
+        "distributed_transactions"
       ]
     },
     {
@@ -1386,7 +2139,16 @@
       "tags": [
         "paradigms",
         "functional",
-        "graham"
+        "graham",
+        "lisp",
+        "macros",
+        "bottom_up",
+        "brevity",
+        "abstraction",
+        "startups",
+        "essays",
+        "language_design",
+        "metaprogramming"
       ]
     },
     {
@@ -1402,7 +2164,15 @@
       "tags": [
         "paradigms",
         "functional",
-        "hickey"
+        "hickey",
+        "simplicity",
+        "immutability",
+        "data_oriented",
+        "values",
+        "state_management",
+        "composition",
+        "clojure",
+        "decoupling"
       ]
     },
     {
@@ -1418,7 +2188,16 @@
       "tags": [
         "paradigms",
         "functional",
-        "peyton_jones"
+        "peyton_jones",
+        "haskell",
+        "monads",
+        "type_classes",
+        "lazy_evaluation",
+        "purity",
+        "ghc",
+        "compiler",
+        "type_system",
+        "academic"
       ]
     },
     {
@@ -1434,7 +2213,14 @@
       "tags": [
         "paradigms",
         "functional",
-        "wadler"
+        "wadler",
+        "monads",
+        "type_theory",
+        "propositions_as_types",
+        "lambda_calculus",
+        "category_theory",
+        "haskell",
+        "formal"
       ]
     },
     {
@@ -1450,7 +2236,16 @@
       "tags": [
         "paradigms",
         "systems",
-        "bellard"
+        "bellard",
+        "emulators",
+        "compilers",
+        "minimal_code",
+        "qemu",
+        "ffmpeg",
+        "tinycc",
+        "virtualization",
+        "performance",
+        "low_level"
       ]
     },
     {
@@ -1466,7 +2261,16 @@
       "tags": [
         "paradigms",
         "systems",
-        "blow"
+        "blow",
+        "game_engine",
+        "compiler",
+        "language_design",
+        "performance",
+        "jai",
+        "game_dev",
+        "rendering",
+        "real_time",
+        "iteration"
       ]
     },
     {
@@ -1482,7 +2286,17 @@
       "tags": [
         "paradigms",
         "systems",
-        "click"
+        "click",
+        "jit",
+        "jvm",
+        "hotspot",
+        "optimization",
+        "compiler",
+        "garbage_collection",
+        "escape_analysis",
+        "inlining",
+        "performance",
+        "sea_of_nodes"
       ]
     },
     {
@@ -1498,7 +2312,17 @@
       "tags": [
         "paradigms",
         "systems",
-        "hejlsberg"
+        "hejlsberg",
+        "typescript",
+        "language_design",
+        "type_system",
+        "c#",
+        "turbo_pascal",
+        "delphi",
+        "generics",
+        "ide",
+        "tooling",
+        "developer_experience"
       ]
     },
     {
@@ -1514,7 +2338,16 @@
       "tags": [
         "paradigms",
         "systems",
-        "kay"
+        "kay",
+        "oop",
+        "message_passing",
+        "smalltalk",
+        "late_binding",
+        "biological_metaphor",
+        "gui",
+        "xerox_parc",
+        "education",
+        "vision"
       ]
     },
     {
@@ -1530,7 +2363,17 @@
       "tags": [
         "paradigms",
         "systems",
-        "lattner"
+        "lattner",
+        "llvm",
+        "clang",
+        "swift",
+        "mlir",
+        "compiler",
+        "ir",
+        "optimization",
+        "toolchain",
+        "language_design",
+        "code_generation"
       ]
     },
     {
@@ -1546,7 +2389,16 @@
       "tags": [
         "paradigms",
         "systems",
-        "muratori"
+        "muratori",
+        "performance",
+        "profiling",
+        "cache",
+        "simd",
+        "optimization",
+        "hardware_sympathy",
+        "benchmarking",
+        "low_level",
+        "data_oriented"
       ]
     },
     {
@@ -1562,7 +2414,16 @@
       "tags": [
         "paradigms",
         "systems",
-        "pall"
+        "pall",
+        "jit",
+        "luajit",
+        "trace_compilation",
+        "interpreter",
+        "bytecode",
+        "optimization",
+        "dynamic_languages",
+        "performance",
+        "low_level"
       ]
     },
     {
@@ -1578,7 +2439,17 @@
       "tags": [
         "paradigms",
         "systems",
-        "ritchie"
+        "ritchie",
+        "c",
+        "unix",
+        "systems_programming",
+        "pointers",
+        "memory",
+        "standard_library",
+        "portable",
+        "low_level",
+        "kernel",
+        "operating_system"
       ]
     },
     {
@@ -1594,7 +2465,18 @@
       "tags": [
         "paradigms",
         "systems",
-        "thompson"
+        "thompson",
+        "unix",
+        "utf_8",
+        "grep",
+        "regex",
+        "plan9",
+        "encoding",
+        "text_processing",
+        "simplicity",
+        "operating_system",
+        "shell",
+        "pipes"
       ]
     },
     {
@@ -1610,7 +2492,16 @@
       "tags": [
         "paradigms",
         "systems",
-        "torvalds"
+        "torvalds",
+        "linux",
+        "kernel",
+        "git",
+        "open_source",
+        "pragmatic",
+        "performance",
+        "drivers",
+        "scheduling",
+        "memory_management"
       ]
     },
     {
@@ -1626,7 +2517,15 @@
       "tags": [
         "specialists",
         "security",
-        "forensics_team"
+        "forensics_team",
+        "forensics",
+        "network_analysis",
+        "incident_response",
+        "pcap",
+        "malware_analysis",
+        "memory_forensics",
+        "disk_forensics",
+        "investigation"
       ]
     }
   ]

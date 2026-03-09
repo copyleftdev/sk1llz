@@ -1,6 +1,7 @@
 ---
 name: lane-api-evangelist
 description: Design APIs using Kin Lane's "API Evangelist" philosophy. Emphasizes Design-First (OpenAPI), governance, treating APIs as products, and the political/business impact of interfaces. Use when building public platforms or large-scale internal ecosystems.
+tags: api, developer-experience, documentation, evangelism, sdk, onboarding, api-design, rest, community
 ---
 
 # Kin Lane Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​‌‌​‌​‍‌​‌​​‌​​‍​​​‌‌​​​‍​​​​​‌‌‌‍​​​​‌​​‌‍​‌​​​‌‌‌⁠‍⁠

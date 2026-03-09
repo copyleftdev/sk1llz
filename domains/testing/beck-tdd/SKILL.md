@@ -1,6 +1,7 @@
 ---
 name: beck-test-driven-development
 description: Develop software in the style of Kent Beck, creator of Test-Driven Development and Extreme Programming. Emphasizes red-green-refactor, tests-first design, small steps, and emergent architecture. Use when writing new features, refactoring legacy code, or establishing development discipline.
+tags: tdd, test-driven, red-green-refactor, unit-testing, design, refactoring, xp, agile, clean-code
 ---
 
 # Kent Beck Test-Driven Development Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌​‌‌​‌‍‌‌​​​​‌​‍​​​‌​‌‌‌‍​​​​​​‌​‍​​​​‌​​‌‍​‌‌‌​​‌​⁠‍⁠

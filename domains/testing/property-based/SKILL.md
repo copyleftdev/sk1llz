@@ -1,6 +1,7 @@
 ---
 name: hughes-property-based-testing
 description: Test software in the style of John Hughes, inventor of QuickCheck and property-based testing. Emphasizes specifying properties that should hold for all inputs, generating random test cases, and shrinking failures to minimal examples. Use when testing algorithms, data structures, parsers, serializers, or any code with clear invariants.
+tags: property-based-testing, quickcheck, generators, shrinking, invariants, fuzzing, random-testing, formal, specification
 ---
 
 # John Hughes Property-Based Testing Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌‌‌‌‌‍​‌​​​‌‌‌‍‌‌‌‌​​‌‌‍​‌‌​‌​​‌‍​​​​‌​‌​‍‌​​​‌‌​​⁠‍⁠

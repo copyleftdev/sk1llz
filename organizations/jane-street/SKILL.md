@@ -1,6 +1,7 @@
 ---
 name: jane-street-functional-trading
 description: Build trading systems in the style of Jane Street, the elite market maker known for functional programming and intellectual rigor. Emphasizes OCaml, correctness by construction, real-time systems, and principled risk management. Use when building market making systems, pricing engines, or mission-critical financial software.
+tags: ocaml, functional, trading, market-making, finance, type-safety, correctness, low-latency, quantitative
 ---
 
 # Jane Street Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌‌‌‌​‍​​‌‌​‌‌‌‍‌‌‌‌‌‌​​‍‌​‌‌​​‌‌‍​​​​‌​‌​‍‌‌​​‌‌‌​⁠‍⁠

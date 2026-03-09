@@ -1,6 +1,7 @@
 ---
 name: cloudflare-performance-engineering
 description: Engineer high-performance network systems in the style of Cloudflare's performance team. Emphasizes kernel bypass (XDP/eBPF), edge computing with V8 isolates, Rust for systems programming, smart routing, and measuring everything. Use when building globally distributed systems, DDoS mitigation, CDN infrastructure, or any system where every millisecond matters at massive scale.
+tags: cdn, networking, performance, edge-computing, dns, http, tls, security, proxy, scale, systems, rust
 ---
 
 # Cloudflare Performance Engineering Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​​​​‌‍‌‌‌‌‌​‌​‍‌​‌‌‌​​‌‍‌​‌‌​‌‌​‍​​​​‌​‌‌‍‌​‌‌​‌​​⁠‍⁠

@@ -1,6 +1,7 @@
 ---
 name: renaissance-statistical-arbitrage
 description: Build trading systems in the style of Renaissance Technologies, the most successful quantitative hedge fund in history. Emphasizes statistical arbitrage, signal processing, and rigorous scientific methodology. Use when developing alpha research, signal extraction, or systematic trading strategies.
+tags: statistical-arbitrage, quantitative, machine-learning, finance, signals, backtesting, hedge-fund, data
 ---
 
 # Renaissance Technologies Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌‌​​‌‍​‌​‌​​​‌‍‌​‌‌​‌​​‍‌​​‌‌​‌‌‍​​​​‌​‌​‍‌‌​​​​‌‌⁠‍⁠

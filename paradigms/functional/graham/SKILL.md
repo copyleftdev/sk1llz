@@ -1,6 +1,7 @@
 ---
 name: graham-hackers-painters
 description: Write code in the style of Paul Graham, essayist, Lisp advocate, and co-founder of Y Combinator. Emphasizes bottom-up programming, expressive power, rapid prototyping, and treating code as a creative medium. Use when building exploratory software, designing DSLs, or writing Lisp that should be as dense and powerful as prose.
+tags: lisp, macros, bottom-up, brevity, abstraction, startups, essays, language-design, metaprogramming
 ---
 
 # Paul Graham Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​‌‌​‌‌‌‌‍​‌‌‌​​​​‍​​​​‌‌‌​‍‌​​‌​‌​‌‍‌‌‌‌​‌​‌‍‌​‌​​​‌‌‍​​​​‌​‌​‍​‌‌‌​​​‌⁠‍⁠

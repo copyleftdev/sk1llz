@@ -1,6 +1,7 @@
 ---
 name: levien-native-ui-mastery
 description: Build native UIs in the style of Raph Levien, architect of Druid, Xilem, and Vello. Emphasizes declarative reactive architecture, synchronized tree transformations, GPU-accelerated rendering, and idiomatic Rust patterns. Use when designing responsive, beautiful native UIs or 2D graphics systems.
+tags: gui, native-ui, rendering, gpu, graphics, 2d, vector, canvas, widget, reactive, layout, vello, druid
 ---
 
 # Raph Levien Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​​​​‌​‍‌‌​​‌‌​​‍‌‌‌‌‌​‌​‍​‌‌‌‌‌‌‌‍​​​​‌​‌​‍‌​‌‌​​​‌⁠‍⁠

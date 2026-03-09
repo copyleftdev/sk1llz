@@ -1,6 +1,7 @@
 ---
 name: turon-api-design
 description: Write Rust code in the style of Aaron Turon, former Rust team lead. Emphasizes API design, async Rust, and ecosystem architecture. Use when designing public APIs, async systems, or library interfaces.
+tags: api-design, async, futures, ecosystem, library-design, traits, concurrency, ergonomics, public-api
 ---
 
 # Aaron Turon Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌‌‌‌‌‍​‌​​​​​​‍‌​​‌​‌‌‌‍​‌‌‌​‌‌‌‍​​​​‌​‌​‍​‌‌‌​‌‌‌⁠‍⁠

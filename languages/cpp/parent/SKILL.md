@@ -1,6 +1,7 @@
 ---
 name: parent-no-raw-loops
 description: Write C++ code following Sean Parent's "No Raw Loops" philosophy. Emphasizes algorithm-based thinking, composition over iteration, and treating code as mathematical reasoning. Use when refactoring or writing new C++ to maximize clarity and correctness.
+tags: algorithms, data-structures, value-semantics, no-raw-loops, stl, generic-programming, clean-code
 ---
 
 # Sean Parent Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌‌‌​‌‌‍‌‌​​​‌​​‍​​​​‌‌​​‍​‌‌​​​​‌‍​​​​‌​‌​‍‌​​‌​‌‌​⁠‍⁠

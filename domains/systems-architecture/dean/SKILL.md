@@ -1,6 +1,7 @@
 ---
 name: dean-large-scale-systems
 description: Design large-scale systems using Jeff Dean's pragmatic approach. Emphasizes performance intuition, building reliable systems from unreliable components, and solving problems at Google scale. Use when building infrastructure that must handle millions of QPS, petabytes of data, or global distribution.
+tags: mapreduce, bigtable, spanner, distributed, scale, fault-tolerance, infrastructure, google, data-processing, parallel
 ---
 
 # Jeff Dean Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌‌‌‌​‍​‌‌‌‌​‌​‍​​​‌‌‌​‌‍‌‌‌‌‌​​​‍​​​​‌​‌​‍‌​‌‌​‌‌‌⁠‍⁠

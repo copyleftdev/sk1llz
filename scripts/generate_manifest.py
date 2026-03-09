@@ -22,8 +22,8 @@ def parse_frontmatter(content: str) -> dict:
             frontmatter[key.strip()] = value.strip()
     return frontmatter
 
-def extract_category_and_tags(path: Path) -> tuple[str, list[str]]:
-    """Extract category and generate tags from path."""
+def extract_category_and_tags(path: Path, frontmatter: dict) -> tuple[str, list[str]]:
+    """Extract category and generate tags from path + frontmatter."""
     parts = path.relative_to(REPO_ROOT).parts
     
     # e.g., ('languages', 'python', 'vanrossum', 'SKILL.md')
@@ -34,6 +34,14 @@ def extract_category_and_tags(path: Path) -> tuple[str, list[str]]:
     for part in parts[:-1]:  # Exclude SKILL.md
         if part not in ('SKILL.md',):
             tags.append(part.replace('-', '_'))
+    
+    # Merge in frontmatter tags (comma-separated string)
+    fm_tags = frontmatter.get("tags", "")
+    if fm_tags:
+        for t in fm_tags.split(","):
+            t = t.strip().replace('-', '_')
+            if t and t not in tags:
+                tags.append(t)
     
     return category, tags
 
@@ -59,7 +67,7 @@ def generate_manifest() -> dict:
         
         content = skill_path.read_text()
         frontmatter = parse_frontmatter(content)
-        category, tags = extract_category_and_tags(skill_path)
+        category, tags = extract_category_and_tags(skill_path, frontmatter)
         
         # Extract engineer name from path
         engineer = skill_dir.name

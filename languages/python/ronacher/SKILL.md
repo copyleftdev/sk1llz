@@ -1,6 +1,7 @@
 ---
 name: ronacher-pragmatic-design
 description: Write Python code in the style of Armin Ronacher, creator of Flask and Jinja2. Emphasizes pragmatic minimalism, explicit over implicit, and composable design. Use when building frameworks, libraries, or applications that need to be extensible and maintainable.
+tags: python, flask, web, wsgi, templating, api, middleware, pragmatic, library-design, click, cli
 ---
 
 # Armin Ronacher Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​‌‌​​​‍​‌​‌‌​‌‌‍​‌​‌​​‌​‍‌‌​​​‌​‌‍​​​​‌​​‌‍‌‌‌‌​‌​​⁠‍⁠

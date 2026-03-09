@@ -1,6 +1,7 @@
 ---
 name: stroustrup-cpp-style
 description: Write C++ code in the style of Bjarne Stroustrup, creator of C++. Emphasizes type safety, resource management via RAII, zero-overhead abstractions, and direct hardware mapping. Use when designing C++ systems, APIs, or when clarity and efficiency must coexist.
+tags: oop, raii, type-safety, resource-management, templates, exceptions, language-design, performance, systems
 ---
 
 # Bjarne Stroustrup Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​‌‌​​‍​​​‌‌‌‌‌‍​‌‌​​​‌‌‍​‌​​​​‌​‍​​​​‌​​‌‍‌​​‌‌​‌​⁠‍⁠

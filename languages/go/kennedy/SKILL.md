@@ -1,6 +1,7 @@
 ---
 name: kennedy-mechanical-sympathy
 description: Write Go code in the style of Bill Kennedy, author of Go in Action. Emphasizes mechanical sympathy, data-oriented design, and understanding how Go code executes. Use when writing performance-critical Go or when teaching Go fundamentals.
+tags: performance, data-oriented, cache, memory, profiling, benchmarking, goroutines, scheduler, hardware
 ---
 
 # Bill Kennedy Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌​​​​‍​​‌‌​‌​​‍​‌‌​​‌‌‌‍‌​​‌​‌‌‌‍​​​​‌​‌​‍​​​​‌‌​​⁠‍⁠

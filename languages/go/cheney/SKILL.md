@@ -1,6 +1,7 @@
 ---
 name: cheney-practical-go
 description: Write Go code in the style of Dave Cheney, Go community leader. Emphasizes practical patterns, clear error handling, and performance awareness. Use when writing production Go that needs to be maintainable and performant.
+tags: error-handling, interfaces, composition, testing, performance, profiling, simplicity, practical, production
 ---
 
 # Dave Cheney Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌‌​‌​‍​​​‌‌​​​‍​​‌‌​‌‌‌‍‌​​​‌​‌‌‍​​​​‌​​‌‍‌​​‌‌‌‌​⁠‍⁠

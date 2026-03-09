@@ -1,6 +1,7 @@
 ---
 name: mendez-async-api
 description: Design event-driven architectures using Fran Méndez's "AsyncAPI" philosophy. Emphasizes Event-First design, treating message contracts with the same rigor as REST (AsyncAPI spec), and decoupling producers from consumers. Use when building message buses, IoT networks, or microservices that communicate asynchronously.
+tags: async-api, event-driven, message-broker, pubsub, kafka, rabbitmq, websocket, streaming, microservices, mqtt
 ---
 
 # Fran Méndez Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌​‌​‌‌‍‌‌‌​‌‌​‌‍‌‌​‌​‌​‌‍‌‌​‌‌​‌​‍​​​​‌​‌‌‍​​‌‌​​​‌⁠‍⁠

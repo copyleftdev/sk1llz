@@ -1,6 +1,7 @@
 ---
 name: dean-large-scale-systems
 description: Design distributed systems in the style of Jeff Dean, Google Senior Fellow behind MapReduce, BigTable, Spanner, and TensorFlow. Emphasizes practical large-scale system design, performance optimization, and building infrastructure that serves billions. Use when designing systems that must scale massively.
+tags: mapreduce, bigtable, spanner, distributed, scale, fault-tolerance, infrastructure, google, data-processing, parallel
 ---
 
 # Jeff Dean Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​‌​​​​‍​‌‌‌‌‌​‌‍​​‌‌‌​​‌‍‌‌​‌​‌‌‌‍​​​​‌​‌​‍‌‌​​​‌‌‌⁠‍⁠

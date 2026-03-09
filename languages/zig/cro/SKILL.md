@@ -1,6 +1,7 @@
 ---
 name: cro-practical-zig
 description: Write Zig code in the style of Loris Cro, VP Community at Zig Software Foundation. Emphasizes practical patterns, build system mastery, and teaching Zig effectively. Use when building real applications or learning Zig idioms.
+tags: zig, comptime, allocators, safety, systems, build-system, cross-compilation, simplicity
 ---
 
 # Loris Cro Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​​‌​‌‍‌‌​‌‌‌​​‍‌‌​​​​‌​‍‌​​​​‌​‌‍​​​​‌​‌​‍‌‌​‌​​‌​⁠‍⁠

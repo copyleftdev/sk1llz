@@ -1,6 +1,7 @@
 ---
 name: rodriguez-threat-hunter-playbook
 description: Apply Roberto Rodriguez's threat hunting methodology with the Threat Hunter Playbook and HELK. Emphasizes documented hunts, open source infrastructure, and data-driven hunting. Use when building hunting programs or developing hunt playbooks.
+tags: threat-hunting, jupyter, analytics, detection, siem, log-analysis, sigma, endpoint, investigation
 ---
 
 # Roberto Rodriguez — Threat Hunter Playbook⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌​​‌‌​‍​‌​​‌​‌‌‍‌​​‌‌‌​‌‍‌‌‌​​​​‌‍​​​​‌​‌​‍​‌​‌‌​​‌⁠‍⁠

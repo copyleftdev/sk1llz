@@ -1,6 +1,7 @@
 ---
 name: lamport-distributed-systems
 description: Design distributed systems using Leslie Lamport's rigorous approach. Emphasizes formal reasoning, logical time, consensus protocols, and state machine replication. Use when building systems where correctness under concurrency and partial failure is critical.
+tags: paxos, consensus, tla+, formal-verification, logical-clocks, state-machine-replication, byzantine, distributed-transactions
 ---
 
 # Leslie Lamport Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌‌​​‌‌‍‌​‌‌​​​‌‍‌‌‌​‌‌‌​‍​​‌​​​​​‍​​​​‌​‌​‍​‌​‌‌‌​​⁠‍⁠

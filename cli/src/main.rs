@@ -1207,6 +1207,149 @@ fn expand_synonyms(token: &str) -> Vec<String> {
             "index",
             &["search", "lookup", "query", "structure", "tree", "hash"],
         ),
+        // Compound terms (after normalize_compounds)
+        (
+            "realtime",
+            &[
+                "streaming",
+                "low_latency",
+                "websocket",
+                "event_driven",
+                "sync",
+                "interactive",
+            ],
+        ),
+        (
+            "websocket",
+            &[
+                "realtime",
+                "streaming",
+                "sync",
+                "event_driven",
+                "networking",
+                "collaborative",
+            ],
+        ),
+        (
+            "crdt",
+            &[
+                "replication",
+                "consistency",
+                "collaborative",
+                "distributed",
+                "conflict",
+                "sync",
+                "convergent",
+            ],
+        ),
+        (
+            "collaborative",
+            &[
+                "crdt",
+                "sync",
+                "multiuser",
+                "realtime",
+                "sharing",
+                "distributed",
+            ],
+        ),
+        (
+            "canvas",
+            &[
+                "rendering",
+                "graphics",
+                "drawing",
+                "ui",
+                "gpu",
+                "2d",
+                "vector",
+            ],
+        ),
+        (
+            "whiteboard",
+            &[
+                "canvas",
+                "drawing",
+                "collaborative",
+                "ui",
+                "interactive",
+                "realtime",
+            ],
+        ),
+        (
+            "lowlatency",
+            &[
+                "performance",
+                "fast",
+                "networking",
+                "optimization",
+                "realtime",
+            ],
+        ),
+        (
+            "highperformance",
+            &["performance", "fast", "optimization", "scale", "efficient"],
+        ),
+        (
+            "eventdriven",
+            &[
+                "async",
+                "streaming",
+                "pubsub",
+                "message",
+                "reactive",
+                "websocket",
+            ],
+        ),
+        (
+            "machinelearning",
+            &[
+                "neural",
+                "training",
+                "model",
+                "inference",
+                "data",
+                "ai",
+                "deep",
+            ],
+        ),
+        (
+            "typescript",
+            &["javascript", "types", "web", "frontend", "node"],
+        ),
+        (
+            "react",
+            &[
+                "components",
+                "ui",
+                "frontend",
+                "hooks",
+                "virtual_dom",
+                "state",
+                "declarative",
+            ],
+        ),
+        (
+            "docker",
+            &[
+                "container",
+                "kubernetes",
+                "deploy",
+                "infrastructure",
+                "devops",
+            ],
+        ),
+        (
+            "kubernetes",
+            &[
+                "container",
+                "orchestration",
+                "deploy",
+                "cloud",
+                "infrastructure",
+                "scaling",
+            ],
+        ),
     ];
 
     let stemmed = stem(token);
@@ -1323,10 +1466,50 @@ fn detect_domain_concepts(tokens: &[String]) -> Vec<String> {
     bonus_tokens
 }
 
+/// Normalize compound terms before tokenization
+fn normalize_compounds(text: &str) -> String {
+    let compounds: &[(&str, &str)] = &[
+        ("real-time", "realtime"),
+        ("real time", "realtime"),
+        ("low-latency", "lowlatency"),
+        ("low latency", "lowlatency"),
+        ("high-performance", "highperformance"),
+        ("high performance", "highperformance"),
+        ("web socket", "websocket"),
+        ("web-socket", "websocket"),
+        ("type script", "typescript"),
+        ("type-script", "typescript"),
+        ("java script", "javascript"),
+        ("java-script", "javascript"),
+        ("event-driven", "eventdriven"),
+        ("event driven", "eventdriven"),
+        ("message-passing", "messagepassing"),
+        ("message passing", "messagepassing"),
+        ("lock-free", "lockfree"),
+        ("lock free", "lockfree"),
+        ("zero-copy", "zerocopy"),
+        ("zero copy", "zerocopy"),
+        ("multi-user", "multiuser"),
+        ("multi user", "multiuser"),
+        ("open-source", "opensource"),
+        ("open source", "opensource"),
+        ("machine-learning", "machinelearning"),
+        ("machine learning", "machinelearning"),
+        ("deep-learning", "deeplearning"),
+        ("deep learning", "deeplearning"),
+    ];
+
+    let mut result = text.to_lowercase();
+    for &(pattern, replacement) in compounds {
+        result = result.replace(pattern, replacement);
+    }
+    result
+}
+
 /// Core tokenizer: split, lowercase, filter stop words, add stems
 fn tokenize(text: &str) -> Vec<String> {
-    let raw: Vec<String> = text
-        .to_lowercase()
+    let normalized = normalize_compounds(text);
+    let raw: Vec<String> = normalized
         .split(|c: char| !c.is_alphanumeric() && c != '+' && c != '#')
         .filter(|w| w.len() > 1)
         .filter(|w| !STOP_WORDS.contains(w))
@@ -1346,8 +1529,8 @@ fn tokenize(text: &str) -> Vec<String> {
 
 /// Expanded tokens: synonyms + domain concepts (lower-signal, used for secondary scoring)
 fn tokenize_expanded(text: &str) -> Vec<String> {
-    let raw: Vec<String> = text
-        .to_lowercase()
+    let normalized = normalize_compounds(text);
+    let raw: Vec<String> = normalized
         .split(|c: char| !c.is_alphanumeric() && c != '+' && c != '#')
         .filter(|w| w.len() > 1)
         .filter(|w| !STOP_WORDS.contains(w))
@@ -1601,12 +1784,30 @@ fn select_diverse_team(
     apply_language_affinity(&mut adjusted_scores, manifest, &query_languages);
 
     let top_score = adjusted_scores[0].1;
-    // Relevance floor: must be at least 30% of top score to be considered
-    let floor = top_score * 0.30;
-    let candidates: Vec<(usize, f64)> = adjusted_scores
-        .into_iter()
+    // Adaptive relevance floor: start at 30%, relax down to 10% if too few candidates
+    let min_team = max_size.min(4);
+    let mut floor = top_score * 0.30;
+    let mut candidates: Vec<(usize, f64)> = adjusted_scores
+        .iter()
         .filter(|(_, s)| *s >= floor)
+        .copied()
         .collect();
+    if candidates.len() < min_team {
+        floor = top_score * 0.15;
+        candidates = adjusted_scores
+            .iter()
+            .filter(|(_, s)| *s >= floor)
+            .copied()
+            .collect();
+    }
+    if candidates.len() < min_team {
+        floor = top_score * 0.10;
+        candidates = adjusted_scores
+            .iter()
+            .filter(|(_, s)| *s >= floor)
+            .copied()
+            .collect();
+    }
 
     let mut selected: Vec<(usize, f64)> = Vec::new();
     let mut categories_covered: std::collections::HashSet<String> =

@@ -1,6 +1,7 @@
 ---
 name: muratori-performance-aware
 description: Write performance-aware code in the style of Casey Muratori, creator of Handmade Hero and performance optimization educator. Emphasizes understanding what the hardware actually does, rejecting unnecessary abstraction, and measuring everything. Use when writing performance-critical code or when you need to understand what's really happening on the machine.
+tags: performance, profiling, cache, simd, optimization, hardware-sympathy, benchmarking, low-level, data-oriented, systems
 ---
 
 # Casey Muratori Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​​‌​​‍​‌‌‌​‌‌​‍‌​​​​‌​​‍​‌​‌​​‌‌‍​​​​‌​‌​‍​​​‌‌​‌‌⁠‍⁠

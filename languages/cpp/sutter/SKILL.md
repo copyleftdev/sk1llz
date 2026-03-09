@@ -1,6 +1,7 @@
 ---
 name: sutter-exceptional-cpp
 description: Write C++ code following Herb Sutter's exceptional C++ principles. Emphasizes exception safety, const correctness, modern idioms, and defensive programming. Use when writing robust, production-quality C++ that must handle errors gracefully.
+tags: concurrency, move-semantics, smart-pointers, const, exceptions, guidelines, modern, best-practices
 ---
 
 # Herb Sutter Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​​‌​‌‍​​‌​‌‌​​‍‌‌​‌‌‌​‌‍​‌‌‌​‌​‌‍​​​​‌​‌​‍‌​‌​‌‌​‌⁠‍⁠
