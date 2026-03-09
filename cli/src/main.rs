@@ -6,9 +6,10 @@ use fuzzy_matcher::skim::SkimMatcherV2;
 use fuzzy_matcher::FuzzyMatcher;
 use indicatif::{ProgressBar, ProgressStyle};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::fs;
 use std::io::{self, Write};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::time::SystemTime;
 
 fn get_manifest_url() -> String {
@@ -100,6 +101,59 @@ enum Commands {
         /// Shell type
         #[arg(value_enum)]
         shell: Shell,
+    },
+    /// Assemble the perfect team of skills for a project
+    #[command(subcommand)]
+    Team(TeamCommand),
+}
+
+#[derive(Subcommand)]
+enum TeamCommand {
+    /// Use AI to assemble the ideal skill team for a project description
+    Assemble {
+        /// Project description (what you're building)
+        description: String,
+        /// Automatically install the recommended skills
+        #[arg(long)]
+        install: bool,
+        /// Install skills globally
+        #[arg(short, long)]
+        global: bool,
+    },
+    /// Analyze the current project and recommend skills
+    Analyze {
+        /// Path to analyze (defaults to current directory)
+        #[arg(default_value = ".")]
+        path: PathBuf,
+        /// Automatically install the recommended skills
+        #[arg(long)]
+        install: bool,
+        /// Install skills globally
+        #[arg(short, long)]
+        global: bool,
+    },
+    /// Save currently installed skills as a reusable team
+    Save {
+        /// Team name
+        name: String,
+        /// Description of the team
+        #[arg(short, long)]
+        description: Option<String>,
+    },
+    /// List saved teams
+    List,
+    /// Install all skills from a saved team
+    Install {
+        /// Team name
+        name: String,
+        /// Install skills globally
+        #[arg(short, long)]
+        global: bool,
+    },
+    /// Show details of a saved team
+    Show {
+        /// Team name
+        name: String,
     },
 }
 
@@ -781,6 +835,739 @@ fn cmd_completions(shell: Shell) -> Result<()> {
     Ok(())
 }
 
+// ─── Team Types ────────────────────────────────────────────────────────────
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+struct TeamSpec {
+    name: String,
+    description: String,
+    skills: Vec<TeamMember>,
+    created_at: String,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+struct TeamMember {
+    skill_id: String,
+    role: String,
+    rationale: String,
+}
+
+#[derive(Debug, Deserialize)]
+struct LlmTeamResponse {
+    team_name: String,
+    summary: String,
+    members: Vec<LlmTeamMember>,
+}
+
+#[derive(Debug, Deserialize)]
+struct LlmTeamMember {
+    skill_id: String,
+    role: String,
+    rationale: String,
+}
+
+// ─── LLM Integration ──────────────────────────────────────────────────────
+
+fn get_anthropic_key() -> Option<String> {
+    std::env::var("ANTHROPIC_API_KEY").ok()
+}
+
+fn get_openai_key() -> Option<String> {
+    std::env::var("OPENAI_API_KEY").ok()
+}
+
+fn build_skill_catalog(manifest: &Manifest) -> String {
+    let mut catalog = String::new();
+    for skill in &manifest.skills {
+        let sub = skill
+            .subcategory
+            .as_deref()
+            .map(|s| format!("/{}", s))
+            .unwrap_or_default();
+        catalog.push_str(&format!(
+            "- id: {} | category: {}{} | {}\n",
+            skill.id, skill.category, sub, skill.description
+        ));
+    }
+    catalog
+}
+
+fn build_team_prompt(description: &str, catalog: &str) -> String {
+    format!(
+        r#"You are an elite engineering team architect. Given a project description, select the PERFECT team of coding skills from the catalog below.
+
+PROJECT:
+{description}
+
+AVAILABLE SKILLS:
+{catalog}
+
+Select 3-8 skills that form the ideal team for this project. For each skill, explain:
+1. Their specific role on this project
+2. Why they are essential (not just nice-to-have)
+
+Think like you're assembling an Avengers-level engineering team. Every member must earn their spot.
+
+Respond with ONLY valid JSON in this exact format (no markdown, no code fences):
+{{
+  "team_name": "short epic team name",
+  "summary": "one sentence describing this team's combined superpower",
+  "members": [
+    {{
+      "skill_id": "exact-skill-id-from-catalog",
+      "role": "their role on this project (e.g. 'Systems Architect', 'Performance Lead')",
+      "rationale": "why this skill is essential for this specific project"
+    }}
+  ]
+}}"#
+    )
+}
+
+fn build_analyze_prompt(analysis: &str, catalog: &str) -> String {
+    format!(
+        r#"You are an elite engineering team architect. I've analyzed a codebase and found the following characteristics. Recommend the perfect team of coding skills.
+
+PROJECT ANALYSIS:
+{analysis}
+
+AVAILABLE SKILLS:
+{catalog}
+
+Select 3-8 skills that would most benefit this codebase. Prioritize skills that match:
+1. The languages and frameworks detected
+2. The architectural patterns observed
+3. Gaps where expert guidance would elevate the code quality
+
+Respond with ONLY valid JSON in this exact format (no markdown, no code fences):
+{{
+  "team_name": "short epic team name",
+  "summary": "one sentence describing this team's combined superpower",
+  "members": [
+    {{
+      "skill_id": "exact-skill-id-from-catalog",
+      "role": "their role on this project",
+      "rationale": "why this skill benefits this specific codebase"
+    }}
+  ]
+}}"#
+    )
+}
+
+fn call_anthropic(prompt: &str) -> Result<String> {
+    let api_key = get_anthropic_key().context(
+        "ANTHROPIC_API_KEY not set. Set it with:\n  export ANTHROPIC_API_KEY=sk-ant-...\n\nOr set OPENAI_API_KEY for OpenAI.",
+    )?;
+
+    let body = serde_json::json!({
+        "model": "claude-sonnet-4-20250514",
+        "max_tokens": 2048,
+        "messages": [{
+            "role": "user",
+            "content": prompt
+        }]
+    });
+
+    let client = reqwest::blocking::Client::new();
+    let response = client
+        .post("https://api.anthropic.com/v1/messages")
+        .header("x-api-key", &api_key)
+        .header("anthropic-version", "2023-06-01")
+        .header("content-type", "application/json")
+        .json(&body)
+        .send()
+        .context("Failed to call Anthropic API")?;
+
+    if !response.status().is_success() {
+        let status = response.status();
+        let text = response.text().unwrap_or_default();
+        anyhow::bail!("Anthropic API error ({}): {}", status, text);
+    }
+
+    let resp: serde_json::Value = response.json()?;
+    let text = resp["content"][0]["text"]
+        .as_str()
+        .context("Unexpected Anthropic response format")?;
+
+    Ok(text.to_string())
+}
+
+fn call_openai(prompt: &str) -> Result<String> {
+    let api_key = get_openai_key().context("OPENAI_API_KEY not set")?;
+
+    let body = serde_json::json!({
+        "model": "gpt-4o",
+        "messages": [{
+            "role": "user",
+            "content": prompt
+        }],
+        "max_tokens": 2048
+    });
+
+    let client = reqwest::blocking::Client::new();
+    let response = client
+        .post("https://api.openai.com/v1/chat/completions")
+        .header("Authorization", format!("Bearer {}", api_key))
+        .header("Content-Type", "application/json")
+        .json(&body)
+        .send()
+        .context("Failed to call OpenAI API")?;
+
+    if !response.status().is_success() {
+        let status = response.status();
+        let text = response.text().unwrap_or_default();
+        anyhow::bail!("OpenAI API error ({}): {}", status, text);
+    }
+
+    let resp: serde_json::Value = response.json()?;
+    let text = resp["choices"][0]["message"]["content"]
+        .as_str()
+        .context("Unexpected OpenAI response format")?;
+
+    Ok(text.to_string())
+}
+
+fn call_llm(prompt: &str) -> Result<String> {
+    if get_anthropic_key().is_some() {
+        call_anthropic(prompt)
+    } else if get_openai_key().is_some() {
+        call_openai(prompt)
+    } else {
+        anyhow::bail!(
+            "No AI API key found. Set one of:\n  \
+             export ANTHROPIC_API_KEY=sk-ant-...\n  \
+             export OPENAI_API_KEY=sk-..."
+        )
+    }
+}
+
+fn parse_llm_team(raw: &str) -> Result<LlmTeamResponse> {
+    // Strip potential markdown code fences
+    let cleaned = raw
+        .trim()
+        .trim_start_matches("```json")
+        .trim_start_matches("```")
+        .trim_end_matches("```")
+        .trim();
+
+    serde_json::from_str(cleaned).context("Failed to parse AI team recommendation as JSON")
+}
+
+// ─── Project Analysis ─────────────────────────────────────────────────────
+
+fn analyze_project(path: &Path) -> Result<String> {
+    let mut ext_counts: HashMap<String, usize> = HashMap::new();
+    let mut total_files = 0usize;
+    let mut config_files: Vec<String> = Vec::new();
+    let mut frameworks: Vec<String> = Vec::new();
+
+    let known_configs = [
+        ("Cargo.toml", "Rust"),
+        ("go.mod", "Go"),
+        ("package.json", "Node.js/JavaScript"),
+        ("tsconfig.json", "TypeScript"),
+        ("pyproject.toml", "Python"),
+        ("requirements.txt", "Python"),
+        ("Gemfile", "Ruby"),
+        ("pom.xml", "Java/Maven"),
+        ("build.gradle", "Java/Gradle"),
+        ("CMakeLists.txt", "C/C++ CMake"),
+        ("Makefile", "Make"),
+        ("docker-compose.yml", "Docker"),
+        ("Dockerfile", "Docker"),
+        (".github/workflows", "GitHub Actions CI"),
+        ("terraform", "Terraform/IaC"),
+        ("k8s", "Kubernetes"),
+        ("helm", "Helm"),
+    ];
+
+    // Walk directory (max depth 4 to avoid huge repos)
+    fn walk(dir: &Path, depth: u8, ext_counts: &mut HashMap<String, usize>, total: &mut usize) {
+        if depth > 4 {
+            return;
+        }
+        let entries = match fs::read_dir(dir) {
+            Ok(e) => e,
+            Err(_) => return,
+        };
+        for entry in entries.flatten() {
+            let path = entry.path();
+            let name = entry.file_name().to_string_lossy().to_string();
+            // Skip hidden dirs, node_modules, target, vendor
+            if name.starts_with('.')
+                || name == "node_modules"
+                || name == "target"
+                || name == "vendor"
+                || name == "__pycache__"
+            {
+                continue;
+            }
+            if path.is_dir() {
+                walk(&path, depth + 1, ext_counts, total);
+            } else if path.is_file() {
+                *total += 1;
+                if let Some(ext) = path.extension() {
+                    *ext_counts
+                        .entry(ext.to_string_lossy().to_string())
+                        .or_insert(0) += 1;
+                }
+            }
+        }
+    }
+
+    walk(path, 0, &mut ext_counts, &mut total_files);
+
+    // Detect config files and frameworks
+    for (config, framework) in &known_configs {
+        if path.join(config).exists() {
+            config_files.push(config.to_string());
+            if !frameworks.contains(&framework.to_string()) {
+                frameworks.push(framework.to_string());
+            }
+        }
+    }
+
+    // Sort extensions by count
+    let mut ext_sorted: Vec<_> = ext_counts.into_iter().collect();
+    ext_sorted.sort_by(|a, b| b.1.cmp(&a.1));
+
+    let mut analysis = String::new();
+    analysis.push_str(&format!("Total files: {}\n", total_files));
+    analysis.push_str(&format!("Frameworks detected: {}\n", frameworks.join(", ")));
+    analysis.push_str(&format!("Config files: {}\n", config_files.join(", ")));
+    analysis.push_str("File extensions (by count):\n");
+    for (ext, count) in ext_sorted.iter().take(15) {
+        analysis.push_str(&format!("  .{}: {}\n", ext, count));
+    }
+
+    Ok(analysis)
+}
+
+// ─── Team Commands ────────────────────────────────────────────────────────
+
+fn get_teams_dir() -> Result<PathBuf> {
+    let dir = get_cache_dir()?.join("teams");
+    fs::create_dir_all(&dir)?;
+    Ok(dir)
+}
+
+fn cmd_team_assemble(description: &str, auto_install: bool, global: bool) -> Result<()> {
+    let manifest = load_manifest()?;
+    let catalog = build_skill_catalog(&manifest);
+    let prompt = build_team_prompt(description, &catalog);
+
+    let pb = ProgressBar::new_spinner();
+    pb.set_style(
+        ProgressStyle::default_spinner()
+            .template("{spinner:.cyan} {msg}")
+            .unwrap(),
+    );
+    pb.set_message("Consulting the AI oracle...");
+    pb.enable_steady_tick(std::time::Duration::from_millis(80));
+
+    let raw = call_llm(&prompt)?;
+    pb.finish_and_clear();
+
+    let team = parse_llm_team(&raw)?;
+
+    // Validate skill IDs against manifest
+    let valid_ids: Vec<String> = manifest.skills.iter().map(|s| s.id.clone()).collect();
+
+    println!("\n{}", "━".repeat(60).cyan());
+    println!(
+        "  {} {}",
+        "⚡".bold(),
+        team.team_name.bold().cyan().underline()
+    );
+    println!("  {}", team.summary.dimmed());
+    println!("{}\n", "━".repeat(60).cyan());
+
+    let mut installable: Vec<String> = Vec::new();
+
+    for (i, member) in team.members.iter().enumerate() {
+        let exists = valid_ids.contains(&member.skill_id);
+        let status = if exists {
+            installable.push(member.skill_id.clone());
+            "✓".green().bold()
+        } else {
+            "?".yellow().bold()
+        };
+
+        println!(
+            "  {} {} {}",
+            status,
+            format!("{}.", i + 1).dimmed(),
+            member.skill_id.bold().green()
+        );
+        println!("    {} {}", "Role:".bold(), member.role);
+        println!("    {} {}", "Why:".bold(), member.rationale.dimmed());
+        println!();
+    }
+
+    println!(
+        "{} {} skills recommended, {} available to install\n",
+        "Summary:".bold(),
+        team.members.len().to_string().cyan(),
+        installable.len().to_string().green()
+    );
+
+    if auto_install && !installable.is_empty() {
+        println!("{}", "Installing team...".bold().cyan());
+        for skill_id in &installable {
+            if let Some(skill) = manifest.skills.iter().find(|s| s.id == *skill_id) {
+                match cmd_install(&skill.name, None, global) {
+                    Ok(()) => {}
+                    Err(e) => eprintln!("  {} {}: {}", "ERR".red().bold(), skill_id, e),
+                }
+            }
+        }
+        println!(
+            "\n{} Team {} assembled and installed!",
+            "✓".green().bold(),
+            team.team_name.cyan()
+        );
+    } else if !installable.is_empty() {
+        println!("{} Install this team with:", "Hint:".blue().bold());
+        for id in &installable {
+            println!("  {}", format!("sk1llz install {}", id).cyan());
+        }
+        println!("\n  Or re-run with {} to auto-install.", "--install".cyan());
+    }
+
+    Ok(())
+}
+
+fn cmd_team_analyze(path: &Path, auto_install: bool, global: bool) -> Result<()> {
+    let pb = ProgressBar::new_spinner();
+    pb.set_style(
+        ProgressStyle::default_spinner()
+            .template("{spinner:.cyan} {msg}")
+            .unwrap(),
+    );
+    pb.set_message("Scanning project...");
+    pb.enable_steady_tick(std::time::Duration::from_millis(80));
+
+    let analysis = analyze_project(path)?;
+    pb.set_message("Project scanned. Consulting the AI oracle...");
+
+    let manifest = load_manifest()?;
+    let catalog = build_skill_catalog(&manifest);
+    let prompt = build_analyze_prompt(&analysis, &catalog);
+
+    let raw = call_llm(&prompt)?;
+    pb.finish_and_clear();
+
+    println!("\n{}", "Project Analysis".bold().cyan());
+    println!("{}", "─".repeat(40).dimmed());
+    for line in analysis.lines() {
+        println!("  {}", line.dimmed());
+    }
+    println!();
+
+    let team = parse_llm_team(&raw)?;
+
+    let valid_ids: Vec<String> = manifest.skills.iter().map(|s| s.id.clone()).collect();
+
+    println!("{}", "━".repeat(60).cyan());
+    println!(
+        "  {} {}",
+        "⚡".bold(),
+        team.team_name.bold().cyan().underline()
+    );
+    println!("  {}", team.summary.dimmed());
+    println!("{}\n", "━".repeat(60).cyan());
+
+    let mut installable: Vec<String> = Vec::new();
+
+    for (i, member) in team.members.iter().enumerate() {
+        let exists = valid_ids.contains(&member.skill_id);
+        let status = if exists {
+            installable.push(member.skill_id.clone());
+            "✓".green().bold()
+        } else {
+            "?".yellow().bold()
+        };
+
+        println!(
+            "  {} {} {}",
+            status,
+            format!("{}.", i + 1).dimmed(),
+            member.skill_id.bold().green()
+        );
+        println!("    {} {}", "Role:".bold(), member.role);
+        println!("    {} {}", "Why:".bold(), member.rationale.dimmed());
+        println!();
+    }
+
+    println!(
+        "{} {} skills recommended, {} available to install\n",
+        "Summary:".bold(),
+        team.members.len().to_string().cyan(),
+        installable.len().to_string().green()
+    );
+
+    if auto_install && !installable.is_empty() {
+        println!("{}", "Installing team...".bold().cyan());
+        for skill_id in &installable {
+            if let Some(skill) = manifest.skills.iter().find(|s| s.id == *skill_id) {
+                match cmd_install(&skill.name, None, global) {
+                    Ok(()) => {}
+                    Err(e) => eprintln!("  {} {}: {}", "ERR".red().bold(), skill_id, e),
+                }
+            }
+        }
+        println!(
+            "\n{} Team {} assembled and installed!",
+            "✓".green().bold(),
+            team.team_name.cyan()
+        );
+    } else if !installable.is_empty() {
+        println!("{} Install this team with:", "Hint:".blue().bold());
+        for id in &installable {
+            println!("  {}", format!("sk1llz install {}", id).cyan());
+        }
+        println!("\n  Or re-run with {} to auto-install.", "--install".cyan());
+    }
+
+    Ok(())
+}
+
+fn cmd_team_save(name: &str, description: Option<String>) -> Result<()> {
+    let (local, global) = get_skill_locations();
+    let mut skills_found: Vec<String> = Vec::new();
+
+    // Collect installed skills from both locations
+    for dir in [local.as_ref(), Some(&global)].into_iter().flatten() {
+        if dir.exists() {
+            if let Ok(entries) = fs::read_dir(dir) {
+                for entry in entries.flatten() {
+                    if entry.path().is_dir() {
+                        let name = entry.file_name().to_string_lossy().to_string();
+                        if name != ".gitkeep" && !skills_found.contains(&name) {
+                            skills_found.push(name);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if skills_found.is_empty() {
+        println!(
+            "{} No installed skills found. Install some first with {}",
+            "Error:".red().bold(),
+            "sk1llz install <skill>".cyan()
+        );
+        return Ok(());
+    }
+
+    let team = TeamSpec {
+        name: name.to_string(),
+        description: description.unwrap_or_else(|| format!("Team: {}", name)),
+        skills: skills_found
+            .iter()
+            .map(|s| TeamMember {
+                skill_id: s.clone(),
+                role: "team member".to_string(),
+                rationale: "installed skill".to_string(),
+            })
+            .collect(),
+        created_at: chrono_free_now(),
+    };
+
+    let teams_dir = get_teams_dir()?;
+    let file = teams_dir.join(format!("{}.json", name));
+    let json = serde_json::to_string_pretty(&team)?;
+    fs::write(&file, json)?;
+
+    println!(
+        "\n{} Saved team '{}' with {} skills to {}",
+        "✓".green().bold(),
+        name.cyan(),
+        team.skills.len().to_string().green(),
+        file.display().to_string().dimmed()
+    );
+
+    for member in &team.skills {
+        println!("  {} {}", "•".green(), member.skill_id);
+    }
+
+    Ok(())
+}
+
+fn cmd_team_list() -> Result<()> {
+    let teams_dir = get_teams_dir()?;
+    let mut teams: Vec<TeamSpec> = Vec::new();
+
+    if let Ok(entries) = fs::read_dir(&teams_dir) {
+        for entry in entries.flatten() {
+            if entry
+                .path()
+                .extension()
+                .map(|e| e == "json")
+                .unwrap_or(false)
+            {
+                if let Ok(content) = fs::read_to_string(entry.path()) {
+                    if let Ok(team) = serde_json::from_str::<TeamSpec>(&content) {
+                        teams.push(team);
+                    }
+                }
+            }
+        }
+    }
+
+    if teams.is_empty() {
+        println!("{}", "No saved teams found.".yellow());
+        println!("\n{} Create one with:", "Hint:".blue().bold());
+        println!(
+            "  {}",
+            "sk1llz team assemble \"project description\"".cyan()
+        );
+        println!("  {}", "sk1llz team save my-team".cyan());
+        return Ok(());
+    }
+
+    println!("\n{}", "Saved Teams".bold().cyan());
+    println!("{}", "─".repeat(40).dimmed());
+
+    for team in &teams {
+        println!(
+            "\n  {} {} {}",
+            "⚡".bold(),
+            team.name.bold().green(),
+            format!("({} skills)", team.skills.len()).dimmed()
+        );
+        println!("    {}", team.description.dimmed());
+    }
+
+    println!(
+        "\n{} View details with {}",
+        "Hint:".blue().bold(),
+        "sk1llz team show <name>".cyan()
+    );
+
+    Ok(())
+}
+
+fn cmd_team_show(name: &str) -> Result<()> {
+    let teams_dir = get_teams_dir()?;
+    let file = teams_dir.join(format!("{}.json", name));
+
+    if !file.exists() {
+        println!(
+            "{} Team '{}' not found.",
+            "Error:".red().bold(),
+            name.yellow()
+        );
+        println!(
+            "{} Use {} to see saved teams.",
+            "Hint:".blue().bold(),
+            "sk1llz team list".cyan()
+        );
+        return Ok(());
+    }
+
+    let content = fs::read_to_string(&file)?;
+    let team: TeamSpec = serde_json::from_str(&content)?;
+
+    println!("\n{}", "━".repeat(60).cyan());
+    println!("  {} {}", "⚡".bold(), team.name.bold().cyan().underline());
+    println!("  {}", team.description.dimmed());
+    println!("  {}", format!("Created: {}", team.created_at).dimmed());
+    println!("{}\n", "━".repeat(60).cyan());
+
+    for (i, member) in team.skills.iter().enumerate() {
+        println!(
+            "  {} {} {}",
+            "✓".green().bold(),
+            format!("{}.", i + 1).dimmed(),
+            member.skill_id.bold().green()
+        );
+        if member.role != "team member" {
+            println!("    {} {}", "Role:".bold(), member.role);
+        }
+        if member.rationale != "installed skill" {
+            println!("    {} {}", "Why:".bold(), member.rationale.dimmed());
+        }
+    }
+
+    println!(
+        "\n{} Install with: {}",
+        "Hint:".blue().bold(),
+        format!("sk1llz team install {}", name).cyan()
+    );
+
+    Ok(())
+}
+
+fn cmd_team_install(name: &str, global: bool) -> Result<()> {
+    let teams_dir = get_teams_dir()?;
+    let file = teams_dir.join(format!("{}.json", name));
+
+    if !file.exists() {
+        println!(
+            "{} Team '{}' not found.",
+            "Error:".red().bold(),
+            name.yellow()
+        );
+        return Ok(());
+    }
+
+    let content = fs::read_to_string(&file)?;
+    let team: TeamSpec = serde_json::from_str(&content)?;
+    let manifest = load_manifest()?;
+
+    println!(
+        "\n{} Installing team '{}' ({} skills)...\n",
+        "⚡".bold(),
+        team.name.cyan(),
+        team.skills.len()
+    );
+
+    let mut installed = 0;
+    let mut skipped = 0;
+
+    for member in &team.skills {
+        if let Some(skill) = manifest
+            .skills
+            .iter()
+            .find(|s| s.id == member.skill_id || s.name == member.skill_id)
+        {
+            match cmd_install(&skill.name, None, global) {
+                Ok(()) => installed += 1,
+                Err(e) => {
+                    eprintln!("  {} {}: {}", "ERR".red().bold(), member.skill_id, e);
+                    skipped += 1;
+                }
+            }
+        } else {
+            println!(
+                "  {} {} not found in catalog, skipping",
+                "SKIP".yellow().bold(),
+                member.skill_id
+            );
+            skipped += 1;
+        }
+    }
+
+    println!(
+        "\n{} Team '{}': {} installed, {} skipped",
+        "✓".green().bold(),
+        team.name.cyan(),
+        installed.to_string().green(),
+        skipped.to_string().yellow()
+    );
+
+    Ok(())
+}
+
+fn chrono_free_now() -> String {
+    let secs = SystemTime::now()
+        .duration_since(SystemTime::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_secs();
+    format!("{}", secs)
+}
+
 fn truncate(s: &str, max: usize) -> String {
     if s.chars().count() <= max {
         s.to_string()
@@ -808,6 +1595,22 @@ fn main() -> Result<()> {
         Commands::Uninstall { name, yes } => cmd_uninstall(&name, yes),
         Commands::Doctor => cmd_doctor(),
         Commands::Completions { shell } => cmd_completions(shell),
+        Commands::Team(team_cmd) => match team_cmd {
+            TeamCommand::Assemble {
+                description,
+                install,
+                global,
+            } => cmd_team_assemble(&description, install, global),
+            TeamCommand::Analyze {
+                path,
+                install,
+                global,
+            } => cmd_team_analyze(&path, install, global),
+            TeamCommand::Save { name, description } => cmd_team_save(&name, description),
+            TeamCommand::List => cmd_team_list(),
+            TeamCommand::Install { name, global } => cmd_team_install(&name, global),
+            TeamCommand::Show { name } => cmd_team_show(&name),
+        },
     }
 }
 
