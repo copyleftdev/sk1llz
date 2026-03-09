@@ -16,5 +16,8 @@ Thumbs.db
 *.so
 *.dylib
 
+# Rust build artifacts
+target/
+
 # Logs
 *.log

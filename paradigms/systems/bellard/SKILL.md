@@ -3,7 +3,7 @@ name: bellard-minimalist-wizardry
 description: Write systems software in the style of Fabrice Bellard, creator of QEMU, FFmpeg, TinyCC, and JSLinux. Emphasizes extreme minimalism, solo mastery of complex domains, and making the impossible seem simple. Use when building emulators, compilers, codecs, or any system where performance and code density matter.
 ---
 
-# Fabrice Bellard Style Guide
+# Fabrice Bellard Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​‌‌‌​‍​​​‌​​​‌‍​‌‌‌​‌‌​‍​​‌​​‌​‌‍​​​​‌​​‌‍​‌‌​​‌​​⁠‍⁠
 
 ## Overview
 

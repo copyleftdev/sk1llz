@@ -3,7 +3,7 @@ name: dodds-testing-practices
 description: Write JavaScript code in the style of Kent C. Dodds, testing advocate and React educator. Emphasizes testing best practices, React patterns, and developer productivity. Use when writing tests or building maintainable React applications.
 ---
 
-# Kent C. Dodds Style Guide
+# Kent C. Dodds Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​‌​‌‌‌‍‌​‌‌​‌‌​‍​​​‌‌​​‌‍​‌​​‌​​​‍​​​​‌​​‌‍‌​​‌‌​​​⁠‍⁠
 
 ## Overview
 

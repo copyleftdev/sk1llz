@@ -3,7 +3,7 @@ name: blow-compiler-gamedev
 description: Design languages and write game engine code in the style of Jonathan Blow, creator of Braid, The Witness, and the Jai programming language. Emphasizes programmer productivity, compile-time execution, and rejecting complexity that doesn't serve the programmer. Use when designing languages, game engines, or performance-critical creative tools.
 ---
 
-# Jonathan Blow Style Guide
+# Jonathan Blow Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​​​​‌‌‍​​​​‌​‌​‍‌​‌​​‌‌‌‍‌​​‌‌‌​​‍​​​​‌​‌​‍​​‌‌‌​‌​⁠‍⁠
 
 ## Overview
 

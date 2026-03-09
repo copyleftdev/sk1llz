@@ -3,7 +3,7 @@ name: lattner-compiler-infrastructure
 description: Write compiler and toolchain code in the style of Chris Lattner, creator of LLVM, Clang, Swift, and MLIR. Emphasizes modular compiler design, reusable infrastructure, progressive lowering, and pragmatic language evolution. Use when building compilers, language tools, or performance-critical infrastructure.
 ---
 
-# Chris Lattner Style Guide
+# Chris Lattner Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌‌​​‌‍‌​​‌​​​​‍‌​‌​‌​‌​‍‌‌​​​​​‌‍​​​​‌​‌​‍‌​‌‌‌‌‌​⁠‍⁠
 
 ## Overview
 

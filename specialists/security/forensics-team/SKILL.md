@@ -3,7 +3,7 @@ name: forensics-team
 description: Analyze network traffic and security incidents with the depth of an "Ultimate Forensics Team". Emphasizes deep packet analysis (PCAP) as the source of truth, OSI layer decomposition, and the use of native Linux tools to uncover temporal patterns, attack types, and attribution.
 ---
 
-# Ultimate Forensics Team Style Guide
+# Ultimate Forensics Team Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌​​‌‌‍‌​‌​‌​‌‌‍‌​‌​‌​​‌‍‌​‌‌​‌​‌‍​​​​‌​‌​‍‌‌​​​‌‌​⁠‍⁠
 
 ## Overview
 

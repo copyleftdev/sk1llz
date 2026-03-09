@@ -3,7 +3,7 @@ name: hashimoto-cli-ux
 description: Design CLI tools in the style of Mitchell Hashimoto, founder of HashiCorp. Emphasizes consistent command patterns, helpful error messages, progressive disclosure, and machine-readable output. Use when building command-line tools that developers will love.
 ---
 
-# Mitchell Hashimoto CLI UX Style Guide
+# Mitchell Hashimoto CLI UX Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​‌‌​​‍‌​​​​​‌‌‍‌​​‌​‌​​‍‌​‌​​‌‌​‍​​​​‌​‌​‍‌​​‌​​‌‌⁠‍⁠
 
 ## Overview
 

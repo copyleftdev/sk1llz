@@ -3,7 +3,7 @@ name: crockford-good-parts
 description: 'Write JavaScript code in the style of Douglas Crockford, author of "JavaScript: The Good Parts". Emphasizes using only the reliable subset of JavaScript, avoiding problematic features, and writing clear, maintainable code. Use when writing robust, quality JavaScript.'
 ---
 
-# Douglas Crockford Style Guide
+# Douglas Crockford Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌​​‌​‍​​‌‌‌‌‌​‍​​​‌‌‌‌‌‍​​‌​‌​​​‍​​​​‌​​‌‍​‌​​​​​‌⁠‍⁠
 
 ## Overview
 

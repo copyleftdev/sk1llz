@@ -3,7 +3,7 @@ name: lamport-formal-distributed
 description: Design distributed systems in the style of Leslie Lamport, creator of Paxos, TLA+, and LaTeX. Emphasizes formal specification, logical time, and rigorous reasoning about concurrent systems. Use when designing consensus protocols or proving system correctness.
 ---
 
-# Leslie Lamport Style Guide
+# Leslie Lamport Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌‌​‌‌‌‍​‌‌‌‌‌‌​‍‌‌‌​‌​‌​‍‌‌‌‌‌‌​‌‍​​​​‌​‌‌‍‌‌​​​‌‌​⁠‍⁠
 
 ## Overview
 

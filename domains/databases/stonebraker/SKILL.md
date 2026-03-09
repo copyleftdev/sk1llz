@@ -3,7 +3,7 @@ name: stonebraker-database-architecture
 description: Design databases in the style of Michael Stonebraker, Turing Award winner and creator of Ingres, Postgres, VoltDB, and Vertica. Emphasizes clean architecture, separation of OLTP/OLAP, and building systems that last decades. Use when designing database internals, storage engines, or making fundamental architectural decisions.
 ---
 
-# Michael Stonebraker Style Guide
+# Michael Stonebraker Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​​‌​​‍​​​‌‌​‌‌‍​​‌​‌​​​‍​‌‌‌​‌‌‌‍​​​​‌​​‌‍​‌‌​‌​​​⁠‍⁠
 
 ## Overview
 

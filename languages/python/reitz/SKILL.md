@@ -3,7 +3,7 @@ name: reitz-api-design
 description: Write Python code in the style of Kenneth Reitz, creator of Requests. Emphasizes beautiful API design, simplicity for users, and the "for humans" philosophy. Use when designing libraries, APIs, or any interface that other developers will consume.
 ---
 
-# Kenneth Reitz Style Guide
+# Kenneth Reitz Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​​​​‌‍‌‌‌​​‌‌​‍​​​‌​​​​‍​‌‌​​​‌‌‍​​​​‌​‌​‍​​​​​‌​​⁠‍⁠
 
 ## Overview
 

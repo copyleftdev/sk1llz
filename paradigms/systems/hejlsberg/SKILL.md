@@ -3,7 +3,7 @@ name: hejlsberg-language-design
 description: Design languages and type systems in the style of Anders Hejlsberg, creator of Turbo Pascal, Delphi, C#, and TypeScript. Emphasizes practical type systems, developer productivity, gradual typing, and IDE-driven language design. Use when designing languages, type systems, or developer tools.
 ---
 
-# Anders Hejlsberg Style Guide
+# Anders Hejlsberg Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​‌​​​‍​‌​‌​‌‌‌‍‌​​‌‌‌‌​‍​​‌‌​​​‌‍​​​​‌​‌​‍​‌​‌‌​​​⁠‍⁠
 
 ## Overview
 

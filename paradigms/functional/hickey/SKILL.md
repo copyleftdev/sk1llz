@@ -3,7 +3,7 @@ name: hickey-simple-made-easy
 description: Write functional code in the style of Rich Hickey, creator of Clojure. Emphasizes simplicity over easiness, immutability, data-oriented programming, and managing state explicitly. Use when designing systems that need to be understood and maintained.
 ---
 
-# Rich Hickey Style Guide
+# Rich Hickey Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌‌‌​​‍​​‌​​‌‌‌‍​‌‌‌‌​‌​‍‌​​​‌​​​‍​​​​‌​‌​‍​​​​‌‌‌‌⁠‍⁠
 
 ## Overview
 

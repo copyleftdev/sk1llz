@@ -3,7 +3,7 @@ name: scarface-mean-reversion
 description: Trade mean reversion setups in the style of Scarface Trades, the mean reversion specialist known for mathematical precision and statistical edge. Emphasizes standard deviation bands, RSI extremes, and calculated entries with defined risk. Use when trading overextended moves, fading extremes, or building systematic reversion strategies.
 ---
 
-# Scarface Trades Mean Reversion Style Guide
+# Scarface Trades Mean Reversion Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌​‌‌​‍​‌​‌‌‌​​‍‌‌‌​‌‌‌‌‍​‌​​​​​​‍​​​​‌​‌​‍‌​‌​‌​‌‌⁠‍⁠
 
 ## Overview
 

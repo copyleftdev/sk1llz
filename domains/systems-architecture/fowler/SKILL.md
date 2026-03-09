@@ -3,7 +3,7 @@ name: fowler
 description: Design systems using Martin Fowler's principles of refactoring, continuous integration, and patterns of enterprise application architecture. Emphasizes clean code, evolution over revolution, and writing code for humans first. Use when designing enterprise systems, planning refactors, or establishing engineering culture.
 ---
 
-# Martin Fowler Style Guide
+# Martin Fowler Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌‌‌​​‌‍‌​​​‌‌​‌‍​​​‌​‌‌‌‍​​‌​​‌‌‌‍​​​​‌​‌​‍​​‌​‌‌‌​⁠‍⁠
 
 ## Overview
 

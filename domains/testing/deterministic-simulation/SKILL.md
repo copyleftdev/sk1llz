@@ -3,7 +3,7 @@ name: tigerbeetle-deterministic-simulation
 description: Test distributed systems in the style of TigerBeetle and Joran Dirk Greef, using deterministic simulation and time compression. Emphasizes controlling all non-determinism, simulating years of operation in minutes, and finding bugs that would take decades to manifest in production. Use when testing distributed systems, consensus protocols, or any system where correctness under failure is critical.
 ---
 
-# TigerBeetle Deterministic Simulation Style Guide
+# TigerBeetle Deterministic Simulation Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​‌‌​‌‌‍‌‌‌​​‌​​‍‌​‌​​‌​​‍‌‌​‌‌‌​​‍​​​​‌​‌‌‍‌​‌​‌​​‌⁠‍⁠
 
 ## Overview
 

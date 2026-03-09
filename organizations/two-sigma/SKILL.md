@@ -3,7 +3,7 @@ name: two-sigma-ml-at-scale
 description: Build trading systems in the style of Two Sigma, the systematic investment manager pioneering machine learning at scale. Emphasizes alternative data, distributed computing, feature engineering, and rigorous ML infrastructure. Use when building ML pipelines for alpha research, feature stores, or large-scale backtesting systems.
 ---
 
-# Two Sigma Style Guide
+# Two Sigma Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​‌​​‌‍​​​​‌‌‌​‍​​‌‌​‌‌‌‍‌​‌​‌‌​​‍​​​​‌​‌​‍​​‌​​‌​​⁠‍⁠
 
 ## Overview
 

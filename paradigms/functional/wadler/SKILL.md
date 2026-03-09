@@ -3,7 +3,7 @@ name: wadler-monadic-elegance
 description: Write functional code in the style of Philip Wadler, type theorist and monad evangelist. Emphasizes monadic composition, type-driven design, and the deep connection between logic and computation. Use when designing composable abstractions or understanding categorical patterns.
 ---
 
-# Philip Wadler Style Guide
+# Philip Wadler Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌‌​​​‍‌​​​‌​‌‌‍‌​​​​‌‌‌‍​​​​‌‌‌‌‍​​​​‌​‌​‍​​​​​​‌‌⁠‍⁠
 
 ## Overview
 

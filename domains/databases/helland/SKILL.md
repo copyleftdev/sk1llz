@@ -3,7 +3,7 @@ name: helland-distributed-data
 description: Design scalable data systems in the style of Pat Helland, distributed systems veteran from Tandem, Microsoft, and Amazon. Emphasizes life beyond distributed transactions, idempotency, and practical patterns for data at scale. Use when building systems that must scale beyond single-node ACID transactions.
 ---
 
-# Pat Helland Style Guide
+# Pat Helland Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​‌‌‌​‍​​‌​​‌‌‌‍​​‌​​​​​‍‌‌‌​​‌​‌‍​​​​‌​‌​‍​​​​​‌​​⁠‍⁠
 
 ## Overview
 

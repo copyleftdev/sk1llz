@@ -1,0 +1,19 @@
+[package]
+name = "sk1llz-dna"
+version = "0.1.0"
+edition = "2021"
+authors = ["copyleftdev"]
+description = "Steganographic zero-width character fingerprinting for sk1llz markdown files"
+license = "Apache-2.0"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+sha2 = "0.10"
+walkdir = "2"
+colored = "2"
+anyhow = "1"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1

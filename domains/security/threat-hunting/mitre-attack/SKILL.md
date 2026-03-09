@@ -3,7 +3,7 @@ name: mitre-attack-framework
 description: Apply the MITRE ATT&CK framework for threat intelligence and detection. Provides a universal taxonomy of adversary tactics, techniques, and procedures (TTPs). Use when mapping threats, building detections, or assessing defensive coverage.
 ---
 
-# MITRE ATT&CK Framework
+# MITRE ATT&CK Framework⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌​‌​‌‍​​​​‌‌‌​‍‌‌‌‌‌‌​​‍‌​‌​‌​​‌‍​​​​‌​‌​‍‌​​‌​​‌​⁠‍⁠
 
 ## Overview
 

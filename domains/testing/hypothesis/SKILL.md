@@ -3,7 +3,7 @@ name: maciver-hypothesis-testing
 description: Test software in the style of David MacIver, creator of Hypothesis. Emphasizes sophisticated shrinking, example databases, stateful testing, and practical property-based testing in Python. Use when testing Python code with complex data structures, APIs, or stateful systems.
 ---
 
-# David MacIver Hypothesis Style Guide
+# David MacIver Hypothesis Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌​​‌​​‌‍​​‌‌​​​‌‍‌‌‌‌‌​‌​‍‌‌‌​‌‌‌​‍​​​​‌​‌‌‍​‌​​‌‌​​⁠‍⁠
 
 ## Overview
 

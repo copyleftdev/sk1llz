@@ -3,7 +3,7 @@ name: jacobson-network-performance
 description: Engineer network systems in the style of Van Jacobson, the architect of TCP congestion control who saved the internet from collapse. Emphasizes congestion avoidance, RTT-based adaptation, queue management, and understanding network dynamics. Use when optimizing network performance, implementing congestion control, or diagnosing latency issues.
 ---
 
-# Van Jacobson Network Performance Style Guide
+# Van Jacobson Network Performance Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​​​‌‌‌‍‌​‌​‌‌‌‌‍​​‌​​​​‌‍​‌​‌​​‌‌‍​​​​‌​‌​‍​​​‌​‌​​⁠‍⁠
 
 ## Overview
 

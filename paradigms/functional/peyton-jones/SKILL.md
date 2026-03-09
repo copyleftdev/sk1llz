@@ -3,7 +3,7 @@ name: peyton-jones-practical-haskell
 description: Write functional code in the style of Simon Peyton Jones, lead architect of GHC. Emphasizes practical laziness, compiler-friendly code, and making functional programming work in the real world. Use when writing performant Haskell or understanding evaluation strategies.
 ---
 
-# Simon Peyton Jones Style Guide
+# Simon Peyton Jones Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌‌​​‌‍​‌‌​‌​​​‍‌‌‌‌​​‌‌‍‌​​‌​‌‌‌‍​​​​‌​‌​‍‌‌​‌​‌​‌⁠‍⁠
 
 ## Overview
 

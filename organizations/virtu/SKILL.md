@@ -3,7 +3,7 @@ name: virtu-market-microstructure
 description: Build trading systems in the style of Virtu Financial, the leading electronic market maker and execution services firm. Emphasizes market microstructure, optimal execution, order routing, and minimizing market impact. Use when building execution algorithms, smart order routers, or analyzing market microstructure.
 ---
 
-# Virtu Financial Style Guide
+# Virtu Financial Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​‌​​‌‍‌‌​‌‌​​‌‍‌​‌​​​‌‌‍​​​​‌‌​​‍​​​​‌​‌​‍​​‌‌‌​‌‌⁠‍⁠
 
 ## Overview
 

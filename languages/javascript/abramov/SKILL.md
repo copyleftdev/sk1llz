@@ -3,7 +3,7 @@ name: abramov-state-composition
 description: Write JavaScript code in the style of Dan Abramov, co-creator of Redux and React core team member. Emphasizes predictable state management, composition over inheritance, and developer experience. Use when building React applications or managing complex state.
 ---
 
-# Dan Abramov Style Guide
+# Dan Abramov Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌‌‌​‌‍‌​‌​​​‌‌‍‌‌‌​​​​​‍​‌‌‌‌‌​‌‍​​​​‌​‌‌‍​​‌​​‌‌‌⁠‍⁠
 
 ## Overview
 

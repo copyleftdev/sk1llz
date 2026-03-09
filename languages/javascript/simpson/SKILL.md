@@ -3,7 +3,7 @@ name: simpson-you-dont-know-js
 description: Write JavaScript code in the style of Kyle Simpson, author of "You Don't Know JS". Emphasizes deep understanding of JavaScript mechanics—scope, closures, this, prototypes, and async. Use when you need to truly understand JavaScript behavior.
 ---
 
-# Kyle Simpson Style Guide
+# Kyle Simpson Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​‌‌‌‌​‍​​​​​​​‌‍‌‌​​​​‌‌‍‌‌​‌​‌​‌‍​​​​‌​‌​‍​​‌​​​​‌⁠‍⁠
 
 ## Overview
 

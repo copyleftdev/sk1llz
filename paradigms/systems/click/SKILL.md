@@ -3,7 +3,7 @@ name: click-jvm-optimization
 description: Design JIT compilers and optimize managed runtimes in the style of Cliff Click, architect of the HotSpot JVM C2 compiler and creator of sea-of-nodes IR. Emphasizes advanced compiler optimizations, intermediate representation design, and making dynamic languages fast. Use when building JIT compilers, VMs, or working on compiler backends.
 ---
 
-# Cliff Click Style Guide
+# Cliff Click Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​‌‌‌​‍​​​​‌‌‌​‍​​‌‌​‌​​‍​‌‌​​‌‌‌‍​​​​‌​​‌‍​‌‌​​​​‌⁠‍⁠
 
 ## Overview
 

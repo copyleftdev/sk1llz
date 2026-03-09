@@ -3,7 +3,7 @@ name: klabnik-teaching-rust
 description: Write Rust code in the style of Steve Klabnik, author of "The Rust Programming Language." Emphasizes clear, idiomatic code that teaches as it goes. Use when writing example code, documentation, or code that others will learn from.
 ---
 
-# Steve Klabnik Style Guide
+# Steve Klabnik Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​​​​‌​‍​​​‌​‌‌‌‍‌​‌‌‌​‌​‍‌​‌‌‌​​‌‍​​​​‌​‌​‍​‌‌‌​‌‌​⁠‍⁠
 
 ## Overview
 

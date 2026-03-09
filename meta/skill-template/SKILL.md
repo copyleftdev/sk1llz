@@ -3,7 +3,7 @@ name: engineer-name-style
 description: Write code in the style and philosophy of [Engineer Name], applying their design principles, patterns, and mental models. Use when writing [language] code that requires [their specialty].
 ---
 
-# [Engineer Name] Style Guide
+# [Engineer Name] Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌​‌​​​‍​​​​​​‌‌‍​‌​​‌‌​​‍‌‌​‌‌​‌​‍​​​​‌​‌​‍​‌‌‌‌​‌‌⁠‍⁠
 
 ## Overview
 

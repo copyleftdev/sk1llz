@@ -1,0 +1,82 @@
+name: DNA Fingerprint
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - '**/*.md'
+      - 'tools/sk1llz-dna/**'
+
+jobs:
+  dna-test:
+    name: Test DNA Tool
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/sk1llz-dna/target
+          key: dna-${{ runner.os }}-${{ hashFiles('tools/sk1llz-dna/Cargo.lock') }}
+          restore-keys: dna-${{ runner.os }}-
+
+      - name: Test
+        working-directory: tools/sk1llz-dna
+        run: cargo test
+
+  dna-stamp:
+    name: Stamp Markdown Files
+    needs: dna-test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/sk1llz-dna/target
+          key: dna-${{ runner.os }}-${{ hashFiles('tools/sk1llz-dna/Cargo.lock') }}
+          restore-keys: dna-${{ runner.os }}-
+
+      - name: Build DNA tool
+        working-directory: tools/sk1llz-dna
+        run: cargo build --release
+
+      - name: Inject fingerprints
+        run: tools/sk1llz-dna/target/release/sk1llz-dna inject .
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit stamped files
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A '*.md'
+          git commit -m "chore: inject DNA fingerprints [skip ci]"
+          git push

@@ -3,7 +3,7 @@ name: nichols-practical-rust
 description: Write Rust code in the style of Carol Nichols, co-author of The Rust Book. Emphasizes practical patterns, clear explanations, and real-world applicability. Use when writing production Rust or explaining Rust to others.
 ---
 
-# Carol Nichols Style Guide
+# Carol Nichols Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​​‌‌‌‌‍‌​​‌​​​‌‍​‌​​‌​​​‍​​​​‌‌‌‌‍​​​​‌​​‌‍‌​‌​​​​‌⁠‍⁠
 
 ## Overview
 

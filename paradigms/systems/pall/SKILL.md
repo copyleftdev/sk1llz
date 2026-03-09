@@ -3,7 +3,7 @@ name: pall-jit-mastery
 description: Write high-performance JIT compilers and interpreters in the style of Mike Pall, creator of LuaJIT. Emphasizes trace-based compilation, aggressive optimization, and understanding CPU microarchitecture. Use when building JITs, interpreters, or any code where every cycle counts.
 ---
 
-# Mike Pall Style Guide
+# Mike Pall Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌‌​​‌‌‍‌​‌​‌‌​‌‍​‌‌‌‌​‌‌‍​‌‌‌​​​​‍​​​​‌​‌​‍‌​‌‌​‌​‌⁠‍⁠
 
 ## Overview
 

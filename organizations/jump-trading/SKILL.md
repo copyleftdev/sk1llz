@@ -3,7 +3,7 @@ name: jump-trading-fpga-hft
 description: Build trading systems in the style of Jump Trading, the high-frequency trading firm pioneering FPGA-based trading. Emphasizes hardware acceleration, network optimization, and nanosecond-level execution. Use when building FPGA trading systems, network-optimized infrastructure, or ultra-low-latency order execution.
 ---
 
-# Jump Trading Style Guide
+# Jump Trading Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌​‌‌‌‌‍​​‌​​‌​‌‍‌‌‌‌​‌​‌‍​​‌‌‌‌‌​‍​​​​‌​‌​‍​​‌‌​​​‌⁠‍⁠
 
 ## Overview
 

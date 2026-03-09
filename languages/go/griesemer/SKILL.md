@@ -3,7 +3,7 @@ name: griesemer-precise-go
 description: Write Go code in the style of Robert Griesemer, co-creator of Go. Emphasizes clean syntax, precise semantics, and well-defined type system behavior. Use when designing APIs, type hierarchies, or code that requires precise specification.
 ---
 
-# Robert Griesemer Style Guide
+# Robert Griesemer Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​​​‌​‌‍​​​‌‌‌‌​‍‌‌​‌‌​​‌‍​​‌​​‌​‌‍​​​​‌​‌​‍​​​​‌​‌‌⁠‍⁠
 
 ## Overview
 

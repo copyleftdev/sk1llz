@@ -3,7 +3,7 @@ name: stepanov-generic-programming
 description: Write C++ code following Alexander Stepanov's generic programming principles. Emphasizes algorithms over data structures, concepts as requirements, and mathematical rigor in interface design. Use when designing reusable algorithms or data structures that must work across types.
 ---
 
-# Alexander Stepanov Style Guide
+# Alexander Stepanov Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​‌​‌​‌‌‍‌​‌​​​‌​‍‌​​​​‌‌​‍‌‌‌‌‌​​​‍​​​​‌​‌‌‍​​‌‌​‌​‌⁠‍⁠
 
 ## Overview
 

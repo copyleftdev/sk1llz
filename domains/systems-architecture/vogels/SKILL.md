@@ -3,7 +3,7 @@ name: vogels-cloud-architecture
 description: Design cloud-native systems using Werner Vogels' principles of failure-first design, eventual consistency, and API-driven architecture. Emphasizes building for failure, customer obsession, and practical distributed systems. Use when building AWS-scale services, microservices, or any system that must be highly available.
 ---
 
-# Werner Vogels Style Guide
+# Werner Vogels Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌‌‌‌​‌​‍​‌​‌​​​‌‍​‌‌‌‌‌‌‌‍​‌‌​‌‌‌‌‍​​​​‌​‌​‍​​‌​​​‌‌⁠‍⁠
 
 ## Overview
 

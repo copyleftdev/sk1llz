@@ -3,7 +3,7 @@ name: lamport-distributed-systems
 description: Design distributed systems using Leslie Lamport's rigorous approach. Emphasizes formal reasoning, logical time, consensus protocols, and state machine replication. Use when building systems where correctness under concurrency and partial failure is critical.
 ---
 
-# Leslie Lamport Style Guide
+# Leslie Lamport Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌‌​​‌‌‍‌​‌‌​​​‌‍‌‌‌​‌‌‌​‍​​‌​​​​​‍​​​​‌​‌​‍​‌​‌‌‌​​⁠‍⁠
 
 ## Overview
 

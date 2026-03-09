@@ -3,7 +3,7 @@ name: ritchie-c-mastery
 description: Write systems code in the style of Dennis Ritchie, co-creator of Unix and creator of C. Emphasizes clean abstraction, portable systems code, and the art of language design. Use when writing C or designing system interfaces.
 ---
 
-# Dennis Ritchie Style Guide
+# Dennis Ritchie Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​‌‌​​​​‍‌‌‌​​‌‌‌‍‌​​​​‌‌‌‍‌‌​‌​​‌‌‍​​​​‌​‌​‍‌‌​‌‌​‌‌⁠‍⁠
 
 ## Overview
 

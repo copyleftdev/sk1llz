@@ -3,7 +3,7 @@ name: google-search-architecture
 description: Build search systems informed by Google's internal architecture as revealed in the May 2024 API Content Warehouse leak. Covers Ascorer ranking, NavBoost click signals, Twiddler re-ranking, index tiering, and entity-based retrieval. Use when designing large-scale search engines, ranking systems, or understanding how modern search actually works.
 ---
 
-# Google Search Architecture Style Guide
+# Google Search Architecture Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​‌​‌​‌‌​‍‌​​​​‌​​‍​‌​‌​​​​‍​‌​​‌​‌‌‍​​​​‌​​‌‍‌‌​‌‌‌‌‌⁠‍⁠
 
 ## Overview
 

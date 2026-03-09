@@ -3,7 +3,7 @@ name: thompson-unix-philosophy
 description: Write Go code in the style of Ken Thompson, co-creator of Go, Unix, and C. Emphasizes Unix philosophy, minimalism, and programs that do one thing well. Use when designing tools, CLIs, or systems that should be composable and focused.
 ---
 
-# Ken Thompson Style Guide
+# Ken Thompson Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍​​​‌‌‌‌​‍‌​​​‌‌‌‌‍‌​‌‌​‌‌​‍‌​​​‌​​​‍​​​​‌​‌​‍​‌​‌​‌​‌⁠‍⁠
 
 ## Overview
 

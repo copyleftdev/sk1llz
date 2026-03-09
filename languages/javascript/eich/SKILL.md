@@ -3,7 +3,7 @@ name: eich-language-fundamentals
 description: Write JavaScript code with deep understanding of the language fundamentals as envisioned by Brendan Eich, creator of JavaScript. Emphasizes first-class functions, prototypes, and the dynamic nature of the language. Use when leveraging JavaScript's unique characteristics.
 ---
 
-# Brendan Eich Style Guide
+# Brendan Eich Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌​​‌‌‌​​‍‌‌‌‌​‌​​‍‌‌​‌‌​​‌‍​​​​​​‌‌‍​​​​‌​‌​‍‌‌​‌​‌‌​⁠‍⁠
 
 ## Overview
 

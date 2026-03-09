@@ -3,7 +3,7 @@ name: cox-tooling-excellence
 description: Write Go code in the style of Russ Cox, Go tech lead. Emphasizes tooling, module design, correctness, and backward compatibility. Use when designing packages, modules, or tools that others will depend on.
 ---
 
-# Russ Cox Style Guide
+# Russ Cox Style Guide⁠‍⁠​‌​‌​​‌‌‍​‌​​‌​‌‌‍​​‌‌​​​‌‍​‌​​‌‌​​‍​​​​​​​‌‍‌​​‌‌​‌​‍‌​​​​​​​‍‌‌​​‌‌‌‌‍‌‌​​​‌​​‍‌‌‌‌‌‌​‌‍‌‌​‌​​​​‍​‌​‌‌‌‌‌‍​‌​​‌​‌‌‍​‌‌​‌​​‌‍‌​‌​‌‌‌​‍​​‌​‌​​​‍‌‌‌​‌​‌‌‍‌‌‌‌​​​​‍‌​‌​​​​​‍​​​​​​‌​‍‌​‌​‌‌​‌‍​​​​‌​‌​‍‌​‌​‌​​‌⁠‍⁠
 
 ## Overview
 
